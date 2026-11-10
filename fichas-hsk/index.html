@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Fichas de escritura de caracteres chinos por lecciones del nuevo HSK (HSK 3.0): orden de trazos, pinyin, significado en español y PDF para imprimir. Gratis.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fichas de caracteres · Nuevo HSK">
+<meta property="og:description" content="Fichas de escritura de caracteres chinos por lecciones del nuevo HSK (HSK 3.0): orden de trazos, pinyin, significado en español y PDF para imprimir. Gratis.">
+<meta property="og:image" content="https://chinoparahispanohablantes.github.io/img/fichas-hsk.png">
+<meta property="og:url" content="https://chinoparahispanohablantes.github.io/fichas-hsk/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231F3A5F'/%3E%3Ctext x='50' y='72' font-size='62' text-anchor='middle' fill='%23E8A33D'%3E%E4%B8%AD%3C/text%3E%3C/svg%3E">
+<style>body{margin:0}</style>
+</head><body>
+<title>Fichas de caracteres HSK</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600&display=swap">
+<style>
+/* Layout: editor column (input → editable data table) on the left, A4 previews on the right; stacks on phones. */
+:root{
+  --bg:#f3f5f2; --panel:#ffffff; --ink:#1d2621; --muted:#5d6b63; --line:#d5ddd7;
+  --accent:#2f7a55; --accent-ink:#ffffff; --red:#c8372d; --pink:#c2557a; --chip:#e7f1eb;
+  --f-body:"Noto Sans","Noto Sans SC",system-ui,sans-serif;
+  --f-han:"Noto Serif SC","Noto Sans SC",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151a17;--panel:#1e2521;--ink:#e6ece8;--muted:#9aa9a0;--line:#34403a;--accent:#5cb487;--accent-ink:#0f1512;--red:#ef7a70;--pink:#e48aab;--chip:#26322b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#151a17;--panel:#1e2521;--ink:#e6ece8;--muted:#9aa9a0;--line:#34403a;--accent:#5cb487;--accent-ink:#0f1512;--red:#ef7a70;--pink:#e48aab;--chip:#26322b;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.wrap{padding-block:20px 24px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));max-width:1360px;margin:0 auto;display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr)}}
+header{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline}
+h1{font-size:1.6rem;margin:0;text-wrap:balance;display:flex;gap:10px;align-items:baseline}
+h1 .han{font-family:var(--f-han);color:var(--accent)}
+header p{margin:0;color:var(--muted);max-width:70ch}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:14px;min-width:0}
+label,.lab{font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+input[type=text],textarea{width:100%;box-sizing:border-box;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px 10px;font:inherit}
+textarea{min-height:120px;font-family:var(--f-han);font-size:22px;line-height:1.5;resize:vertical}
+.hint{font-size:.8rem;color:var(--muted);margin:4px 0 0}
+.row{display:flex;gap:10px 16px;flex-wrap:wrap;align-items:center}
+.opt{display:flex;gap:6px;align-items:center;font-size:.9rem}
+.opt input{accent-color:var(--accent)}
+.opt label{margin:0;text-transform:none;letter-spacing:0;font-size:.9rem;color:var(--ink)}
+select{width:100%;box-sizing:border-box;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px 10px;font:inherit}
+select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+fieldset{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:6px 16px}
+legend{padding:0;margin-bottom:4px}
+button{font:inherit;border-radius:6px;padding:9px 14px;border:1px solid var(--accent);cursor:pointer}
+button.primary{background:var(--accent);color:var(--accent-ink);font-weight:600}
+button.ghost{background:transparent;color:var(--accent)}
+button:disabled{opacity:.5;cursor:default}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#status{font-size:.85rem;color:var(--muted);min-height:1.3em}
+#status.err{color:var(--red)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th{font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:600;padding:6px 8px;background:var(--bg);border-bottom:1px solid var(--line)}
+td{padding:4px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+td.w{font-family:var(--f-han);font-size:20px;white-space:nowrap;padding-left:10px}
+td input{padding:5px 7px;font-size:.88rem;min-width:7em}
+td.rad{font-family:var(--f-han);font-size:16px;white-space:nowrap;color:var(--muted)}
+.chip{display:inline-block;font-size:.7rem;padding:1px 7px;border-radius:99px;background:var(--chip);color:var(--accent);white-space:nowrap;font-weight:600}
+.chip.ai{color:var(--pink)}
+.chip.none{color:var(--red)}
+.pages{display:flex;flex-direction:column;gap:18px;min-width:0}
+.pages img.sheet,.pages canvas{width:100%;max-width:820px;height:auto;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.18);border-radius:2px;display:block}
+.pnum{font-size:.8rem;color:var(--muted);margin-bottom:4px}
+.empty{color:var(--muted);font-size:.9rem;padding:40px 0}
+footer{grid-column:1/-1;font-size:.8rem;color:var(--muted);text-align:center;padding-top:8px;border-top:1px solid var(--line)}
+footer .han{font-family:var(--f-han)}
+#printArea{display:none}
+@page{size:A4;margin:0}
+@media print{
+  body>*:not(#printArea){display:none!important}
+  #printArea{display:block}
+  #printArea img{display:block;width:210mm;height:297mm;page-break-after:always;break-after:page}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1><span class="han">写汉字</span> Fichas de caracteres · Nuevo HSK</h1>
+    <p>Elige una lección o escribe tus caracteres. La ficha se completa sola con pinyin, significado, radical, número de trazos, orden y dirección de cada trazo.</p>
+  </header>
+
+  <section class="panel" aria-label="Datos de la ficha">
+    <div>
+      <label for="titulo">Título de la ficha</label>
+      <input type="text" id="titulo" value="新HSK教程 1 · Lección 1">
+    </div>
+    <div>
+      <label for="libro">Libro</label>
+      <select id="libro"></select>
+    </div>
+    <div>
+      <label for="unidad">Lección (opcional)</label>
+      <select id="unidad"><option value="">— Escribo yo los caracteres —</option></select>
+      <span class="opt" style="margin-top:8px"><input type="checkbox" id="soloHW"><label for="soloHW">Solo los caracteres que hay que saber escribir</label></span>
+      <p class="hint" id="hwHint">Lista oficial de caracteres de escritura del nuevo HSK. En cada lección salen solo los que aparecen por primera vez en el libro. También puedes escribir tus propios caracteres abajo.</p>
+    </div>
+    <div>
+      <label for="hanzi">Caracteres o palabras</label>
+      <textarea id="hanzi" spellcheck="false" lang="zh-Hans"></textarea>
+      <p class="hint">Separa las palabras con espacios, comas o saltos de línea.</p>
+    </div>
+    <fieldset>
+      <legend class="lab">Cómo leer lo que escribes</legend>
+      <span class="opt"><input type="radio" name="modo" id="modoPal" value="pal" checked><label for="modoPal">Por palabras</label></span>
+      <span class="opt"><input type="radio" name="modo" id="modoCar" value="car"><label for="modoCar">Carácter a carácter</label></span>
+    </fieldset>
+    <div class="row">
+      <span class="opt"><input type="checkbox" id="rosa" checked><label for="rosa">Copias en rosa para repasar</label></span>
+      <span class="opt"><input type="checkbox" id="flechas" checked><label for="flechas">Flechas de dirección</label></span>
+    </div>
+    <div class="row">
+      <button class="primary" id="gen">Crear ficha</button>
+      <button class="ghost" id="pdf" disabled>Descargar PDF</button>
+      <button class="ghost" id="imprimir" disabled>Imprimir</button>
+    </div>
+    <div id="status" role="status"></div>
+    <div id="datos" hidden>
+      <span class="lab">Datos de cada palabra (puedes corregirlos)</span>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Palabra</th><th>Pinyin</th><th>Significado</th><th>部首</th><th>Origen</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table></div>
+      <p class="hint">Al cambiar un dato, la ficha se actualiza. «L3»: vocabulario de la lección 3 del libro elegido · Si una palabra no trae significado, escríbelo tú en la tabla.</p>
+    </div>
+  </section>
+
+  <section class="pages" id="pages" aria-label="Vista previa"><div class="empty">Escribe caracteres y pulsa «Crear ficha».</div></section>
+
+  <footer>Creado por María A. Piernavieja <span class="han">孙雅颂</span> · Departamento de Chino · EOI de Cádiz</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pinyin-pro@3.29.4/dist/index.js"></script>
+<script>
+const DATA={"rad":"通辶用用规见范艹汉氵字子表衣一一乙乙二二十十丁一厂厂七一卜卜八八人人入入儿儿匕匕几几九丿刁刀了乙刀刀力力乃丿又又三一干干于二亏二工工土土士士才扌下一寸寸大大丈一与一万一上一小小口口山山巾巾千十乞乙川川亿亻个人夕夕久丿么丿勺勹凡几丸丿及又广广亡亠门门丫丨义丶之丶尸尸己己已己巳巳弓弓子子卫卩也乙女女刃刀飞飞习乙叉又马马乡乙丰丨王王开廾井二天大夫大元二无一云二专一丐一扎扌艺艹木木五二支支厅厂不一犬犬太大区匚历厂歹歹友又尤尢匹匚车车巨匚牙牙屯屮戈戈比比互二切刀瓦瓦止止少小曰曰日日中丨贝贝冈冂内冂水水见见午十牛牛手手气气毛毛壬士升十夭大长长仁亻什亻片片仆亻化亻仇亻币巾仍亻仅亻斤斤爪爪反又介人父父从人仑人今人凶凵分刀乏丿公八仓人月月氏氏勿勹欠欠风风丹丿匀勹乌丿勾勹凤几六亠文文亢亠方方火火为丶斗斗忆忄计讠订讠户户认讠冗冖讥讠心心尺尸引弓丑一巴巳孔子队阝办力以人允儿予乙邓阝劝力双又书乛幻幺玉玉刊刂未木末木示示击凵打扌巧工正止扑扌卉十扒扌功力扔扌去土甘甘世一艾艹古口节艹本木术木可口丙一左工厉厂石石右口布巾夯大戊戈龙龙平干灭火轧车东一卡丨北匕占卜凸凵卢卜业一旧日帅巾归彐旦日目目且一叶口甲丨申田叮口电田号口田田由田只口叭口史口央大兄儿叽口叼口叫口叩口叨口另口叹口冉冂皿皿凹凵囚囗四囗生生矢矢失大乍丿禾禾丘丿付亻仗亻代亻仙亻们亻仪亻白白仔亻他亻斥斤瓜瓜乎丿丛一令人甩用印卩尔小乐丿句口匆勹册丿卯卩犯犭外夕处夂冬夂鸟鸟务力包勹饥饣主丶市巾立立冯冫玄玄闪门兰丷半十汁氵汇氵头大宁宀穴穴它宀讨讠写冖让讠礼礻训讠议讠必心讯讠记讠永水司口尼尸民乛弗弓弘弓出凵辽辶奶女奴女召口加力皮皮边辶孕子发又圣土对寸台口矛矛纠纟母母幼幺丝一邦阝式弋迂辶刑刂戎戈动力扛扌寺寸吉口扣扌考耂托扌老耂巩工圾土执扌扩扌扫扌地土场土扬扌耳耳芋艹共八芒艹亚二芝艹朽木朴木机木权木过辶臣臣吏口再冂协十西覀压厂厌厂戌戈在土百白有月存子而而页页匠匚夸大夺大灰火达辶列刂死歹成戈夹大夷大轨车邪阝尧兀划刂迈辶毕比至至此止贞贝师巾尘小尖小劣力光儿当彐早日吁口吐口吓口虫虫曲曰团囗吕口同口吊口吃口因囗吸口吗口吆口屿山屹山岁山帆巾回囗岂山则刂刚刂网冂肉肉年干朱木先儿丢丿廷廴舌舌竹竹迁辶乔丿迄辶伟亻传亻乒丿乓丿休亻伍亻伏亻优亻臼臼伐亻延廴仲亻件亻任亻伤亻价亻伦亻份亻华十仰亻仿亻伙亻伪亻自自伊亻血血向口似亻后口行行舟舟全人会人杀木合口兆儿企人众人爷父伞人创刂肌月肋月朵木杂木危㔾旬日旨日旭日负贝匈勹名口各口多夕争刀色色壮士冲冫妆女冰冫庄广庆广亦亠刘文齐齐交亠衣衣次欠产亠决冫亥亠充亠妄女闭门问门闯门羊羊并干关丷米米灯火州川汗氵污氵江氵汛氵池氵汝氵汤氵忙忄兴八宇宀守宀宅宀安宀讲讠讳讠军冖讶讠许讠讹讠论讠讼讠农冖讽讠设讠访讠诀讠寻寸那阝迅辶尽尸导寸异廾弛弓孙子阵阝阳阝收攵阶阝阴阝防阝奸女如女妇女妃女好女她女妈女戏戈羽羽观见欢欠买乙红纟驮马纤纟驯马约纟级纟纪纟驰马纫纟巡巛寿寸弄廾麦麦玖王玛王形彡进辶戒戈吞口远辶违辶韧韦运辶扶扌抚扌坛土技扌坏土抠扌扰扌扼扌拒扌找扌批扌址土扯扌走走抄扌贡贝汞水坝土攻攵赤赤折扌抓扌扳扌抡扌扮扌抢扌孝子坎土均土抑扌抛扌投扌坟土坑土抗扌坊土抖扌护扌壳士志心块土扭扌声士把扌报扌拟扌却卩抒扌劫力芙艹芜艹苇艹芽艹花艹芹艹芥艹芬艹苍艹芳艹严一芦艹芯艹劳力克十芭艹苏艹杆木杠木杜木材木村木杖木杏木杉木巫工极木李木杨木求水甫用匣匚更一束木吾口豆豆两一酉酉丽一医匚辰辰励力否口还辶尬尢歼歹来木连辶轩车步止卤卜坚土肖月旱日盯目呈口时日吴口助力县厶里里呆口吱口吠口呕口园囗旷日围囗呀口吨口足足邮阝男田困囗吵口串丨员口呐口听口吟口吩口呛口吻口吹口呜口吭口吧口邑邑吼口囤囗别刂吮口岖山岗山帐巾财贝针钅钉钅牡牜告口我戈乱乙利刂秃禾秀禾私禾每母兵八估亻体亻何亻佐亻佑亻但亻伸亻佃亻作亻伯亻伶亻佣亻低亻你亻住亻位亻伴亻身身皂白伺亻佛亻囱囗近辶彻彳役彳返辶余人希巾坐土谷谷妥女含口邻阝岔山肝月肛月肚月肘月肠月龟刀甸田免刀狂犭犹犭狈犭角角删刂条木彤彡卵卩灸火岛山刨刂迎辶饭饣饮饣系糸言言冻冫状犬亩亠况冫床广库广庇广疗疒吝口应广这辶冷冫庐广序广辛辛弃廾冶冫忘心闰门闲门间门闷门判刂兑丷灶火灿火灼火弟弓汪氵沐氵沛氵汰氵沥氵沙氵汽氵沃氵沦氵汹氵泛氵沧氵没氵沟氵沪氵沈氵沉氵沁氵怀忄忧忄忱忄快忄完宀宋宀宏宀牢牛究穴穷穴灾火良艮证讠启口评讠补衤初刀社礻祀礻识讠诈讠诉讠罕冖诊讠词讠译讠君口灵火即卩层尸屁尸尿尸尾尸迟辶局尸改攵张弓忌心际阝陆阝阿阝陈阝阻阝附阝坠土妓女妙女妖女姊女妨女妒女努力忍心劲力矣矢鸡鸟纬纟驱马纯纟纱纟纲纟纳纟驳马纵纟纷纟纸纟纹纟纺纟驴马纽纟奉大玩王环王武止青青责贝现见玫攵抹扌卦卜坷土坯土拓扌拢扌拔扌坪土拣扌坦土担扌坤土押扌抽扌拐扌拖扌者耂拍扌顶页拆扌拎扌拥扌抵扌拘扌势力抱扌拄扌垃土拉扌拦扌幸干拌扌拧扌拂扌拙扌招扌坡土披扌拨扌择扌抬扌拇扌拗扌其八取又茉艹苦艹昔日苛艹若艹茂艹苹艹苗艹英艹苟艹苑艹苞艹直目茁艹茄艹茎艹苔艹茅艹枉木林木枝木杯木枢木柜木枚木析木板木松木枪木枫木构木杭木杰木述辶枕木丧十或戈画田卧卜事亅刺刂枣木雨雨卖十郁阝矾石矿石码石厕厂奈大奔大奇大奋大态心欧欠殴殳垄土妻女轰车顷页转车斩斤轮车软车到刂非非叔又歧止肯月齿齿些止卓十虎虍虏虍肾月贤贝尚小旺日具八味口果木昆日国囗哎口咕口昌日呵口畅田明日易日咙口昂日迪辶典八固囗忠心呻口咒口咋口咐口呼口鸣鸟咏口呢口咄口咖口岸山岩山帖巾罗罒帜巾帕巾岭山凯几败贝账贝贩贝贬贝购贝贮贝图囗钓钅制刂知矢迭辶氛气垂丿牧牜物牜乖丿刮刂秆禾和口季子委女秉禾佳亻侍亻岳山供亻使亻例亻侠亻侥亻版片侄亻侦亻侣亻侧亻凭几侨亻佩亻货贝侈亻依亻卑十的白迫辶质贝欣欠征彳往彳爬爪彼彳径彳所户舍舌金金刹刂命口肴月斧斤爸父采采觅见受又乳乚贪贝念心贫贝忿心肤月肺月肢月肿月胀月朋月股月肮月肪月肥月服月胁月周口昏日鱼鱼兔刀狐犭忽心狗犭狞犭备夂饰饣饱饣饲饣变又京亠享亠庞广店广夜亠庙广府广底广疟疒疙疒疚疒剂刂卒十郊阝庚广废广净冫盲目放攵刻刂育月氓亠闸门闹门郑阝券刀卷㔾单丷炬火炒火炊火炕火炎火炉火沫氵浅氵法氵泄氵沽氵河氵沾氵泪氵沮氵油氵泊氵沿氵泡氵注氵泣氵泞氵泻氵泌氵泳氵泥氵沸氵沼氵波氵泼氵泽氵治氵怔忄怯忄怖忄性忄怕忄怜忄怪忄怡忄学子宝宀宗宀定宀宠宀宜宀审宀宙宀官宀空穴帘巾宛宀实宀试讠郎阝诗讠肩月房户诚讠衬衤衫衤视见祈礻话讠诞讠诡讠询讠该讠详讠建廴肃聿录彐隶隶帚巾屉尸居尸届尸刷刂屈尸弧弓弥弓弦弓承乙孟子陋阝陌阝孤子陕阝降阝函凵限阝妹女姑女姐女姓女妮女始女姆女迢辶驾马叁厶参厶艰艮线纟练纟组纟绅纟细纟驶马织纟驹马终纟驻马绊纟驼马绍纟绎纟经纟贯贝契大贰贝奏大春日帮巾玷王珍王玲王珊王玻王毒母型土拭扌挂扌封寸持扌拷扌拱扌项页垮土挎扌城土挟扌挠扌政攵赴走赵走挡扌拽扌哉口挺扌括扌垢土拴扌拾扌挑扌垛土指扌垫土挣扌挤扌拼扌挖扌按扌挥扌挪扌拯扌某木甚甘荆艹茸艹革革茬艹荐艹巷巳带巾草艹茧艹茵艹茶艹荒艹茫艹荡艹荣艹荤艹荧艹故攵胡月荫艹荔艹南十药艹标木栈木柑木枯木柄木栋木相目查木柏木栅木柳木柱木柿木栏木柠木树木勃力要覀柬木咸口威女歪止研石砖石厘厂厚厂砌石砂石泵水砚石砍石面面耐而耍而牵牛鸥鸟残歹殃歹轴车轻车鸦鸟皆白韭韭背月战戈点灬虐虍临丨览见竖立省目削刂尝小昧日盹目是日盼目眨目哇口哄口哑口显日冒⺜映日星日昨日咧口昭日畏田趴足胃月贵贝界田虹虫虾虫蚁虫思心蚂虫虽虫品口咽口骂马勋力哗口咱口响口哈口哆口咬口咳口咪口哪口哟口炭火峡山罚罒贱贝贴贝贻贝骨骨幽幺钙钅钝钅钞钅钟钅钢钅钠钅钥钅钦钅钧钅钩钅钮钅卸卩缸缶拜手看目矩矢毡毛氢气怎心牲牜选辶适辶秒禾香香种禾秋禾科禾重里复夂竿竹段殳便亻俩亻贷贝顺页修亻俏亻保亻促亻俄亻俐亻侮亻俭亻俗亻俘亻信亻皇白泉水鬼鬼侵亻禹丿侯亻追辶俊亻盾目待彳徊彳衍行律彳很彳须页叙又剑刂逃辶食飠盆皿胚月胧月胆月胜月胞月胖月脉月胎月勉力狭犭狮犭独犭狰犭狡犭狱犭狠犭贸贝怨心急心饵饣饶饣蚀虫饺饣饼饣峦山弯弓将寸奖大哀口亭亠亮亠度广迹辶庭广疮疒疯疒疫疒疤疒咨口姿女亲立音音帝巾施方闺门闻门闽门阀门阁门差工养丷美八姜女叛又送辶类米迷辶籽米娄女前刂首首逆辶兹丷总心炼火炸火烁火炮火炫火烂火剃刂洼氵洁氵洪氵洒氵柒木浇氵浊氵洞氵测氵洗氵活氵派氵洽氵染木洛氵浏氵济氵洋氵洲氵浑氵浓氵津氵恃忄恒忄恢忄恍忄恬忄恤忄恰忄恼忄恨忄举丶觉见宣宀宦宀室宀宫宀宪宀突穴穿穴窃穴客宀诫讠冠冖诬讠语讠扁户袄衤祖礻神礻祝礻祠礻误讠诱讠诲讠说讠诵讠垦土退辶既旡屋尸昼日屏尸屎尸费贝陡阝逊辶眉目孩子陨阝除阝险阝院阝娃女姥女姨女姻女娇女姚女娜女怒心架木贺贝盈皿勇力怠心癸癶蚤虫柔木垒土绑纟绒纟结纟绕纟骄马绘纟给纟绚纟骆马络纟绝纟绞纟骇马统纟耕耒耘耒耗耒耙耒艳色泰水秦禾珠王班王素糸匿匚蚕虫顽页盏皿匪匚捞扌栽木捕扌埂土捂扌振扌载车赶走起走盐皿捎扌捍扌捏扌埋土捉扌捆扌捐扌损扌袁衣捌扌都阝哲口逝辶捡扌挫扌换扌挽扌挚手热灬恐心捣扌壶士捅扌埃土挨扌耻耳耿耳耽耳聂耳恭小莽艹莱艹莲艹莫艹莉艹荷艹获艹晋日恶心莹艹莺艹真目框木梆木桂木桔木栖木档木桐木株木桥木桦木栓木桃木格木桩木校木核木样木根木索糸哥口速辶逗辶栗木贾贝酌酉配酉翅羽辱辰唇口夏夂砸石砰石砾石础石破石原厂套大逐辶烈灬殊歹殉歹顾页轿车较车顿页毙比致至柴木桌木虑虍监皿紧糸党儿逞辶晒日眠目晓日哮口唠口鸭鸟晃日哺口晌日剔刂晕日蚌虫畔田蚣虫蚊虫蚪虫蚓虫哨口哩口圃囗哭口哦口恩心鸯鸟唤口唁口哼口唧口啊口唉口唆口罢罒峭山峨山峰山圆囗峻山贼贝贿贝赂贝赃贝钱钅钳钅钻钅钾钅铁钅铃钅铅钅缺缶氧气氨气特牜牺牜造辶乘丿敌攵秤禾租禾积禾秧禾秩禾称禾秘禾透辶笔毛笑竹笋竹债亻借亻值亻倚亻俺亻倾亻倒亻倘亻俱亻倡亻候亻赁贝俯亻倍亻倦亻健亻臭自射寸躬身息心倔亻徒彳徐彳殷殳舰舟舱舟般舟航舟途辶拿手耸耳爹父舀臼爱爫豺豸豹豸颁页颂页翁羽胰月脆月脂月胸月胳月脏月脐月胶月脑月脓月逛辶狸犭狼犭卿卩逢辶鸵鸟留田鸳鸟皱皮饿饣馁饣凌冫凄冫恋心桨木浆水衰衣衷衣高高郭阝席巾准冫座广症疒病疒疾疒斋文疹疒疼疒疲疒脊月效攵离亠紊糸唐口瓷瓦资贝凉冫站立剖刂竞立部阝旁方旅方畜田阅门羞羊羔灬瓶瓦拳手粉米料斗益皿兼丷烤火烘火烦火烧火烛火烟火烙火递辶涛氵浙氵涝氵浦氵酒酉涉氵消氵涡氵浩氵海氵涂氵浴氵浮氵涣氵涤氵流氵润氵涧氵涕氵浪氵浸氵涨氵烫火涩氵涌氵悖忄悟忄悄忄悍忄悔忄悯忄悦忄害宀宽宀家宀宵宀宴宀宾宀窍穴窄穴容宀宰宀案木请讠朗月诸讠诺讠读讠扇户诽讠袜衤袖衤袍衤被衤祥礻课讠冥冖谁讠调讠冤冖谅讠谆讠谈讠谊讠剥刂恳心展尸剧刂屑尸弱弓陵阝祟示陶阝陷阝陪阝娱女娟女恕心娥女娘女能月难隹预页桑木绢纟绣纟验马继纟骏马球王琐王理王琉王琅王捧扌堵土措扌描扌域土捺扌掩扌捷扌排扌焉灬掉扌捶扌赦赤堆土推扌埠土掀扌授扌捻扌教攵掏扌掐扌掠扌掂扌培土接扌掷扌控扌探扌据扌掘扌掺扌职耳基土聆耳勘力聊耳娶女著艹菱艹勒力黄黄菲艹萌艹萝艹菌艹萎艹菜艹萄艹菊艹菩艹萍艹菠艹萤艹营艹乾乙萧艹萨艹菇艹械木彬彡梦木婪女梗木梧木梢木梅木检木梳木梯木桶木梭木救攵曹曰副刂票示酝酉酗酉厢厂戚戈硅石硕石奢大盔皿爽爻聋耳袭衣盛皿匾匚雪雨辅车辆车颅页虚虍彪彡雀小堂土常巾眶目匙匕晨日睁目眯目眼目悬心野里啪口啦口曼曰晦日晚日啄口啡口距足趾足啃口跃足略田蚯虫蛀虫蛇虫唬口累糸鄂阝唱口患心啰口唾口唯口啤口啥口啸口崖山崎山崭山逻辶崔山帷巾崩山崇山崛山婴女圈囗铐钅铛钅铝钅铜钅铭钅铲钅银钅矫矢甜舌秸禾梨木犁牛秽禾移禾笨竹笼龙笛竹笙竹符竹第竹敏攵做亻袋衣悠心偿亻偶亻偎亻偷亻您心售口停亻偏亻躯身兜儿假亻衅血徘彳徙彳得彳衔行盘皿舶舟船舟舵舟斜斗盒皿鸽鸟敛攵悉心欲欠彩彡领页脚月脖月脯月豚豕脸月脱月象豕够夕逸辶猜犭猪犭猎犭猫犭凰几猖犭猛犭祭示馅饣馆饣凑冫减冫毫毛烹灬庶广麻麻庵广痊疒痒疒痕疒廊广康广庸广鹿鹿盗皿章立竟立商口族方旋方望月率玄阎门阐门着目羚羊盖皿眷目粘米粗米粒米断斤剪刀兽丷焊火焕火清氵添氵鸿鸟淋氵涯氵淹氵渠氵渐氵淑氵淌氵混氵淮氵淆氵渊氵淫氵渔氵淘氵淳氵液氵淤氵淡氵淀氵深氵涮氵涵氵婆女梁木渗氵情忄惜忄惭忄悼忄惧忄惕忄惟忄惊忄惦忄悴忄惋忄惨忄惯忄寇宀寅宀寄宀寂宀宿宀窒穴窑穴密宀谋讠谍讠谎讠谐讠袱衤祷礻祸礻谓讠谚讠谜讠逮辶敢攵尉寸屠尸弹弓隋阝堕土随阝蛋虫隅阝隆阝隐阝婚女婶女婉女颇页颈页绩纟绪纟续纟骑马绰纟绳纟维纟绵纟绷纟绸纟综纟绽纟绿纟缀纟巢巛琴王琳王琢王琼王斑文替曰揍扌款欠堪土塔土搭扌堰土揩扌越走趁走趋走超走揽扌堤土提扌博十揭扌喜口彭彡揣扌插扌揪扌搜扌煮灬援扌搀扌裁衣搁扌搓扌搂扌搅扌壹士握扌搔扌揉扌斯斤期月欺欠联耳葫艹散攵惹心葬艹募力葛艹董艹葡艹敬攵葱艹蒋艹蒂艹落艹韩韦朝月辜辛葵艹棒木棱木棋木椰木植木森木焚火椅木椒木棵木棍木椎木棉木棚木棕木棺木榔木椭木惠心惑心逼辶粟米棘木酣酉酥酉厨厂厦厂硬石硝石确石硫石雁隹殖歹裂衣雄隹颊页雳雨暂日雅隹翘羽辈车悲心紫糸凿凵辉车敞攵棠木赏贝掌手晴日睐目暑日最曰晰日量里鼎鼎喷口喳口晶日喇口遇辶喊口遏辶晾日景日畴田践足跋足跌足跑足跛足遗辶蛙虫蛛虫蜓虫蜒虫蛤虫喝口鹃鸟喂口喘口喉口喻口啼口喧口嵌山幅巾帽巾赋贝赌贝赎贝赐贝赔贝黑黑铸钅铺钅链钅销钅锁钅锄钅锅钅锈钅锋钅锌钅锐钅甥生掰手短矢智日氮气毯毛氯气鹅鸟剩刂稍禾程禾稀禾税禾筐竹等竹筑竹策竹筛竹筒竹筏竹答竹筋竹筝竹傲亻傅亻牌片堡土集隹焦灬傍亻储亻皓白皖白粤米奥大街行惩心御彳循彳艇舟舒人逾辶番田释采禽人腊月脾月腋月腔月腕月鲁鱼猩犭猬犭猾犭猴犭惫心然灬馈饣馋饣装衣蛮虫就尢敦攵斌文痘疒痢疒痪疒痛疒童立竣立阔门善口翔羽羡八普日粪米尊寸奠大道辶遂辶曾曰焰火港氵滞氵湖氵湘氵渣氵渤氵渺氵湿氵温氵渴氵溃氵溅氵滑氵湃氵渝氵湾氵渡氵游氵滋氵渲氵溉氵愤忄慌忄惰忄愕忄愣忄惶忄愧忄愉忄慨忄割刂寒宀富宀寓宀窜穴窝穴窖穴窗穴窘穴遍辶雇隹裕衤裤衤裙衤禅礻禄礻谢讠谣讠谤讠谦讠犀牛属尸屡尸强弓粥米疏疋隔阝隙阝隘阝媒女絮糸嫂女媚女婿女登癶缅纟缆纟缉纟缎纟缓纟缔纟缕纟骗马编纟骚马缘纟瑟王鹉鸟瑞王瑰王瑙王魂鬼肆聿摄扌摸扌填土搏扌塌土鼓鼓摆扌携扌搬扌摇扌搞扌塘土摊扌聘耳斟斗蒜艹勤力靴革靶革鹊鸟蓝艹墓土幕巾蓬艹蓄艹蒲艹蓉艹蒙艹蒸艹献犬椿木禁示楚木楷木榄木想心槐木榆木楼木概木赖贝酪酉酬酉感心碍石碘石碑石碎石碰石碗石碌石尴尢雷雨零雨雾雨雹雨辐车辑车输车督目频页龄齿鉴金睛目睹目睦目瞄目睫目睡目睬目嗜口鄙阝嗦口愚心暖日盟皿歇欠暗日暇日照灬畸田跨足跷足跳足跺足跪足路足跤足跟足遣辶蜈虫蜗虫蛾虫蜂虫蜕虫嗅口嗡口嗓口署罒置罒罪罒罩罒蜀虫幌巾错钅锚钅锡钅锣钅锤钅锥钅锦钅键钅锯钅锰钅矮矢辞辛稚禾稠禾颓页愁心筹竹签竹简竹筷竹毁殳舅臼鼠鼠催亻傻亻像亻躲身魁鬼衙行微彳愈心遥辶腻月腰月腥月腮月腹月腺月鹏鸟腾月腿月鲍鱼猿犭颖页触角解角煞灬雏隹馍饣馏饣酱酉禀示痹疒廓广痴疒痰疒廉广靖青新斤韵音意音誊言粮米数攵煎灬塑土慈心煤火煌火满氵漠氵滇氵源氵滤氵滥氵滔氵溪氵溜氵漓氵滚氵溢氵溯氵滨氵溶氵溺氵粱米滩氵慎忄誉言塞土寞宀窥穴窟穴寝宀谨讠褂衤裸衤福礻谬讠群羊殿殳辟辛障阝媳女嫉女嫌女嫁女叠又缚纟缝纟缠纟缤纟剿刂静青碧石璃王赘贝熬灬墙土墟土嘉口摧扌赫赤截戈誓言境土摘扌摔扌撇扌聚耳慕小暮日摹手蔓艹蔑艹蔡艹蔗艹蔽艹蔼艹熙灬蔚艹兢儿模木槛木榴木榜木榨木榕木歌欠遭辶酵酉酷酉酿酉酸酉碟石碱石碳石磁石愿心需雨辖车辗车雌隹裳衣颗页瞅目墅土嗽口踊足蜻虫蜡虫蝇虫蜘虫蝉虫嘛口嘀口赚贝锹钅锻钅镀钅舞夕舔舌稳禾熏灬箕竹算竹箩竹管竹箫竹舆臼僚亻僧亻鼻鼻魄鬼魅鬼貌豸膜月膊月膀月鲜鱼疑疋孵子馒饣裹衣敲攴豪豕膏月遮辶腐肉瘩疒瘟疒瘦疒辣辛彰彡竭立端立旗方精米粹米歉欠弊廾熄火熔火煽火潇氵漆氵漱氵漂氵漫氵滴氵漾氵演氵漏氵慢忄慷忄寨宀赛贝寡宀察宀蜜虫寥宀谭讠肇聿褐衤褪衤谱讠隧阝嫩女翠羽熊灬凳几骡马缩纟慧心撵扌撕扌撒扌撩扌趣走趟走撑扌撮扌撬扌播扌擒扌墩土撞扌撤扌增土撰扌聪耳鞋革鞍革蕉艹蕊艹蔬艹蕴艹横木槽木樱木橡木樟木橄木敷攵豌豆飘风醋酉醇酉醉酉磕石磊石磅石碾石震雨霄雨霉雨瞒目题页暴日瞎目嘻口嘶口嘲口嘹口影彡踢足踏足踩足踪足蝶虫蝴虫蝠虫蝎虫蝌虫蝗虫蝙虫嘿口嘱口幢巾墨土镇钅镐钅镑钅靠非稽禾稻禾黎黍稿禾稼禾箱竹篓竹箭竹篇竹僵亻躺身僻亻德彳艘舟膝月膛月鲤鱼鲫鱼熟灬摩手褒衣瘪疒瘤疒瘫疒凛冫颜页毅殳糊米遵辶憋心潜氵澎氵潮氵潭氵鲨鱼澳氵潘氵澈氵澜氵澄氵懂忄憔忄懊忄憎忄额页翩羽褥衤谴讠鹤鸟憨心慰心劈刀履尸豫豕缭纟撼扌擂扌操扌擅扌燕灬蕾艹薯艹薛艹薇艹擎手薪艹薄艹颠页翰羽噩口橱木橙木橘木整攵融虫瓢瓜醒酉霍雨霎雨辙车冀八餐飠嘴口踱足蹄足蹂足蟆虫螃虫器口噪口鹦鸟赠贝默黑黔黑镜钅赞贝穆禾篮竹篡竹篷竹篱竹儒亻邀辶衡行膨月雕隹鲸鱼磨石瘾疒瘸疒凝冫辨辛辩辛糙米糖米糕米燃火濒氵澡氵激氵懒忄憾忄懈忄窿穴壁土避辶缰纟缴纟戴十擦扌藉艹鞠革藏艹藐艹檬木檐木檀木礁石磷石霜雨霞雨瞭目瞧目瞬目瞳目瞩目瞪目曙日蹋足蹈足螺虫蟋虫蟀虫嚎口赡贝穗禾魏鬼簧竹簇竹繁糸徽彳爵爫朦月臊月鳄鱼癌疒辫辛赢贝糟米糠米燥火懦忄豁谷臀月臂月翼羽骤马藕艹鞭革藤艹覆覀瞻目蹦足嚣口镰钅翻羽鳍鱼鹰鸟瀑氵襟衤璧玉戳戈孽子警言蘑艹藻艹攀手曝日蹲足蹭足蹬足巅山簸竹簿竹蟹虫颤页靡非癣疒瓣瓜羹羊鳖鱼爆火疆田鬓髟壤土馨香耀羽躁足蠕虫嚼口嚷口巍山籍竹鳞鱼魔鬼糯米灌氵譬言蠢虫霸雨露雨霹雨躏足黯黑髓骨赣贝囊口镶钅瓤瓜罐缶矗目乂丿乜乙兀儿弋弋孑子孓子幺幺亓二韦韦廿廾丏一卅十仄人厄厂仃亻仉亻仂亻兮八刈刂爻爻卞卜闩门讣讠尹尸夬大爿爿毋毋邗阝邛阝艽艹艿艹札木叵口匝匚丕一匜匚劢力卟卜叱口叻口仨亻仕亻仟亻仡亻仫亻仞亻卮㔾氐氏犰犭刍刀邝阝邙阝汀氵讦讠讧讠讪讠讫讠尻尸阡阝尕小弁廾驭马匡匚耒耒玎王玑王邢阝圩土圬土圭土扦扌圪土圳土圹土扪扌圮土圯土芊艹芍艹芄艹芨艹芑艹芎艹芗艹亘二厍厂夼大戍戈尥尢乩乙旯日曳曰岌山屺山凼凵囡囗钇钅缶缶氘气氖气牝牜伎亻伛亻伢亻佤亻仵亻伥亻伧亻伉亻伫亻囟囗汆水刖刂夙夕旮日刎刂犷犭犸犭舛夕凫几邬阝饧饣汕氵汔氵汐氵汲氵汜氵汊氵忖忄忏忄讴讠讵讠祁礻讷讠聿聿艮艮厾厶阱阝阮阝阪阝丞一妁女牟牛纡纟纣纟纥纟纨纟玕王玙王抟扌抔扌圻土坂土坍土坞土抃扌抉扌芫艹邯阝芸艹芾艹苈艹苣艹芷艹芮艹苋艹芼艹苌艹苁艹芩艹芪艹芡艹芟艹苄艹苎艹苡艹杌木杓木杞木杈木忑心孛子邴阝邳阝矶石奁大豕豕忒心欤欠轫车迓辶邶阝忐心卣卜邺阝旰日呋口呒口呓口呔口呖口呃口旸日吡口町田虬虫呗口吽口吣口吲口帏巾岐山岈山岘山岑山岚山兕儿囵囗囫囗钊钅钋钅钌钅迕辶氙气氚气牤牜佞亻邱阝攸攵佚亻佝亻佟亻佗亻伽亻彷彳佘人佥人孚子豸豸坌土肟月邸阝奂大劬力狄犭狁犭鸠鸟邹阝饨饣饩饣饪饣饫饣饬饣亨亠庑广庋广疔疒疖疒肓月闱门闳门闵门羌羊炀火沣氵沅氵沔氵沤氵沌氵沏氵沚氵汩氵汨氵沂氵汾氵沨氵汴氵汶氵沆氵沩氵泐氵怃忄怄忄忡忄忤忄忾忄怅忄忻忄忪忄怆忄忭忄忸忄诂讠诃讠诅讠诋讠诌讠诏讠诒讠孜子陇阝陀阝陂阝陉阝妍女妩女妪女妣女妊女妗女妫女妞女姒女妤女邵阝劭力刭刂甬用邰阝纭纟纰纟纴纟纶纟纾纟玮王玡王玭王玠王玢王玥王玦王盂皿忝小匦匚坩土抨扌拤扌坫土拈扌垆土抻扌劼力拃扌拊扌坼土坻土坨土坭土抿扌坳土耶耳苷艹苯艹苤艹茏艹苫艹苜艹苴艹苒艹苘艹茌艹苻艹苓艹茚艹茆艹茑艹茓艹茔艹茕艹茀艹苕艹枥木枇木杪木杳木枧木杵木枨木枞木枋木杻木杷木杼木矸石砀石刳刂奄大瓯瓦殁歹郏阝轭车郅阝鸢鸟盱目昊日昙日杲木昃日咂口呸口昕日昀日旻日昉日炅火咔口畀田虮虫咀口呷口黾口呱口呤口咚口咆口咛口呶口呣口呦口咝口岢山岿山岬山岫山帙巾岣山峁山刿刂迥辶岷山剀刂帔巾峄山沓水囹囗罔冂钍钅钎钅钏钅钒钅钕钅钗钅邾阝迮辶牦牜竺竹迤辶佶亻佬亻佰亻侑亻侉亻臾臼岱山侗亻侃亻侏亻侩亻佻亻佾亻侪亻佼亻佯亻侬亻帛巾阜阜侔亻徂彳刽刂郄阝怂心籴米瓮瓦戗戈肼月肽月肱月肫月剁刂迩辶郇阝狙犭狎犭狍犭狒犭咎口炙火枭木饯饣饴饣冽冫冼冫庖广疠疒疝疒疡疒兖亠妾女劾力炜火炖火炘火炝火炔火泔氵沭氵泷氵泸氵泱氵泅氵泗氵泠氵泺氵泖氵泫氵泮氵沱氵泯氵泓氵泾氵怙忄怵忄怦忄怛忄怏忄怍忄怩忄怫忄怿忄宕宀穹穴宓宀诓讠诔讠诖讠诘讠戾户诙讠戽户郓阝衩衤祆礻祎礻祉礻祇礻诛讠诜讠诟讠诠讠诣讠诤讠诧讠诨讠诩讠戕戈孢子亟二陔阝妲女妯女姗女帑巾弩弓孥子驽马虱虫迦辶迨辶绀纟绁纟绂纟驷马驸马绉纟绌纟驿马骀马甾田珏王珐王珂王珑王玳王珀王顸页珉王珈王拮扌垭土挝扌垣土挞扌垤土赳走贲贝垱土垌土郝阝垧土垓土挦扌垠土茜艹荚艹荑艹贳贝荜艹莒艹茼艹茴艹茱艹莛艹荞艹茯艹荏艹荇艹荃艹荟艹荀艹茗艹荠艹茭艹茨艹垩土荥艹荦艹荨艹荩艹剋刂荪艹茹艹荬艹荮艹柰木栉木柯木柘木栊木柩木枰木栌木柙木枵木柚木枳木柞木柝木栀木柢木栎木枸木柈木柁木枷木柽木剌刂酊酉郦阝甭用砗石砘石砒石斫斤砭石砜石奎大耷耳虺虫殂歹殇歹殄歹殆歹轱车轲车轳车轶车轸车虿虫毖比觇见尜小哐口眄目眍目郢阝眇目眊目眈目禺田哂口咴口曷曰昴日昱日昵日咦口哓口哔口畎田毗比呲口胄月畋田畈田虼虫虻虫盅皿咣口哕口剐刂郧阝咻口囿囗咿口哌口哙口哚口咯口咩口咤口哝口哏口哞口峙山峣山罘罒帧巾峒山峤山峋山峥山贶贝钚钅钛钅钡钅钣钅钤钅钨钅钫钅钯钅氡气氟气牯牜郜阝秕禾秭禾竽竹笈竹笃竹俦亻俨亻俅亻俪亻叟又垡土牮牛俣亻俚亻皈白俑亻俟亻逅辶徇彳徉彳舢舟俞人郗阝俎人郤阝爰爫郛阝瓴瓦胨月胪月胛月胂月胙月胍月胗月胝月朐月胫月鸨鸟匍勹狨犭狯犭飑风狩犭狲犭訇言逄辶昝日饷饣饸饣饹饣胤月孪子娈女弈廾奕大庥广疬疒疣疒疥疒疭疒庠广竑立彦彡飒风闼门闾门闿门阂门羑八迸辶籼米酋酉炳火炻火炽火炯火烀火炷火烃火洱氵洹氵洧氵洌氵浃氵洇氵洄氵洙氵涎氵洎氵洫氵浍氵洮氵洵氵浒氵浔氵浕氵洳氵恸忄恓忄恹忄恫忄恺忄恻忄恂忄恪忄恽忄宥宀扃户衲衤衽衤衿衤袂衤祛礻祜礻祓礻祚礻诮讠祗礻祢礻诰讠诳讠鸩鸟昶日郡阝咫口弭弓牁爿胥月陛阝陟阝娅女姮女娆女姝女姣女姘女姹女怼心羿羽炱火矜矛绔纟骁马骅马绗纟绛纟骈马耖耒挈手珥王珙王顼页珰王珩王珧王珣王珞王琤王珲王敖攵恚心埔土埕土埘土埙土埚土挹扌耆耂耄耂埒土捋扌贽贝垸土捃扌盍皿荸艹莆艹莳艹莴艹莪艹莠艹莓艹莜艹莅艹荼艹莩艹荽艹莸艹荻艹莘艹莎艹莞艹莨艹鸪鸟莼艹栲木栳木郴阝桓木桡木桎木桢木桤木梃木栝木桕木桁木桧木桅木栟木桉木栩木逑辶逋辶彧彡鬲鬲豇豆酐酉逦辶厝厂孬子砝石砹石砺石砧石砷石砟石砼石砥石砣石剞刂砻石轼车轾车辂车鸫鸟趸足龀齿鸬鸟虔虍逍辶眬目唛口晟日眩目眙目哧口哽口唔口晁日晏日鸮鸟趵足趿足畛田蚨虫蚜虫蚍虫蚋虫蚬虫蚝虫蚧虫唢口圄囗唣口唏口盎皿唑口崂山崃山罡罒罟罒峪山觊见赅贝钰钅钲钅钴钅钵钅钹钅钺钅钽钅钼钅钿钅铀钅铂钅铄钅铆钅铈钅铉钅铊钅铋钅铌钅铍钅铎钅氩气氤气氦气毪毛舐舌秣禾秫禾盉皿笄竹笕见笊竹笏竹笆竹俸亻倩亻俵亻偌亻俳亻俶亻倬亻倏亻恁心倭亻倪亻俾亻倜亻隼隹隽隹倌亻倥亻臬自皋白郫阝倨亻衄血颀页徕彳舫舟釜金奚大衾衣胯月胱月胴月胭月脍月胼月朕月脒月胺月鸱鸟玺玉鸲鸟狷犭猁犭狳犭猃犭狺犭逖辶桀木袅衣饽饣凇冫栾木挛手亳亠疳疒疴疒疸疒疽疒痈疒疱疒痂疒痉疒衮衣凋冫颃页恣心旆方旄方旃方阃门阄门訚言阆门恙心粑米朔月郸阝烜火烨火烩火烊火剡刂郯阝烬火涑氵浯氵涞氵涟氵娑女涅氵涠氵浞氵涓氵浥氵涔氵浜氵浠氵浣氵浚氵悚忄悭忄悝忄悒忄悌忄悛忄宸宀窈穴剜刂诹讠冢冖诼讠袒衤袢衤祯礻诿讠谀讠谂讠谄讠谇讠屐尸屙尸陬阝勐力奘大牂爿蚩虫陲阝姬女娠女娌女娉女娲女娩女娴女娣女娓女婀女畚田逡辶绠纟骊马绡纟骋马绥纟绦纟绨纟骎马邕邑鸶鸟彗彐耜耒焘灬舂臼琏王琇王麸麦揶扌埴土埯土捯扌掳扌掴扌埸土埵土赧赤埤土捭扌逵辶埝土堋土堍土掬扌鸷鸟掖扌捽扌掊扌堉土掸扌捩扌掮扌悫心埭土埽土掇扌掼扌聃耳菁艹萁艹菘艹堇土萘艹萋艹菽艹菖艹萜艹萸艹萑艹棻木菔艹菟艹萏艹萃艹菏艹菹艹菪艹菅艹菀艹萦艹菰艹菡艹梵木梿木梏木觋见桴木桷木梓木棁木桫木棂木啬口郾阝匮匚敕攵豉豆鄄阝酞酉酚酉戛戈硎石硭石硒石硖石硗石硐石硇石硌石鸸鸟瓠瓜匏勹厩厂龚龙殒歹殓歹殍歹赉贝雩雨辄车堑土眭目眦目啧口晡日晤日眺目眵目眸目圊囗喏口喵口啉口勖力晞日唵口晗日冕冂啭口畦田趺足啮口跄足蚶虫蛄虫蛎虫蛆虫蚰虫蛊虫圉囗蚱虫蛉虫蛏虫蚴虫啁口啕口唿口啐口唼口唷口啖口啵口啶口啷口唳口唰口啜口帻巾崚山崦山帼巾崮山崤山崆山赇贝赈贝赊贝铑钅铒钅铗钅铙钅铟钅铠钅铡钅铢钅铣钅铤钅铧钅铨钅铩钅铪钅铫钅铬钅铮钅铯钅铰钅铱钅铳钅铵钅铷钅氪气牾牜鸹鸟秾禾逶辶笺竹筇竹笸竹笪竹笮竹笠竹笥竹笤竹笳竹笾竹笞竹偾亻偃亻偕亻偈亻傀亻偬亻偻亻皑白皎白鸻鸟徜彳舸舟舻舟舴舟舷舟龛龙翎羽脬月脘月脲月匐勹猗犭猡犭猞犭猝犭斛斗猕犭馗首馃饣馄饣鸾鸟孰子庹广庾广痔疒痍疒疵疒翊羽旌方旎方袤衣阇门阈门阉门阊门阋门阍门阏门羟羊粝米粕米敝攵焐火烯火焓火烽火焖火烷火焗火渍氵渚氵淇氵淅氵淞氵渎氵涿氵淖氵挲手淠氵涸氵渑氵淦氵淝氵淬氵涪氵淙氵涫氵渌氵淄氵惬忄悻忄悱忄惝忄惘忄悸忄惆忄惚忄惇忄惮忄窕穴谌讠谏讠扈户皲皮谑讠裆衤袷衤裉衤谒讠谔讠谕讠谖讠谗讠谙讠谛讠谝讠逯辶郿阝隈阝粜米隍阝隗阝婧女婊女婕女娼女婢女婵女胬肉袈衣翌羽恿心欸欠绫纟骐马绮纟绯纟绱纟骒马绲纟骓马绶纟绺纟绻纟绾纟骖马缁纟耠耒琫王琵比琶王琪王瑛王琦王琥王琨王靓青琰王琮王琯王琬王琛王琚王辇车鼋黽揳扌堞土搽扌揸扌揠扌堙土趄走揖扌颉页塄土揿扌耋耂揄扌蛩虫蛰虫塆土摒扌揆扌掾扌聒耳葑艹葚艹靰革靸革葳艹葺艹葸艹萼艹葆艹葩艹葶艹蒌艹萱艹戟戈葭艹楮木棼木椟木棹木椤木棰木赍贝椋木椁木椪木棣木椐木鹁鸟覃覀酤酉酢酉酡酉鹂鸟厥厂殚歹殛歹雯雨雱雨辊车辋车椠木辍车辎车斐文睄目睑目睇目睃目戢戈喋口嗒口喃口喱口喹口晷日喈口跖足跗足跞足跚足跎足跏足跆足蛱虫蛲虫蛭虫蛳虫蛐虫蛔虫蛞虫蛴虫蛟虫蛘虫喁口喟口啾口嗖口喑口嗟口喽口嗞口喀口喔口喙口嵘山嵖山崴山遄辶詈言嵎山崽山嵬山嵛山嵯山嵝山嵫山幄巾嵋山赕贝铻钅铼钅铿钅锃钅锂钅锆钅锇钅锉钅锏钅锑钅锒钅锔钅锕钅掣手矬矢氰气毳毛毽毛犊牜犄牜犋牜鹄鸟犍牜嵇山黍黍稃禾稂禾筚竹筵竹筌竹傣亻傈亻舄臼牍片傥亻傧亻遑辶傩亻遁辶徨彳媭女畲田弑弋颌页翕羽釉采鹆鸟舜夕貂豸腈月腌月腓月腆月腴月腑月腚月腱月鱿鱼鲀鱼鲂鱼颍页猢犭猹犭猥犭飓风觞角觚角猱犭颎页飧飠馇饣馊饣亵亠脔肉裒衣痣疒痨疒痦疒痞疒痤疒痫疒痧疒赓贝竦立瓿瓦啻口颏页鹇鸟阑门阒门阕门粞米遒辶孳子焯火焜火焙火焱火鹈鸟湛氵渫氵湮氵湎氵湜氵渭氵湍氵湫氵溲氵湟氵溆氵湲氵湔氵湉氵渥氵湄氵滁氵愠忄惺忄愦忄惴忄愀忄愎忄愔忄喾口寐宀谟讠扉户裢衤裎衤裥衤祾礻祺礻谠讠幂巾谡讠谥讠谧讠遐辶孱子弼弓巽巳骘马媪女媛女婷女巯工翚羽皴皮婺女骛马缂纟缃纟缄纟彘彑缇纟缈纟缌纟缑纟缒纟缗纟飨飠耢耒瑚王瑁王瑜王瑗王瑄王瑕王遨辶骜马韫韦髡髟塬土鄢阝趔走趑走摅扌摁扌蜇虫搋扌搪扌搐扌搛扌搠扌摈扌彀弓毂殳搦扌搡扌蓁艹戡戈蓍艹鄞阝靳革蓐艹蓦艹鹋鸟蒽艹蓓艹蓖艹蓊艹蒯艹蓟艹蓑艹蒿艹蒺艹蓠艹蒟艹蒡艹蒹艹蒴艹蒗艹蓥艹颐页楔木楠木楂木楝木楫木楸木椴木槌木楯木皙白榈木槎木榉木楦木楣木楹木椽木裘衣剽刂甄瓦酮酉酰酉酯酉酩酉蜃虫碛石碓石硼石碉石碚石碇石碜石鹌鸟辏车龃齿龅齿訾言粲米虞虍睚目嗪口韪韦嗷口嗉口睨目睢目雎隹睥目嘟口嗑口嗫口嗬口嗔口嗝口戥戈嗄口煦灬暄日遢辶暌日跬足跶足跸足跐足跣足跹足跻足蛸虫蜊虫蜍虫蜉虫蜣虫畹田蛹虫嗣口嗯口嗥口嗲口嗳口嗌口嗍口嗨口嗐口嗤口嗵口罨罒嵊山嵩山嵴山骰骨锗钅锛钅锜钅锝钅锞钅锟钅锢钅锨钅锩钅锭钅锱钅雉隹氲气犏牜歃欠稞禾稗禾稔禾筠竹筢竹筮竹筲竹筱竹牒片煲火敫攵徭彳愆心艄舟觎见毹毛貊豸貅豸貉豸颔页腠月腩月腼月腭月腧月塍土媵女詹言鲅鱼鲆鱼鲇鱼鲈鱼稣禾鲋鱼鲐鱼肄聿鹐鸟飕风觥角遛辶馐饣鹑鸟亶亠瘃疒痱疒痼疒痿疒瘐疒瘁疒瘆疒麂鹿裔衣歆欠旒方雍隹阖门阗门阙门羧羊豢豕粳米猷犬煳火煜火煨火煅火煊火煸火煺火滟氵溱氵溘氵漭氵滢氵溥氵溧氵溽氵裟衣溻氵溷氵滗氵滫氵溴氵滏氵滃氵滦氵溏氵滂氵滓氵溟氵滪氵愫忄慑忄慊忄鲎鱼骞马窦穴窠穴窣穴裱衤褚衤裨衤裾衤裰衤禊礻谩讠谪讠媾女嫫女媲女嫒女嫔女媸女缙纟缜纟缛纟辔车骝马缟纟缡纟缢纟缣纟骟马耥耒璈王瑶王瑭王獒犬觏见慝心嫠女韬韦叆厶髦髟摽扌墁土撂扌摞扌撄扌翥羽踅足摭扌墉土墒土榖木綦糸蔫艹蔷艹靺革靼革鞅革靿革甍瓦蔸艹蔟艹蔺艹戬戈蕖艹蔻艹蓿艹斡斗鹕鸟蓼艹榛木榧木榻木榫木榭木槔木榱木槁木槟木槠木榷木僰人酽酉酶酉酹酉厮厂碡石碴石碣石碲石磋石臧臣豨豕殡歹霆雨霁雨辕车蜚虫裴衣翡羽龇齿龈齿睿目睽目嘞口嘈口嘌口嘁口嘎口暧日暝日踌足踉足蜞虫蜥虫蜮虫蝈虫蜴虫蜱虫蜩虫蜷虫蜿虫螂虫蜢虫嘘口嘡口鹗鸟嘣口嘤口嘚口嗾口嘧口罴罒罱罒幔巾嶂山幛巾赙贝罂缶骷骨骶骨鹘鸟锲钅锴钅锶钅锷钅锸钅锵钅镁钅镂钅犒牜箐竹箦贝箧竹箍竹箸竹箬竹箅竹箪竹箔竹箜竹箢竹箓竹毓母僖亻儆亻僳亻僭亻劁刂僮亻魃鬼魆鬼睾目艋舟鄱阝膈月膑月鲑鱼鲔鱼鲚鱼鲛鱼鲟鱼獐犭觫角雒隹夤夕馑饣銮金塾土麽麻瘌疒瘊疒瘘疒瘙疒廖广韶音旖方膂月阚门鄯阝鲞鱼粿米粼米粽米糁米槊木鹚鸟熘火熥火潢氵漕氵滹氵漯氵漶氵潋氵潴氵漪氵漉氵漳氵漩氵澉氵潍氵慵忄搴手窨穴寤宀綮糸谮讠褡衤褙衤褓衤褛衤褊衤谯讠谰讠谲讠暨日屣尸鹛鸟嫣女嫱女嫖女嫦女嫚女嫘女嫡女鼐鼎翟羽瞀目鹜鸟骠马缥纟缦纟缧纟缨纟骢马缪纟缫纟耦耒耧耒瑾王璜王璀王璎王璁王璋王璇王奭大髯髟髫髟撷扌撅扌赭赤撸扌鋆金撙扌撺扌墀土聩耳觐见鞑革蕙艹鞒革蕈艹蕨艹蕤艹蕞艹蕺艹瞢目蕃艹蕲艹赜贝槿木樯木槭木樗木樘木樊木槲木醌酉醅酉靥面魇鬼餍飠磔石磙石霈雨辘车龉齿龊齿觑见瞌目瞋目瞑目嘭口噎口噶口颙页暹日噘口踔足踝足踟足踒足踬足踮足踯足踺足踞足蝽虫蝾虫蝻虫蝰虫蝮虫螋虫蝓虫蝣虫蝼虫噗口嘬口颚页噍口噢口噙口噜口噌口噔口颛页幞巾幡巾嶙山嶝山骺骨骼骨骸骨镊钅镉钅镌钅镍钅镏钅镒钅镓钅镔钅稷禾箴竹篑竹篁竹篌竹篆竹牖片儋亻徵彳磐石虢虍鹞鸟膘月滕水鲠鱼鲡鱼鲢鱼鲣鱼鲥鱼鲧鱼鲩鱼獗犭獠犭觯角馓饣馔饣麾麻廛广瘛疒瘼疒瘢疒瘠疒齑齐羯羊羰羊遴辶糌米糍米糅米熜火熵火熠火澍氵澌氵潸氵潦氵潲氵鋈金潟氵潼氵潺氵憬忄憧忄寮宀窳穴谳讠褴衤褟衤褫衤谵讠熨火屦尸嬉女勰力戮戈蝥虫缬纟缮纟缯纟骣马畿田耩耒耨耒耪耒璞王璟王靛青璠王璘王聱耳螯虫髻髟髭髟髹髟擀扌熹灬甏瓦擞扌縠糹磬石颞页蕻艹鞘革颟页薤艹薨艹檠木薏艹薮艹薜艹薅艹樾木橛木橇木樵木檎木橹木樽木樨木橼木墼土橐木翮羽醛酉醐酉醍酉醚酉磲石赝贝飙风殪歹霖雨霏雨霓雨錾金辚车臻至遽辶氅毛瞟目瞠目瞰目嚄口嚆口噤口暾日蹀足踹足踵足踽足蹉足蹁足螨虫蟒虫螈虫螅虫螭虫螠虫螟虫噱口噬口噫口噻口噼口罹罒圜囗镖钅镗钅镘钅镚钅镛钅镝钅镞钅镠钅氇毛氆毛憩心穑禾篝竹篥竹篦竹篪竹篙竹盥皿劓刂翱羽魉鬼魈鬼徼彳歙欠膳月膦月膙月鲮鱼鲱鱼鲲鱼鲳鱼鲴鱼鲵鱼鲷鱼鲻鱼獴犭獭犭獬犭邂辶鹧鸟廨广赟贝瘰疒廪广瘿疒瘵疒瘴疒癃疒瘳疒斓文麇鹿麈鹿嬴女壅土羲羊糗米瞥目甑瓦燎火燠火燔火燧火濑氵濉氵潞氵澧氵澹氵澥氵澶氵濂氵褰衣寰宀窸穴褶衤禧礻嬖女犟牛隰阝嬗女颡页缱纟缲纟缳纟璨王璩王璐王璪王螫虫擤扌壕土觳角罄缶擢扌薹艹鞡革鞬革薷艹薰艹藓艹藁艹檄木檩木懋心醢酉翳羽礅石磴石鹩鸟龋齿龌齿豳豕壑土黻黹嚏口嚅口蹑足蹒足蹊足蟥虫螬虫螵虫疃田螳虫蟑虫嚓口羁罒罽罒罾罒嶷山黜黑黝黑髁骨髀骨镡钅镢钅镣钅镦钅镧钅镩钅镪钅镫钅罅缶黏黍簌竹篾竹篼竹簖竹簋皿鼢鼠黛黑儡亻鹪鸟鼾鼻皤白魍鬼龠龠繇糸貘豸邈辶貔豸臌月膻月臆月臃月鲼鱼鲽鱼鳀鱼鳃鱼鳅鱼鳇鱼鳊鱼螽虫燮火鹫鸟襄衣糜米縻糸膺月癍疒麋鹿懑心濡氵濮氵濞氵濠氵濯氵蹇足謇言邃辶襁衤檗木擘手孺子隳阝嬷女蟊虫鹬鸟鍪金鏊金鳌鱼鬈髟鬃髟瞽目鞯革鞨革鞫革鞧革鞣革藜艹藠艹藩艹醪酉蹙足礓石燹火餮飠瞿目曛日颢页曜日躇足蹚足鹭鸟蟛虫蟪虫蟠虫蟮虫鹮鸟黠黑黟黑髅骨髂骨镬钅镭钅镯钅馥香簟竹簪日鼬鼠雠隹艟舟鳎鱼鳏鱼鳐鱼癞疒癔疒癜疒癖疒糨米蹩足鎏金懵忄彝彑邋辶鬏髟攉扌攒扌鞲革鞴革藿艹蘧艹蘅艹麓鹿醮酉醯酉酃阝霪雨霭雨霨雨黼黹嚯口蹰足蹶足蹽足蹼足蹴足蹾足蹿足蠖虫蠓虫蟾虫蠊虫黢黑髋骨髌骨镲钅籀竹籁竹齁鼻魑鬼艨舟鳓鱼鳔鱼鳕鱼鳗鱼鳙鱼麒鹿鏖金羸羊瀚氵瀣氵瀛氵襦衤谶讠襞衣骥马缵纟瓒王攘扌蘩艹蘖艹醴酉霰雨酆阝矍目曦日躅足鼍黽巉山黩黑黥黑黪黑镳钅镴钅黧黑纂糸璺玉鼯鼠臜月鳜鱼鳝鱼鳟鱼獾犭孀女骧马瓘王鼙鼓醺酉礴石颦页曩日鳢鱼癫疒麝鹿夔夂爝火灏氵禳礻鐾金羼羊蠡虫耱耒懿心蘸艹鹳鸟霾雨氍毛饕飠躐足髑骨镵钅穰禾饔飠鬻鬲鬟髟趱走攫扌攥扌颧页躜足鼹鼠癯疒麟鹿蠲虫蠹虫躞足衢行鑫金灞氵襻衤纛糸鬣髟攮扌囔口馕饣戆心爨火齉鼻亍二尢尢彳彳卬卩殳殳毌毋邘阝戋戈圢土氕气伋亻仝人冮冫氿氵汈氵氾氵忉忄宄宀讱讠扞扌圲土圫土芏艹芃艹朳木朸木邨阝吒口吖口屼山屾山辿辶钆钅仳亻伣亻伈亻癿白甪用邠阝犴犭冱冫邡阝闫门汋氵讻讠孖子纩纟玒王玓王玘王玚王刬刂坜土坉土扽扌坋土扺扌毐毋芰艹芣艹苊艹苉艹芘艹芴艹芠艹芤艹杕木杙木杄木杧木杩木尪尢尨尢轪车坒土芈卝旴日旵日呙口岍山岠山岜山呇口冏冂觃见岙山伾亻伭亻佖亻伲亻佁亻飏风狃犭闶门汧氵汫氵沄氵沘氵汭氵沇氵忮忄忳忄忺忄祃礻诇讠邲阝诎讠诐讠屃尸岊山阽阝阼阝妧女妘女纮纟驲马纻纟纼纟玤王玞王玱王玟王邽阝邿阝坥土坰土坬土坽土弆廾耵耳茋艹苧艹苾艹苠艹枅木枘木枍木矼石矻石匼匚旿日昇日昄日昒日昈日咉口咇口咍口岵山岽山岨山岞山峂山囷囗钐钅钔钅钖钅牥牜佴亻垈土侁亻侹亻佸亻佺亻隹隹侂亻佽亻侘亻郈阝舠舟郐阝郃阝攽攵肭月肸月肷月狉犭狝犭饳饣忞心於方炌火炆火泙氵沺氵泂氵泜氵泃氵泇氵怊忄峃山穸穴祋礻祊礻鸤鸟弢弓弨弓陑阝陎阝卺㔾乸乙妭女姈女迳辶叕又驵马驺马绋纟绐纟砉石耔耒玶王珇王珅王珋王玹王珌王玿王韨韦垚土垯土垙土垲土埏土垍土耇耂鿍土垎土垴土垟土垞土挓扌垵土垏土拶扌荖艹荁艹荙艹荛艹茈艹茽艹荄艹茺艹荓艹茳艹茛艹荭艹柷木柃木柊木枹木栐木柖木郚阝剅刂迺辶厖厂砆石砑石砄石耏而奓大轵车轷车轹车轺车昺日昽日盷目咡口咺口昳日昣日哒口昤日昫日昡日咥口昪日虷虫虸虫哃口峘山耑而峛山峗山峧山帡巾钘钅钜钅钪钅钬钅钭钅矧矢秬禾俫亻舁臼俜亻俙亻俍亻垕土衎行舣舟弇廾侴人鸧鸟胠月胈月胩月胣月朏月飐风訄言饻饣庤广疢疒炣火炟火洭氵洘氵洓氵洿氵泚氵浈氵浉氵洸氵洑氵洢氵洈氵洚氵洺氵洨氵浐氵洴氵洣氵恔忄宬宀窀穴扂户袆衤祏礻祐礻祕礻叚又陧阝陞阝娀女姞女姱女姤女姶女姽女枲木绖纟骃马彖彑骉马恝心珪王珛王珹王琊王玼王珖王珽王珦王珫王珒王珢王珕王珝王埗土垾土垺土埆土垿土埌土埇土莰艹茝艹鄀阝莶艹莝艹莙艹栻木桠木桄木梠木栴木梴木栒木酎酉酏酉砵石砠石砫石砬石硁石恧心翃羽郪阝辀车辁车剕刂赀贝哢口晅日晊日唝口哳口哱口冔冂晔日晐日晖日畖田蚄虫蚆虫帱巾崁山峿山崄山帨巾崀山赆贝钷钅眚目甡生笫竹倻亻倴亻脩月倮亻倕亻倞亻倓亻倧亻衃血虒虍舭舟舯舟舥舟瓞瓜鬯鬯鸰鸟脎月朓月胲月虓虍鱽鱼狴犭峱山狻犭眢目勍力痄疒疰疒痃疒竘立羖羊羓羊桊木敉攵烠火烔火烶火烻火涍氵浡氵浭氵浬氵涄氵涢氵涐氵浰氵浟氵浛氵浼氵浲氵涘氵悈忄悃忄悢忄宧宀窅穴窊穴窎穴扅户扆户袪衤袗衤袯衤祧礻隺隹堲土疍疋陴阝烝灬砮石哿口翀羽翂羽剟刂绤纟骍马琎王珸王珵王琄王琈王琀王珺王掭扌堎土堐土埼土掎扌埫土堌土晢日掞扌埪土壸士聍耳菝艹萚艹菥艹莿艹勚力萆艹菂艹菍艹菼艹萣艹菉艹梼木梽木桲木梾木桯木梣木梌木桹木敔攵厣厂硔石鿎石硙石硚石硊石硍石勔力龁齿逴辶唪口啫口翈羽晙日畤田趼足跂足蛃虫蚲虫蚺虫啴口崧山崟山崞山崒山崌山崡山铏钅铕钅铖钅铘钅铚钅铞钅铥钅铴钅牻牜牿牜稆禾笱竹笯竹偰亻偡亻鸺鸟偭亻偲亻偁亻鄅阝偓亻徛彳衒行舳舟舲舟鸼鸟悆心鄃阝瓻瓦脶月脞月脟月鱾鱼猇犭猊犭猄犭觖角庱广庼广庳广痓疒竫立堃土阌门羝羊羕羊焆火烺火焌火淏氵淟氵淜氵淴氵淯氵湴氵涴氵惛忄惔忄悰忄惙忄寁宀逭辶袼衤裈衤祲礻谞讠艴色弸弓弶弓隃阝婞女娵女婼女媖女婳女婍女婌女婫女婤女婘女婠女绹纟骕马絜糸珷王琲王琡王琟王琔王琭王堾土堼土揕扌堧土喆口堨土塅土堠土絷糸葜艹惎心萳艹葙艹靬革葴艹蒇艹蒈艹鄚阝蒉艹蓇艹萩艹蒐艹葰艹葎艹鄑阝蒎艹葖艹蒄艹萹艹棤木棽木棫木椓木椑木鹀鸟椆木棓木棬木棪木椀木楗木甦生酦酉觌见奡大皕白硪石欹欠詟言辌车棐木龂齿黹黹牚牙睎目晫日晪日晱日蛑虫畯田斝斗喤口崶山嵁山崾山嵅山崿山嵚山翙羽圌囗圐囗赑贝淼水赒贝鿏钅铹钅铽钅锊钅锍钅锎钅锓钅犇牛颋页稌禾筀竹筘竹筜竹筥竹筅竹傃亻傉亻翛羽傒亻傕亻舾舟畬田脿月腘月腙月腒月鲃鱼猰犭猯犭馉饣凓冫鄗阝廋广廆广鄌阝粢米遆辶旐方焞火欻欠溚氵溁氵湝氵渰氵湓氵渟氵溠氵渼氵溇氵湣氵湑氵溞氵愐忄愃忄敩攵甯用棨木扊户裣衤祼礻婻女媆女媞女媓女媂女媄女毵毛矞矛缊纟缐纟骙马瑃王瑓王瑅王瑆王瑖王瑝王瑔王瑀王瑳王瑂王嶅山瑑王遘辶髢髟塥土堽土赪赤摛扌塝土搒扌搌扌蒱艹蒨艹蓏艹蔀艹蓢艹蓂艹蒻艹蓣艹椹木楪木榃木榅木楒木楞木楩木榇木椸木楙木歅欠碃石碏石碈石硿石鄠阝辒车龆齿觜角暕日鹍鸟暅日跱足蜐虫蜎虫嵲山赗贝骱骨锖钅锘钅锳钅锧钅锪钅锫钅锬钅稑禾稙禾筻竹筼竹筶竹筦竹筤竹傺亻鹎鸟僇亻艅舟艉舟谼谷貆豸腽月腨月腯月鲉鱼鲊鱼鲌鱼鲏鱼雊隹猺犭飔风觟角馌饣裛衣廒广瘀疒瘅疒鄘阝鹒鸟鄜阝麀鹿鄣阝阘门煁火煃火煴火煋火煟火煓火滠氵溍氵溹氵滆氵滉氵溦氵溵氵漷氵滧氵滘氵滍氵愭忄慥忄慆忄塱土裼衤禋礻禔礻禘礻禒礻谫讠鹔鸟愍心嫄女媱女戤戈勠力戣戈缞纟耤耒瑧王瑨王瑱王瑷王瑢王斠斗摏扌墕土墈土墐土墘土摴扌銎金墚土撖扌靽革鞁革蔌艹蔈艹蓰艹蔹艹蔊艹嘏口榰木榑木槚木槜木榍木疐疋酺酉酾酉酲酉酴酉碶石碨石碹石碥石劂刂夥夕瞍目鹖鸟跽足蜾虫幖巾嶍山圙囗锺钅锼钅锽钅锾钅锿钅镃钅镄钅镅钅馝香鹙鸟箨竹箖竹劄刂僬亻僦亻僔亻僎亻槃木鲒鱼鲕鱼鲖鱼鲗鱼鲘鱼鲙鱼夐夂獍犭飗风凘冫廑广廙广瘗疒瘥疒瘕疒鲝鱼鄫阝熇火漹氵漖氵潆氵漤氵潩氵漼氵漴氵漈氵漋氵漻氵慬忄窬穴窭穴褕衤禛礻禚礻隩阝嫕女嫭女嫜女嫪女麹麦璆王漦水叇厶墣土墦土墡土劐刂薁艹蕰艹蔃艹鼒鼎槱木鹝鸟磏石磉石殣歹慭心霅雨暵日暲日暶日踦足踣足蝘虫蝲虫蝤虫噇口噂口噀口罶罒嶲山嶓山嶟山嶒山镆钅镈钅镋钅镎钅镕钅稹禾儇亻皞白皛白艎舟艏舟鹟鸟鲦鱼鲪鱼鲬鱼橥木觭角鹠鸟鹡鸟糇米糈米翦羽鹢鸟鹣鸟熛火潖氵潵氵澂氵澛氵瑬玉潽氵潾氵潏氵憭忄憕忄戭戈褯衤禤礻嫽女遹辶璥王璲王璒王憙心擐扌鄹阝薳艹鞔革黇黄蕗艹薢艹蕹艹橞木橑木橦木醑酉觱角磡石磜石豮豕鹾卤虤虍暿日曌日曈日蹅足踶足螗虫疁田幪巾嶦山馞香穄禾篚竹篯竹簉竹鼽鼻衠行盦皿螣虫縢糸鲭鱼鲯鱼鲰鱼鲺鱼鲹鱼亸亠癀疒瘭疒羱羊糒米燋火熻火燊火燚火燏火濩氵濋氵澪氵澽氵澴氵澭氵澼氵憷忄憺忄懔忄黉黄嬛女鹨鸟翯羽璱王璬王璮王髽髟擿扌薿艹薸艹檑木櫆木檞木醨酉繄糸磹石磻石瞫目瞵目蹐足蟏虫镤钅镥钅镨钅矰矢穙禾穜禾穟禾簕竹簃竹簏竹儦亻魋鬼斶斤艚舟谿谷鲾鱼鲿鱼鳁鱼鳂鱼鳈鱼鳉鱼獯犭馘首襕衤襚衤螱虫甓瓦嬬女嬥女瓀王釐里鬶鬲爇灬鞳革鞮革藟艹藦艹藨艹鹲鸟檫木黡黑礞石礌石蹢足蹜足蟫虫嚚口髃骨镮钅镱钅酂阝馧香簠皿簝竹簰竹鼫鼠鼩鼠皦白臑月鳑鱼鳒鱼鹱鸟鹯鸟癗疒旞方翷羽冁丷瀔氵瀍氵瀌氵襜衤嚭口鬷鬲醭酉蹯足蠋虫翾羽鳘鱼儳亻儴亻鼗鼓鳚鱼鳛鱼麑鹿麖鹿蠃虫彟彐嬿女鬒髟蘘艹欂木醵酉颥页甗瓦巇山酅阝髎骨犨牛爔火瀱氵瀹氵瀼氵瀵氵襫衤孅女骦马耰耒瓖王鬘髟趯走罍缶鼱鼠鳠鱼鳡鱼鳣鱼爟火爚火灈氵韂革糵米蘼艹礵石鹴鸟躔足皭白龢龠鳤鱼亹亠籥竹鼷鼠玃犭醾酉齇鼻觿角蠼虫","dic":{},"books":[{"id":"X1","name":"新HSK教程 1","hw":2,"lessons":[[1,"AI小语，你好！",["不客气","大家","好","老师","们","你好","你们","您","同学","谢谢","学生","再见"]],[2,"我叫李文",["不","对不起","高兴","很","叫","没关系","没事","名字","你","请问","认识","什么","是","我","也"]],[3,"我是中国人",["的","对","工作","国","还","姐姐","吗","忙","哪","女朋友","人","谁","她","太","喂","我们","想","这","法国","泰国","中国","中文"]],[4,"我有两个孩子",["八","爸爸","百","大","多","多少","儿子","二","哥哥","个","孩子","和","几","家","今年","九","口","两","零","六","妈妈","没有","妹妹","呢","女儿","七","千","三","十","四","岁","他","五","一","有"]],[5,"今天我休息",["菜","电脑","好看","号","会","饺子","今天","面条儿","日","它","喜欢","下班","新","星期","星期日","星期天","休息","一些","月","真","做","做饭"]],[6,"你的手机号是多少？",["包子","超市","吃","出租车","电话","东西","非常","好吃","买","米饭","明天","哪儿","那边","牛奶","去","手机","晚饭","些","怎么","坐","西安饭店"]],[7,"我晚上六点半下班",["吧","半","点","电影","电影院","店","分","分钟","后","见","看","课","里","上班","上课","上午","事","晚上","下课","下午","现在","医院","在","早上"]],[8,"我爸爸也在医院工作",["病人","到","饭","房间","看见","猫","没","能","漂亮","前","书店","外","午饭","下","小","学校","医生","只","桌子"]],[9,"我明天上午在学校学习",["白天","本","边","唱","第","电视","读书","歌","狗","好听","那","那个","朋友","前边","上","书","外边","玩","学习","椅子"]],[10,"这儿的苹果真便宜！",["杯子","穿","贵","件","斤","块","那儿","那些","男","女","便宜","苹果","钱","商店","少","售货员","水果","衣服","元","怎么样","这边","这儿","这些"]],[11,"我读大学呢",["车","大学","大学生","弟弟","读","饭店","开车","哪里","那里","起床","时候","睡","睡觉","说","问","小朋友","学","要","医","找","正在","知道","昨天"]],[12,"昨天下雪了",["病","公司","喝","回","觉得","看病","来","了","冷","热","生病","水","天","天气","下雨","雪","药","一点儿","有点儿","雨","再","这里"]],[13,"请给我一杯茶",["杯","茶","打电话","服务员","给","鸡蛋","可以","卖","面包","女士","请","问题","先生","一半","一下","早饭","这个"]],[14,"我看了一个电影",["不要","都","火车","开","明年","哪些","上学","说话","他们","它们","她们","听","听见","晚","小学","小学生","写","有的","有些","中午","中学","中学生","字","汉语","汉字"]],[15,"大兴机场见！",["爱","飞机","好玩儿","机场","家人","接","哪个","男朋友","年","去年","时间","小时","早","住","北京","大兴机场","西安"]]],"dic":{"爱":["ài","querer, amar; gustar mucho"],"八":["bā","ocho"],"爸爸":["bà ba","papá"],"吧":["ba","partícula (sugerencia o suposición)"],"白天":["bái tiān","de día, durante el día"],"百":["bǎi","cien"],"半":["bàn","media, mitad"],"包子":["bāo zi","bollo relleno al vapor (baozi)"],"杯":["bēi","vaso, taza (clasificador)"],"杯子":["bēi zi","vaso, taza"],"本":["běn","clasificador de libros"],"边":["bian","lado (sufijo de lugar)"],"病":["bìng","enfermedad; enfermar"],"病人":["bìng rén","enfermo/a, paciente"],"不客气":["bú kè qi","de nada"],"不要":["bú yào","no (+ verbo): ¡no…!"],"不":["bù","no"],"菜":["cài","plato, comida; verdura"],"茶":["chá","té"],"唱":["chàng","cantar"],"超市":["chāo shì","supermercado"],"车":["chē","coche, vehículo"],"吃":["chī","comer"],"出租车":["chū zū chē","taxi"],"穿":["chuān","ponerse, llevar (ropa)"],"打电话":["dǎ diàn huà","llamar por teléfono"],"大":["dà","grande; mayor (de edad)"],"大家":["dà jiā","todos/as"],"大学":["dà xué","universidad"],"大学生":["dà xué shēng","estudiante universitario/a"],"到":["dào","llegar; hasta"],"的":["de","partícula estructural (posesión)"],"弟弟":["dì di","hermano menor"],"第":["dì","prefijo de ordinales (第一 primero)"],"点":["diǎn","hora (en punto)"],"电话":["diàn huà","teléfono; llamada"],"电脑":["diàn nǎo","ordenador"],"电视":["diàn shì","televisión"],"电影":["diàn yǐng","película"],"电影院":["diàn yǐng yuàn","cine"],"店":["diàn","tienda"],"东西":["dōng xi","cosa, cosas"],"都":["dōu","todos, todo; ambos"],"读":["dú","estudiar (en un centro); leer"],"读书":["dú shū","leer; estudiar"],"对":["duì","correcto, sí; a, para (con)"],"对不起":["duì bu qǐ","perdón, lo siento"],"多":["duō","¿cuánto? (多大 ¿qué edad?); mucho"],"多少":["duō shao","¿cuánto(s)?"],"儿子":["ér zi","hijo"],"二":["èr","dos"],"饭":["fàn","comida; arroz cocido"],"饭店":["fàn diàn","restaurante; hotel"],"房间":["fáng jiān","habitación"],"飞机":["fēi jī","avión"],"非常":["fēi cháng","muy, muchísimo"],"分":["fēn","minuto"],"分钟":["fēn zhōng","minuto (duración)"],"服务员":["fú wù yuán","camarero/a"],"高兴":["gāo xìng","contento/a"],"哥哥":["gē ge","hermano mayor"],"歌":["gē","canción"],"个":["gè","clasificador general"],"给":["gěi","dar; a, para"],"工作":["gōng zuò","trabajo; trabajar"],"公司":["gōng sī","empresa"],"狗":["gǒu","perro"],"贵":["guì","caro/a"],"国":["guó","país"],"还":["hái","también, además; todavía"],"孩子":["hái zi","niño/a, hijo/a"],"好":["hǎo","bien, bueno/a"],"好吃":["hǎo chī","rico/a, sabroso/a"],"好看":["hǎo kàn","bonito/a"],"好听":["hǎo tīng","que suena bien, bonito/a (al oído)"],"好玩儿":["hǎo wán r","divertido/a"],"号":["hào","día (del mes); número"],"喝":["hē","beber"],"和":["hé","y; con"],"很":["hěn","muy"],"后":["hòu","después"],"回":["huí","volver, regresar"],"会":["huì","saber (hacer algo aprendido)"],"火车":["huǒ chē","tren"],"机场":["jī chǎng","aeropuerto"],"鸡蛋":["jī dàn","huevo"],"几":["jǐ","¿cuántos? (número pequeño); algunos"],"家":["jiā","familia, casa; clasificador de tiendas y empresas"],"家人":["jiā rén","familia, familiares"],"见":["jiàn","ver; verse"],"件":["jiàn","clasificador de prendas y asuntos"],"饺子":["jiǎo zi","empanadillas chinas (jiaozi)"],"叫":["jiào","llamarse"],"接":["jiē","recoger, ir a buscar (a alguien)"],"姐姐":["jiě jie","hermana mayor"],"斤":["jīn","jin (medio kilo)"],"今年":["jīn nián","este año"],"今天":["jīn tiān","hoy"],"九":["jiǔ","nueve"],"觉得":["jué de","creer, parecer (opinión)"],"开":["kāi","abrir; encender"],"开车":["kāi chē","conducir"],"看":["kàn","ver, mirar; leer"],"看病":["kàn bìng","ir al médico; atender a un paciente"],"看见":["kàn jiàn","ver (percibir)"],"可以":["kě yǐ","poder (permiso)"],"课":["kè","clase, lección"],"口":["kǒu","clasificador de miembros de la familia"],"块":["kuài","yuan (oral)"],"来":["lái","venir"],"老师":["lǎo shī","profesor/a"],"了":["le","partícula (cambio de situación; acción terminada)"],"冷":["lěng","frío"],"里":["li","dentro; en"],"两":["liǎng","dos (delante de clasificador)"],"零":["líng","cero"],"六":["liù","seis"],"妈妈":["mā ma","mamá"],"吗":["ma","partícula interrogativa"],"买":["mǎi","comprar"],"卖":["mài","vender"],"忙":["máng","ocupado/a"],"猫":["māo","gato"],"没":["méi","no (haber, tener; pasado)"],"没关系":["méi guān xi","no importa, no pasa nada"],"没事":["méi shì","no pasa nada"],"没有":["méi yǒu","no tener; no haber"],"妹妹":["mèi mei","hermana menor"],"们":["men","sufijo de plural"],"米饭":["mǐ fàn","arroz (cocido)"],"面包":["miàn bāo","pan"],"面条儿":["miàn tiáo r","fideos"],"名字":["míng zi","nombre"],"明年":["míng nián","el año que viene"],"明天":["míng tiān","mañana"],"哪":["nǎ","¿cuál?, ¿qué?"],"哪个":["nǎ ge","¿cuál?"],"哪里":["nǎ lǐ","¿dónde?"],"哪儿":["nǎ r","¿dónde?"],"哪些":["nǎ xiē","¿cuáles?"],"那":["nà","ese, aquel; entonces"],"那边":["nà biān","allí, ahí"],"那个":["nà ge","ese, aquel"],"那里":["nà lǐ","allí, ahí"],"那儿":["nà r","allí, ahí"],"那些":["nà xiē","esos, aquellos"],"男":["nán","hombre, masculino"],"男朋友":["nán péng you","novio"],"呢":["ne","partícula (¿y…?); partícula de acción en curso"],"能":["néng","poder (capacidad, posibilidad)"],"你":["nǐ","tú"],"你好":["nǐ hǎo","hola"],"你们":["nǐ men","vosotros/as, ustedes"],"年":["nián","año"],"您":["nín","usted"],"牛奶":["niú nǎi","leche"],"女":["nǚ","mujer, femenino"],"女儿":["nǚ ér","hija"],"女朋友":["nǚ péng you","novia"],"女士":["nǚ shì","señora"],"朋友":["péng you","amigo/a"],"便宜":["pián yi","barato/a"],"漂亮":["piào liang","guapo/a, bonito/a"],"苹果":["píng guǒ","manzana"],"七":["qī","siete"],"起床":["qǐ chuáng","levantarse"],"千":["qiān","mil"],"前":["qián","delante; antes"],"前边":["qián bian","delante"],"钱":["qián","dinero"],"请":["qǐng","por favor; invitar"],"请问":["qǐng wèn","disculpe, ¿puedo preguntar…?"],"去":["qù","ir"],"去年":["qù nián","el año pasado"],"热":["rè","calor, caluroso"],"人":["rén","persona"],"认识":["rèn shi","conocer (a alguien)"],"日":["rì","día (del mes)"],"三":["sān","tres"],"商店":["shāng diàn","tienda"],"上":["shang","encima, sobre; subir, ir a"],"上班":["shàng bān","ir a trabajar"],"上课":["shàng kè","empezar la clase; ir a clase"],"上午":["shàng wǔ","mañana (antes del mediodía)"],"上学":["shàng xué","ir a la escuela"],"少":["shǎo","poco/a"],"谁":["shéi","¿quién?"],"什么":["shén me","¿qué?"],"生病":["shēng bìng","ponerse enfermo/a"],"十":["shí","diez"],"时候":["shí hou","momento, cuando"],"时间":["shí jiān","tiempo"],"事":["shì","asunto, cosa (que hacer)"],"是":["shì","ser"],"手机":["shǒu jī","teléfono móvil"],"售货员":["shòu huò yuán","dependiente/a"],"书":["shū","libro"],"书店":["shū diàn","librería"],"水":["shuǐ","agua"],"水果":["shuǐ guǒ","fruta"],"睡":["shuì","dormir"],"睡觉":["shuì jiào","dormir, irse a dormir"],"说":["shuō","decir, hablar"],"说话":["shuō huà","hablar"],"四":["sì","cuatro"],"岁":["suì","año (de edad)"],"他":["tā","él"],"他们":["tā men","ellos"],"它":["tā","ello (cosas y animales)"],"它们":["tā men","ellos/as (cosas y animales)"],"她":["tā","ella"],"她们":["tā men","ellas"],"太":["tài","demasiado; muy (太…了)"],"天":["tiān","día; cielo"],"天气":["tiān qì","tiempo (meteorológico)"],"听":["tīng","escuchar"],"听见":["tīng jiàn","oír"],"同学":["tóng xué","compañero/a de clase"],"外":["wài","fuera"],"外边":["wài bian","fuera"],"玩":["wán","jugar, divertirse"],"晚":["wǎn","tarde (con retraso)"],"晚饭":["wǎn fàn","cena"],"晚上":["wǎn shang","noche"],"喂":["wèi","¿diga?, ¡oye! (al teléfono)"],"问":["wèn","preguntar"],"问题":["wèn tí","pregunta; problema"],"我":["wǒ","yo"],"我们":["wǒ men","nosotros/as"],"五":["wǔ","cinco"],"午饭":["wǔ fàn","comida (del mediodía)"],"喜欢":["xǐ huan","gustar"],"下":["xià","debajo; caer (lluvia, nieve)"],"下班":["xià bān","salir del trabajo"],"下课":["xià kè","terminar la clase"],"下午":["xià wǔ","tarde"],"下雨":["xià yǔ","llover"],"先生":["xiān sheng","señor"],"现在":["xiàn zài","ahora"],"想":["xiǎng","echar de menos; querer (hacer)"],"小":["xiǎo","pequeño/a"],"小朋友":["xiǎo péng yǒu","niño/a"],"小时":["xiǎo shí","hora (duración)"],"小学":["xiǎo xué","escuela primaria"],"小学生":["xiǎo xué shēng","alumno/a de primaria"],"些":["xiē","algunos/as (clasificador)"],"写":["xiě","escribir"],"谢谢":["xiè xie","gracias"],"新":["xīn","nuevo/a"],"星期":["xīng qī","semana"],"星期日":["xīng qī rì","domingo"],"星期天":["xīng qī tiān","domingo"],"休息":["xiū xi","descansar"],"学":["xué","estudiar, aprender"],"学生":["xué shēng","estudiante, alumno/a"],"学习":["xué xí","estudiar, aprender"],"学校":["xué xiào","escuela"],"雪":["xuě","nieve"],"药":["yào","medicina, medicamento"],"要":["yào","querer; ir a; necesitar"],"也":["yě","también"],"一":["yī","uno"],"一半":["yí bàn","la mitad"],"一下":["yí xià","un momento, un poco (verbo + 一下)"],"一点儿":["yì diǎn r","un poco"],"一些":["yì xiē","algunos/as, un poco"],"衣服":["yī fu","ropa"],"医":["yī","medicina (estudiar medicina: 学医)"],"医生":["yī shēng","médico/a"],"医院":["yī yuàn","hospital"],"椅子":["yǐ zi","silla"],"有":["yǒu","tener; haber"],"有的":["yǒu de","algunos/as"],"有点儿":["yǒu diǎn r","un poco (con sentido negativo)"],"有些":["yǒu xiē","algunos/as; un poco"],"雨":["yǔ","lluvia"],"元":["yuán","yuan"],"月":["yuè","mes; luna"],"再":["zài","otra vez; luego"],"再见":["zài jiàn","adiós"],"在":["zài","estar en; en; estar (haciendo)"],"早":["zǎo","temprano; ¡buenos días!"],"早饭":["zǎo fàn","desayuno"],"早上":["zǎo shang","mañana (temprano)"],"怎么":["zěn me","¿cómo?"],"怎么样":["zěn me yàng","¿qué tal?"],"找":["zhǎo","buscar"],"这":["zhè","este/a, esto"],"这边":["zhè biān","aquí, por aquí"],"这个":["zhè ge","este/a"],"这里":["zhè lǐ","aquí"],"这儿":["zhè r","aquí"],"这些":["zhè xiē","estos/as"],"真":["zhēn","muy, de verdad"],"正在":["zhèng zài","estar (haciendo)"],"只":["zhī","clasificador de animales"],"知道":["zhī dào","saber"],"中午":["zhōng wǔ","mediodía"],"中学":["zhōng xué","escuela secundaria"],"中学生":["zhōng xué shēng","alumno/a de secundaria"],"住":["zhù","vivir, alojarse"],"桌子":["zhuō zi","mesa"],"字":["zì","carácter (chino), letra"],"昨天":["zuó tiān","ayer"],"坐":["zuò","ir en (vehículo); sentarse"],"做":["zuò","hacer"],"做饭":["zuò fàn","cocinar"],"北京":["běi jīng","Pekín"],"大兴机场":["dà xīng jī chǎng","Aeropuerto de Daxing"],"法国":["fǎ guó","Francia"],"汉语":["hàn yǔ","chino (lengua)"],"汉字":["hàn zì","carácter chino"],"泰国":["tài guó","Tailandia"],"西安":["xī ān","Xi'an"],"西安饭店":["xī ān fàn diàn","Hotel Xi'an"],"中国":["zhōng guó","China"],"中文":["zhōng wén","chino (lengua)"]}},{"id":"B1","name":"HSK标准教程 1","hw":2,"lessons":[[1,"你好",["你","好","您","你们","对不起","没关系","白天","你好"]],[2,"谢谢你",["谢谢","不","不客气","再见","不要","没事","事","们","他们","她们"]],[3,"你叫什么名字",["叫","什么","名字","我","是","老师","吗","学生","人","中国","美国","国","它们","中文"]],[4,"她是我的汉语老师",["她","谁","的","汉语","哪","他","呢","同学","朋友","家人","哪个","哪些","男朋友","女朋友","女士"]],[5,"她女儿今年二十岁",["家","有","口","女儿","几","岁","了","今年","多","大","明年","两","一半","一些"]],[6,"我会说汉语",["会","说","妈妈","菜","很","好吃","做","写","汉字","字","怎么","读","唱","歌","读书","听见"]],[7,"今天几号",["请","问","今天","号","月","星期","昨天","明天","去","学校","看","书","第","电影院","请问","书店","天"]],[8,"我想喝茶",["想","喝","茶","吃","米饭","下午","商店","买","个","杯子","这","多少","钱","块","那","超市","包子","饺子","面包","饭","那个","那些","这个","元"]],[9,"你儿子在哪儿工作",["小","猫","在","那儿","狗","椅子","下面","下","哪儿","工作","儿子","医院","医生","爸爸","哪里","小朋友","小学","小学生","中学","中学生","大学","大学生"]],[10,"我能坐这儿吗",["桌子","上","电脑","和","本","里","前面","后面","这儿","没有","没","能","坐","前","后","边","那边","那里","这边","这里","外边"]],[11,"现在几点",["现在","点","分","中午","吃饭","时候","回","我们","电影","住","北京","早","早饭","午饭","晚","晚饭","星期日","星期天"]],[12,"明天天气怎么样",["天气","怎么样","太","热","冷","下雨","雨","小姐","来","身体","爱","些","水果","水","好看","好听","好玩儿"]],[13,"他在学做中国菜呢",["喂","也","学习","学","上午","睡觉","电视","喜欢","给","打电话","吧","电话","睡","做饭"]],[14,"她买了不少衣服",["东西","一点儿","苹果","看见","先生","开","车","回来","分钟","衣服","漂亮","啊","少","不少","这些","都","张","见","有的","有些","有点儿"]],[15,"我是坐飞机来的",["认识","年","饭店","出租车","一起","高兴","听","飞机","病","火车","开车","看病","上课","上学","下班","下课"]]],"dic":{"你":["nǐ","tú"],"好":["hǎo","bien, bueno/a"],"您":["nín","usted"],"你们":["nǐ men","vosotros/as, ustedes"],"对不起":["duì bu qǐ","perdón, lo siento"],"没关系":["méi guān xi","no importa, no pasa nada"],"白天":["bái tiān","de día, durante el día"],"你好":["nǐ hǎo","hola"],"谢谢":["xiè xie","gracias"],"不":["bù","no"],"不客气":["bú kè qi","de nada"],"再见":["zài jiàn","adiós"],"不要":["bú yào","no (+ verbo): ¡no…!"],"没事":["méi shì","no pasa nada"],"事":["shì","asunto, cosa (que hacer)"],"们":["men","sufijo de plural"],"他们":["tā men","ellos"],"她们":["tā men","ellas"],"叫":["jiào","llamarse"],"什么":["shén me","¿qué?"],"名字":["míng zi","nombre"],"我":["wǒ","yo"],"是":["shì","ser"],"老师":["lǎo shī","profesor/a"],"吗":["ma","partícula interrogativa"],"学生":["xué shēng","estudiante, alumno/a"],"人":["rén","persona"],"中国":["zhōng guó","China"],"美国":["Měi guó","Estados Unidos"],"国":["guó","país"],"它们":["tā men","ellos/as (cosas y animales)"],"中文":["zhōng wén","chino (lengua)"],"她":["tā","ella"],"谁":["shéi","¿quién?"],"的":["de","partícula estructural (posesión)"],"汉语":["hàn yǔ","chino (lengua)"],"哪":["nǎ","¿cuál?, ¿qué?"],"他":["tā","él"],"呢":["ne","partícula (¿y…?); partícula de acción en curso"],"同学":["tóng xué","compañero/a de clase"],"朋友":["péng you","amigo/a"],"家人":["jiā rén","familia, familiares"],"哪个":["nǎ ge","¿cuál?"],"哪些":["nǎ xiē","¿cuáles?"],"男朋友":["nán péng you","novio"],"女朋友":["nǚ péng you","novia"],"女士":["nǚ shì","señora"],"家":["jiā","familia, casa; clasificador de tiendas y empresas"],"有":["yǒu","tener; haber"],"口":["kǒu","clasificador de miembros de la familia; boca"],"女儿":["nǚ ér","hija"],"几":["jǐ","¿cuántos? (número pequeño); algunos"],"岁":["suì","año (de edad)"],"了":["le","partícula (cambio de situación; acción terminada)"],"今年":["jīn nián","este año"],"多":["duō","¿cuánto? (多大 ¿qué edad?); mucho"],"大":["dà","grande; mayor (de edad)"],"明年":["míng nián","el año que viene"],"两":["liǎng","dos (delante de clasificador)"],"一半":["yí bàn","la mitad"],"一些":["yì xiē","algunos/as, un poco"],"会":["huì","saber (hacer algo aprendido)"],"说":["shuō","decir, hablar"],"妈妈":["mā ma","mamá"],"菜":["cài","plato, comida; verdura"],"很":["hěn","muy"],"好吃":["hǎo chī","rico/a, sabroso/a"],"做":["zuò","hacer"],"写":["xiě","escribir"],"汉字":["hàn zì","carácter chino"],"字":["zì","carácter (chino), letra"],"怎么":["zěn me","¿cómo?"],"读":["dú","estudiar (en un centro); leer"],"唱":["chàng","cantar"],"歌":["gē","canción"],"读书":["dú shū","leer; estudiar"],"听见":["tīng jiàn","oír"],"请":["qǐng","por favor; invitar"],"问":["wèn","preguntar"],"今天":["jīn tiān","hoy"],"号":["hào","día (del mes); número"],"月":["yuè","mes; luna"],"星期":["xīng qī","semana"],"昨天":["zuó tiān","ayer"],"明天":["míng tiān","mañana"],"去":["qù","ir"],"学校":["xué xiào","escuela"],"看":["kàn","ver, mirar; leer"],"书":["shū","libro"],"第":["dì","prefijo de ordinales (第一 primero)"],"电影院":["diàn yǐng yuàn","cine"],"请问":["qǐng wèn","disculpe, ¿puedo preguntar…?"],"书店":["shū diàn","librería"],"天":["tiān","día; cielo"],"想":["xiǎng","echar de menos; querer (hacer)"],"喝":["hē","beber"],"茶":["chá","té"],"吃":["chī","comer"],"米饭":["mǐ fàn","arroz (cocido)"],"下午":["xià wǔ","tarde"],"商店":["shāng diàn","tienda"],"买":["mǎi","comprar"],"个":["gè","clasificador general"],"杯子":["bēi zi","vaso, taza"],"这":["zhè","este/a, esto"],"多少":["duō shao","¿cuánto(s)?"],"钱":["qián","dinero"],"块":["kuài","yuan (oral)"],"那":["nà","ese, aquel; entonces"],"超市":["chāo shì","supermercado"],"包子":["bāo zi","bollo relleno al vapor (baozi)"],"饺子":["jiǎo zi","empanadillas chinas (jiaozi)"],"面包":["miàn bāo","pan"],"饭":["fàn","comida; arroz cocido"],"那个":["nà ge","ese, aquel"],"那些":["nà xiē","esos, aquellos"],"这个":["zhè ge","este/a"],"元":["yuán","yuan"],"小":["xiǎo","pequeño/a"],"猫":["māo","gato"],"在":["zài","estar en; en; estar (haciendo)"],"那儿":["nà r","allí, ahí"],"狗":["gǒu","perro"],"椅子":["yǐ zi","silla"],"下面":["xià mian","debajo"],"下":["xià","debajo; caer (lluvia, nieve)"],"哪儿":["nǎ r","¿dónde?"],"工作":["gōng zuò","trabajo; trabajar"],"儿子":["ér zi","hijo"],"医院":["yī yuàn","hospital"],"医生":["yī shēng","médico/a"],"爸爸":["bà ba","papá"],"哪里":["nǎ lǐ","¿dónde?"],"小朋友":["xiǎo péng yǒu","niño/a"],"小学":["xiǎo xué","escuela primaria"],"小学生":["xiǎo xué shēng","alumno/a de primaria"],"中学":["zhōng xué","escuela secundaria"],"中学生":["zhōng xué shēng","alumno/a de secundaria"],"大学":["dà xué","universidad"],"大学生":["dà xué shēng","estudiante universitario/a"],"桌子":["zhuō zi","mesa"],"上":["shang","encima, sobre; subir, ir a"],"电脑":["diàn nǎo","ordenador"],"和":["hé","y; con"],"本":["běn","clasificador de libros"],"里":["li","dentro; en"],"前面":["qián mian","delante"],"后面":["hòu mian","detrás"],"这儿":["zhè r","aquí"],"没有":["méi yǒu","no tener; no haber"],"没":["méi","no (haber, tener; pasado)"],"能":["néng","poder (capacidad, posibilidad)"],"坐":["zuò","ir en (vehículo); sentarse"],"前":["qián","delante; antes"],"后":["hòu","después"],"边":["bian","lado (sufijo de lugar)"],"那边":["nà biān","allí, ahí"],"那里":["nà lǐ","allí, ahí"],"这边":["zhè biān","aquí, por aquí"],"这里":["zhè lǐ","aquí"],"外边":["wài bian","fuera"],"现在":["xiàn zài","ahora"],"点":["diǎn","hora (en punto)"],"分":["fēn","minuto"],"中午":["zhōng wǔ","mediodía"],"吃饭":["chī fàn","comer"],"时候":["shí hou","momento, cuando"],"回":["huí","volver, regresar"],"我们":["wǒ men","nosotros/as"],"电影":["diàn yǐng","película"],"住":["zhù","vivir, alojarse"],"北京":["běi jīng","Pekín"],"早":["zǎo","temprano; ¡buenos días!"],"早饭":["zǎo fàn","desayuno"],"午饭":["wǔ fàn","comida (del mediodía)"],"晚":["wǎn","tarde (con retraso)"],"晚饭":["wǎn fàn","cena"],"星期日":["xīng qī rì","domingo"],"星期天":["xīng qī tiān","domingo"],"天气":["tiān qì","tiempo (meteorológico)"],"怎么样":["zěn me yàng","¿qué tal?"],"太":["tài","demasiado; muy (太…了)"],"热":["rè","calor, caluroso"],"冷":["lěng","frío"],"下雨":["xià yǔ","llover"],"雨":["yǔ","lluvia"],"小姐":["xiǎo jiě","señorita"],"来":["lái","venir"],"身体":["shēn tǐ","cuerpo, salud"],"爱":["ài","querer, amar; gustar mucho"],"些":["xiē","algunos/as (clasificador)"],"水果":["shuǐ guǒ","fruta"],"水":["shuǐ","agua"],"好看":["hǎo kàn","bonito/a"],"好听":["hǎo tīng","que suena bien, bonito/a (al oído)"],"好玩儿":["hǎo wán r","divertido/a"],"喂":["wèi","¿diga?, ¡oye! (al teléfono)"],"也":["yě","también"],"学习":["xué xí","estudiar, aprender"],"学":["xué","estudiar, aprender"],"上午":["shàng wǔ","mañana (antes del mediodía)"],"睡觉":["shuì jiào","dormir, irse a dormir"],"电视":["diàn shì","televisión"],"喜欢":["xǐ huan","gustar"],"给":["gěi","dar; a, para"],"打电话":["dǎ diàn huà","llamar por teléfono"],"吧":["ba","partícula (sugerencia o suposición)"],"电话":["diàn huà","teléfono; llamada"],"睡":["shuì","dormir"],"做饭":["zuò fàn","cocinar"],"东西":["dōng xi","cosa, cosas"],"一点儿":["yì diǎn r","un poco"],"苹果":["píng guǒ","manzana"],"看见":["kàn jiàn","ver (percibir)"],"先生":["xiān sheng","señor"],"开":["kāi","abrir; encender"],"车":["chē","coche, vehículo"],"回来":["huí lai","volver (aquí)"],"分钟":["fēn zhōng","minuto (duración)"],"衣服":["yī fu","ropa"],"漂亮":["piào liang","guapo/a, bonito/a"],"啊":["a","partícula exclamativa (¡ah!)"],"少":["shǎo","poco/a"],"不少":["bù shǎo","bastante(s), muchos/as"],"这些":["zhè xiē","estos/as"],"都":["dōu","todos, todo; ambos"],"张":["zhāng","clasificador (papel, fotos)"],"见":["jiàn","ver; verse"],"有的":["yǒu de","algunos/as"],"有些":["yǒu xiē","algunos/as; un poco"],"有点儿":["yǒu diǎn r","un poco (con sentido negativo)"],"认识":["rèn shi","conocer (a alguien)"],"年":["nián","año"],"饭店":["fàn diàn","restaurante; hotel"],"出租车":["chū zū chē","taxi"],"一起":["yì qǐ","juntos"],"高兴":["gāo xìng","contento/a"],"听":["tīng","escuchar"],"飞机":["fēi jī","avión"],"病":["bìng","enfermedad; enfermar"],"火车":["huǒ chē","tren"],"开车":["kāi chē","conducir"],"看病":["kàn bìng","ir al médico; atender a un paciente"],"上课":["shàng kè","empezar la clase; ir a clase"],"上学":["shàng xué","ir a la escuela"],"下班":["xià bān","salir del trabajo"],"下课":["xià kè","terminar la clase"]}},{"id":"B2","name":"HSK标准教程 2","hw":3,"lessons":[[1,"九月去北京旅游最好",["旅游","觉得","最","为什么","也","运动","踢足球","一起","要","新","它","眼睛","外国","出国","机票","酒店","球","踢","足球"]],[2,"我每天六点起床",["生病","每","早上","跑步","起床","药","身体","出院","出","高","米","知道","休息","忙","时间","床","药店","动","时","有时候","周"]],[3,"左边那个红色的是我的",["手表","千","报纸","送","一下","牛奶","房间","丈夫","旁边","真","粉色","颜色","左边","红色","红","花","间","红茶","绿茶","绿色","左"]],[4,"这个工作是他帮我介绍的",["生日","快乐","给","接","晚上","问","非常","开始","已经","长","两","帮","介绍","点","名","头","那么","那样"]],[5,"就买这件吧",["外面","准备","就","鱼","吧","件","还","可以","不错","考试","咖啡","对","以后","饭馆","肉","篮球","游"]],[6,"你怎么不吃了",["门","外","自行车","羊肉","好吃","面条","打篮球","因为","所以","游泳","经常","公斤","姐姐","唱","歌","读书","听见"]],[7,"你家离公司远吗",["教室","机场","路","离","公司","远","公共汽车","小时","慢","快","过","走","到","跑","走路","打","打车","公交车","过来"]],[8,"让我想想再告诉你",["再","让","告诉","等","找","事情","服务员","白","黑","贵","打开","飞","白色","黑色","快要","上去"]],[9,"题太多，我没做完",["错","从","跳舞","第一","希望","问题","欢迎","上班","懂","完","题","词","从小","高中","开学","考","忘","网上"]],[10,"别找了，手机在桌子上呢",["课","帮助","别","哥哥","鸡蛋","西瓜","正在","手机","洗","上来","上面","下来","下面","下去","正"]],[11,"他比我大三岁",["唱歌","男","女","孩子","右边","比","便宜","说话","可能","去年","姓","男孩儿","女孩儿","小孩儿","小时候","右","姓名"]],[12,"你穿得太少了",["得","妻子","雪","零","度","穿","进","弟弟","近","出来","出门","出去","进来","进去","里面"]],[13,"门开着呢",["着","手","拿","铅笔","班","笑","宾馆","一直","往","路口","本子","笔","书包","路上","门口","门票"]],[14,"你看过那个电影吗",["意思","但是","虽然","次","玩儿","晴","百","不好意思","没意思","有意思","但"]],[15,"新年就要到了",["日","新年","票","火车站","大家","更","妹妹","阴","过年","站","车站","过去","回来","回去"]]],"dic":{"旅游":["lǚ yóu","hacer turismo"],"觉得":["jué de","creer, parecer (opinión)"],"最":["zuì","el / la más (superlativo)"],"为什么":["wèi shén me","¿por qué?"],"也":["yě","también"],"运动":["yùn dòng","deporte"],"踢足球":["tī zú qiú","jugar al fútbol"],"一起":["yì qǐ","juntos"],"要":["yào","querer; ir a; necesitar"],"新":["xīn","nuevo/a"],"它":["tā","ello (cosas y animales)"],"眼睛":["yǎn jing","ojo"],"外国":["wài guó","país extranjero; extranjero/a"],"出国":["chū guó","ir al extranjero"],"机票":["jī piào","billete de avión"],"酒店":["jiǔ diàn","hotel"],"球":["qiú","pelota, balón"],"踢":["tī","jugar (con los pies), dar patadas"],"足球":["zú qiú","fútbol"],"生病":["shēng bìng","ponerse enfermo/a"],"每":["měi","cada"],"早上":["zǎo shang","mañana (temprano)"],"跑步":["pǎo bù","correr"],"起床":["qǐ chuáng","levantarse"],"药":["yào","medicina, medicamento"],"身体":["shēn tǐ","cuerpo, salud"],"出院":["chū yuàn","salir del hospital"],"出":["chū","salir"],"高":["gāo","alto/a"],"米":["mǐ","metro; arroz"],"知道":["zhī dào","saber"],"休息":["xiū xi","descansar"],"忙":["máng","ocupado/a"],"时间":["shí jiān","tiempo"],"床":["chuáng","cama"],"药店":["yào diàn","farmacia"],"动":["dòng","moverse"],"时":["shí","hora; momento"],"有时候":["yǒu shí hou","a veces"],"周":["zhōu","semana"],"手表":["shǒu biǎo","reloj de pulsera"],"千":["qiān","mil"],"报纸":["bào zhǐ","periódico"],"送":["sòng","regalar; llevar (a alguien)"],"一下":["yí xià","un momento, un poco (verbo + 一下)"],"牛奶":["niú nǎi","leche"],"房间":["fáng jiān","habitación"],"丈夫":["zhàng fu","marido"],"旁边":["páng biān","al lado"],"真":["zhēn","muy, de verdad"],"粉色":["fěn sè","rosa (color)"],"颜色":["yán sè","color"],"左边":["zuǒ bian","izquierda"],"红色":["hóng sè","rojo"],"红":["hóng","rojo/a"],"花":["huā","flor; gastar"],"间":["jiān","clasificador de habitaciones"],"红茶":["hóng chá","té negro"],"绿茶":["lǜ chá","té verde"],"绿色":["lǜ sè","verde"],"左":["zuǒ","izquierda"],"生日":["shēng rì","cumpleaños"],"快乐":["kuài lè","feliz"],"给":["gěi","dar; a, para"],"接":["jiē","recoger, ir a buscar (a alguien)"],"晚上":["wǎn shang","noche"],"问":["wèn","preguntar"],"非常":["fēi cháng","muy, muchísimo"],"开始":["kāi shǐ","empezar"],"已经":["yǐ jīng","ya"],"长":["cháng","largo/a"],"两":["liǎng","dos (delante de clasificador)"],"帮":["bāng","ayudar"],"介绍":["jiè shào","presentar"],"点":["diǎn","hora (en punto)"],"名":["míng","nombre"],"头":["tóu","cabeza"],"那么":["nà me","entonces"],"那样":["nà yàng","así, de esa manera"],"外面":["wài miàn","fuera"],"准备":["zhǔn bèi","preparar"],"就":["jiù","justo, enseguida"],"鱼":["yú","pescado, pez"],"吧":["ba","partícula (sugerencia o suposición)"],"件":["jiàn","clasificador de prendas y asuntos"],"还":["hái","también, además; todavía"],"可以":["kě yǐ","poder (permiso)"],"不错":["bú cuò","no está mal, bastante bien"],"考试":["kǎo shì","examen"],"咖啡":["kā fēi","café"],"对":["duì","correcto, sí; a, para (con)"],"以后":["yǐ hòu","después"],"饭馆":["fàn guǎn","restaurante"],"肉":["ròu","carne"],"篮球":["lán qiú","baloncesto"],"游":["yóu","nadar; viajar"],"门":["mén","puerta"],"外":["wài","fuera"],"自行车":["zì xíng chē","bicicleta"],"羊肉":["yáng ròu","carne de cordero"],"好吃":["hǎo chī","rico/a, sabroso/a"],"面条":["miàn tiáo","fideos"],"打篮球":["dǎ lán qiú","jugar al baloncesto"],"因为":["yīn wèi","porque"],"所以":["suǒ yǐ","por eso"],"游泳":["yóu yǒng","nadar"],"经常":["jīng cháng","a menudo"],"公斤":["gōng jīn","kilo"],"姐姐":["jiě jie","hermana mayor"],"唱":["chàng","cantar"],"歌":["gē","canción"],"读书":["dú shū","leer; estudiar"],"听见":["tīng jiàn","oír"],"教室":["jiào shì","aula"],"机场":["jī chǎng","aeropuerto"],"路":["lù","calle, camino"],"离":["lí","estar a (una distancia) de"],"公司":["gōng sī","empresa"],"远":["yuǎn","lejos, lejano"],"公共汽车":["gōng gòng qì chē","autobús"],"小时":["xiǎo shí","hora (duración)"],"慢":["màn","lento/a"],"快":["kuài","rápido/a"],"过":["guò","pasar, cruzar"],"走":["zǒu","caminar, ir"],"到":["dào","llegar; hasta"],"跑":["pǎo","correr"],"走路":["zǒu lù","andar, caminar"],"打":["dǎ","jugar (a la pelota); coger (un taxi)"],"打车":["dǎ chē","coger un taxi"],"公交车":["gōng jiāo chē","autobús"],"过来":["guò lai","venir (hacia aquí)"],"再":["zài","otra vez; luego"],"让":["ràng","dejar, permitir"],"告诉":["gào su","decir, contar"],"等":["děng","esperar"],"找":["zhǎo","buscar"],"事情":["shì qing","asunto, cosa"],"服务员":["fú wù yuán","camarero/a"],"白":["bái","blanco/a"],"黑":["hēi","negro/a"],"贵":["guì","caro/a"],"打开":["dǎ kāi","abrir"],"飞":["fēi","volar"],"白色":["bái sè","blanco"],"黑色":["hēi sè","negro"],"快要":["kuài yào","estar a punto de"],"上去":["shàng qu","subir"],"错":["cuò","error; equivocado/a"],"从":["cóng","de, desde"],"跳舞":["tiào wǔ","bailar"],"第一":["dì yī","primero/a"],"希望":["xī wàng","esperar, desear"],"问题":["wèn tí","pregunta; problema"],"欢迎":["huān yíng","bienvenido"],"上班":["shàng bān","ir a trabajar"],"懂":["dǒng","entender"],"完":["wán","terminar"],"题":["tí","pregunta, ejercicio"],"词":["cí","palabra"],"从小":["cóng xiǎo","desde pequeño/a"],"高中":["gāo zhōng","bachillerato"],"开学":["kāi xué","empezar el curso"],"考":["kǎo","examinarse"],"忘":["wàng","olvidar"],"网上":["wǎng shàng","en internet"],"课":["kè","clase, lección"],"帮助":["bāng zhù","ayudar"],"别":["bié","no (imperativo: ¡no…!)"],"哥哥":["gē ge","hermano mayor"],"鸡蛋":["jī dàn","huevo"],"西瓜":["xī guā","sandía"],"正在":["zhèng zài","estar (haciendo)"],"手机":["shǒu jī","teléfono móvil"],"洗":["xǐ","lavar"],"上来":["shàng lai","subir (hacia aquí)"],"上面":["shàng mian","encima"],"下来":["xià lai","bajar (hacia aquí)"],"下面":["xià mian","debajo"],"下去":["xià qu","bajar (hacia allí)"],"正":["zhèng","justo, en este momento"],"唱歌":["chàng gē","cantar"],"男":["nán","hombre, masculino"],"女":["nǚ","mujer, femenino"],"孩子":["hái zi","niño/a, hijo/a"],"右边":["yòu bian","derecha"],"比":["bǐ","que (comparación)"],"便宜":["pián yi","barato/a"],"说话":["shuō huà","hablar"],"可能":["kě néng","posible"],"去年":["qù nián","el año pasado"],"姓":["xìng","apellido; apellidarse"],"男孩儿":["nán hái r","chico, niño"],"女孩儿":["nǚ hái r","chica, niña"],"小孩儿":["xiǎo hái r","niño/a"],"小时候":["xiǎo shí hou","de pequeño/a, en la infancia"],"右":["yòu","derecha"],"姓名":["xìng míng","nombre completo"],"得":["de","(partícula de complemento 得)"],"妻子":["qī zi","esposa"],"雪":["xuě","nieve"],"零":["líng","cero"],"度":["dù","grado (temperatura)"],"穿":["chuān","ponerse, llevar (ropa)"],"进":["jìn","entrar"],"弟弟":["dì di","hermano menor"],"近":["jìn","cerca, cercano"],"出来":["chū lai","salir (hacia aquí)"],"出门":["chū mén","salir de casa"],"出去":["chū qu","salir (hacia fuera)"],"进来":["jìn lai","entrar (hacia aquí)"],"进去":["jìn qu","entrar (hacia dentro)"],"里面":["lǐ miàn","dentro"],"着":["zhe","(partícula de continuidad 着)"],"手":["shǒu","mano"],"拿":["ná","coger, llevar en la mano"],"铅笔":["qiān bǐ","lápiz"],"班":["bān","clasificador de vuelos y trenes regulares"],"笑":["xiào","reír, sonreír"],"宾馆":["bīn guǎn","hotel"],"一直":["yì zhí","todo recto; siempre, todo el tiempo"],"往":["wǎng","hacia"],"路口":["lù kǒu","cruce"],"本子":["běn zi","cuaderno"],"笔":["bǐ","bolígrafo, lápiz"],"书包":["shū bāo","mochila, cartera (escolar)"],"路上":["lù shang","en el camino"],"门口":["mén kǒu","entrada, puerta"],"门票":["mén piào","entrada (billete)"],"意思":["yì si","significado"],"但是":["dàn shì","pero"],"虽然":["suī rán","aunque"],"次":["cì","vez"],"玩儿":["wán r","jugar, divertirse"],"晴":["qíng","soleado, despejado"],"百":["bǎi","cien"],"不好意思":["bù hǎo yì si","perdón, qué vergüenza"],"没意思":["méi yì si","aburrido/a"],"有意思":["yǒu yì si","interesante"],"但":["dàn","pero"],"日":["rì","día (del mes)"],"新年":["xīn nián","Año Nuevo"],"票":["piào","billete, entrada"],"火车站":["huǒ chē zhàn","estación de tren"],"大家":["dà jiā","todos/as"],"更":["gèng","más, aún más"],"妹妹":["mèi mei","hermana menor"],"阴":["yīn","nublado"],"过年":["guò nián","celebrar el Año Nuevo"],"站":["zhàn","estación, parada; estar de pie"],"车站":["chē zhàn","estación, parada"],"过去":["guò qu","pasar (hacia allí); el pasado"],"回来":["huí lai","volver (aquí)"],"回去":["huí qu","volver (allí)"]}},{"id":"B3","name":"HSK标准教程 3","hw":4,"lessons":[[1,"周末你有什么打算",["周末","打算","啊","跟","一直","游戏","作业","着急","复习","南方","南","北方","面包","带","地图","搬","工作日","兴趣","初中","北","东南","东北","东方","西方","西北","西南","搬家","一块儿","园"]],[2,"他什么时候回来",["腿","疼","脚","树","容易","难","太太","秘书","经理","办公室","辆","楼","拿","把","伞","胖","其实","瘦","不行","刚刚","难题","办","急","员","得到","楼梯","难看","难听"]],[3,"桌子上放着很多饮料",["还是","爬山","小心","条","裤子","记得","衬衫","元","新鲜","甜","只","放","饮料","或者","舒服","花","绿","山","爬","雨衣","花园","大衣","上衣","短裤","鞋","大小","记","子","或","黄色"]],[4,"她总是笑着跟客人说话",["比赛","照片","年级","又","聪明","热情","努力","总是","回答","站","饿","超市","蛋糕","年轻","认真","客人","得分","男生","女生","男人","女人","运动员","球场","体育馆","运动会","听说","名人"]],[5,"我最近越来越胖了",["发烧","为","照顾","用","感冒","季节","当然","春天","春","草","夏天","夏","裙子","最近","越","四季","季","草地","开花"]],[6,"怎么突然找不到了",["眼镜","突然","离开","清楚","刚才","帮忙","特别","讲","明白","锻炼","音乐","公园","聊天儿","睡着","更","耳机","不见","纸","聊","半天","总","看来","不用"]],[7,"我跟她都认识五年了",["同事","以前","银行","久","感兴趣","结婚","欢迎","迟到","半","接","刻","差","后天","后年","前天","前年","以后","以外","以上","以下","休假","假期","夫妻","爱人","不久","好久","好多"]],[8,"你去哪儿我就去哪儿",["满意","电梯","层","害怕","熊猫","见面","安静","可乐","一会儿","马上","洗手间","老","几乎","变化","健康","重要","小区","房子","屋子","室","怕","大熊猫","动物园","面前","身边","老人"]],[9,"她的汉语说得跟中国人一样好",["中文","班","一样","最后","放心","一定","担心","比较","了解","先","中间","参加","影响","班级","课本","课文","笔记","练","外语","懂得","中","加"]],[10,"数学比历史难多了",["个子","矮","历史","体育","数学","方便","自行车","骑","旧","换","地方","中介","主要","环境","附近","身高","直到","受","方便面","汽车","高铁","红绿灯","街","马路","路边","路口"]],[11,"别忘了把空调关了",["图书馆","借","词典","还","灯","会议","结束","忘记","空调","关","地铁","双","筷子","啤酒","口","瓶子","笔记本","电子邮件","习惯","电子书","字典","会","洗衣机","酒","收到","电","封","信","邮件","邮箱","开机","关机"]],[12,"把重要的东西放在我这儿吧",["太阳","西","生气","行李箱","自己","包","发现","护照","起飞","司机","教","画","需要","黑板","外地","行李","箱子","游客","检票","晚点","画家"]],[13,"我是走回来的",["终于","爷爷","礼物","奶奶","遇到","一边","过去","一般","愿意","起来","应该","生活","校长","坏","经常","大人","分开","遇见","认得","起","开会","该","常","常常","常见","常用","心里"]],[14,"你把水果拿过来",["打扫","干净","然后","冰箱","洗澡","节目","月亮","像","盘子","刮风","叔叔","阿姨","故事","声音","菜单","简单","香蕉","服务","冰","冰激凌","扫","做客","声","刮","风","姐妹","外卖","请客","名单"]],[15,"其他都没什么问题",["留学","水平","提高","练习","完成","句子","其他","发","要求","注意","上网","除了","新闻","极了","节日","举行","世界","街道","各","文化","留学生","校园","句","选","关注","过节","新年","晚会"]],[16,"我没有你那么多",["城市","如果","认为","皮球","帽子","长","可爱","米","公斤","鼻子","头发","检查","刷牙","关系","别人","词语","的话","市","斤","查","牙","牙刷","刷","有用","别的","有关"]],[17,"谁笑到最后谁笑得最好",["请假","一共","邻居","后来","爱好","办法","饱","为了","决定","选择","冬天","冬","必须","根据","情况","渴","放假","放学","喜爱","住院","出院","病人","跳"]],[18,"我相信你们会做得更好",["向","万","嘴","动物","段","不但","而且","有名","同意","相信","关于","机会","国家","种","特点","奇怪","地","养","鸡","牛","羊","可","不同"]],[19,"你没看出来吗",["耳朵","脸","短","马","张","位","蓝","秋天","秋","过","鸟","哭","黄河","船","经过","变","变成","海","河"]],[20,"如果遇到危险",["照相机","被","难过","东","信用卡","关心","只有","才","成绩","碗","分","解决","试","真正","多么","相机","拍照","照相","银行卡","卡","感到","只能","只是","怎么办","怎样"]]],"dic":{"周末":["zhōu mò","fin de semana"],"打算":["dǎ suàn","pensar (hacer), planear"],"啊":["a","partícula exclamativa (¡ah!)"],"跟":["gēn","con"],"一直":["yì zhí","todo recto; siempre, todo el tiempo"],"游戏":["yóu xì","juego"],"作业":["zuò yè","deberes, tarea"],"着急":["zháo jí","preocupado/a, impaciente"],"复习":["fù xí","repasar"],"南方":["nán fāng","el sur"],"南":["nán","sur"],"北方":["běi fāng","el norte"],"面包":["miàn bāo","pan"],"带":["dài","traer, llevar"],"地图":["dì tú","mapa"],"搬":["bān","mudar(se); trasladar"],"工作日":["gōng zuò rì","día laborable"],"兴趣":["xìng qù","interés"],"初中":["chū zhōng","educación secundaria (primer ciclo)"],"北":["běi","norte"],"东南":["dōng nán","sureste"],"东北":["dōng běi","noreste"],"东方":["dōng fāng","el este; Oriente"],"西方":["xī fāng","el oeste; Occidente"],"西北":["xī běi","noroeste"],"西南":["xī nán","suroeste"],"搬家":["bān jiā","mudarse de casa"],"一块儿":["yí kuài r","juntos"],"园":["yuán","jardín, parque"],"腿":["tuǐ","pierna"],"疼":["téng","doler"],"脚":["jiǎo","pie"],"树":["shù","árbol"],"容易":["róng yì","fácil"],"难":["nán","difícil"],"太太":["tài tai","señora, esposa"],"秘书":["mì shū","secretario/a"],"经理":["jīng lǐ","director/a, gerente"],"办公室":["bàn gōng shì","oficina"],"辆":["liàng","clasificador de vehículos"],"楼":["lóu","edificio; piso"],"拿":["ná","coger, llevar en la mano"],"把":["bǎ","(partícula 把)"],"伞":["sǎn","paraguas"],"胖":["pàng","gordo/a"],"其实":["qí shí","en realidad"],"瘦":["shòu","delgado/a"],"不行":["bù xíng","no vale, no puede ser"],"刚刚":["gāng gāng","hace un momento"],"难题":["nán tí","problema difícil"],"办":["bàn","hacer, gestionar"],"急":["jí","impaciente, nervioso/a"],"员":["yuán","persona (sufijo: 服务员)"],"得到":["dé dào","conseguir, obtener"],"楼梯":["lóu tī","escalera"],"难看":["nán kàn","feo/a"],"难听":["nán tīng","desagradable (al oído)"],"还是":["hái shi","o (en preguntas)"],"爬山":["pá shān","subir montañas, hacer senderismo"],"小心":["xiǎo xīn","cuidadoso/a; ¡cuidado!"],"条":["tiáo","clasificador de objetos largos (faldas, pantalones, calles)"],"裤子":["kù zi","pantalones"],"记得":["jì de","recordar"],"衬衫":["chèn shān","camisa"],"元":["yuán","yuan"],"新鲜":["xīn xiān","fresco/a"],"甜":["tián","dulce"],"只":["zhī","clasificador de animales"],"放":["fàng","poner, dejar"],"饮料":["yǐn liào","bebida"],"或者":["huò zhě","o (en afirmaciones)"],"舒服":["shū fu","cómodo/a, a gusto"],"花":["huā","flor; gastar"],"绿":["lǜ","verde"],"山":["shān","montaña"],"爬":["pá","trepar, subir"],"雨衣":["yǔ yī","chubasquero"],"花园":["huā yuán","jardín"],"大衣":["dà yī","abrigo"],"上衣":["shàng yī","prenda de arriba, chaqueta"],"短裤":["duǎn kù","pantalón corto"],"鞋":["xié","zapatos"],"大小":["dà xiǎo","tamaño, talla"],"记":["jì","recordar; apuntar"],"子":["zi","sufijo nominal (桌子, 椅子)"],"或":["huò","o"],"黄色":["huáng sè","amarillo"],"比赛":["bǐ sài","competición, partido"],"照片":["zhào piàn","fotografía"],"年级":["nián jí","curso (escolar)"],"又":["yòu","otra vez, además"],"聪明":["cōng míng","inteligente"],"热情":["rè qíng","amable, acogedor/a"],"努力":["nǔ lì","esforzarse"],"总是":["zǒng shì","siempre"],"回答":["huí dá","responder"],"站":["zhàn","estación, parada; estar de pie"],"饿":["è","tener hambre"],"超市":["chāo shì","supermercado"],"蛋糕":["dàn gāo","pastel, tarta"],"年轻":["nián qīng","joven"],"认真":["rèn zhēn","serio/a, responsable"],"客人":["kè rén","invitado/a, cliente"],"得分":["dé fēn","marcar (puntos)"],"男生":["nán shēng","chico, alumno"],"女生":["nǚ shēng","chica, alumna"],"男人":["nán rén","hombre"],"女人":["nǚ rén","mujer"],"运动员":["yùn dòng yuán","deportista"],"球场":["qiú chǎng","campo, cancha"],"体育馆":["tǐ yù guǎn","pabellón deportivo"],"运动会":["yùn dòng huì","competición deportiva"],"听说":["tīng shuō","oír decir"],"名人":["míng rén","persona famosa"],"发烧":["fā shāo","tener fiebre"],"为":["wèi","para, por"],"照顾":["zhào gù","cuidar"],"用":["yòng","usar"],"感冒":["gǎn mào","resfriado; resfriarse"],"季节":["jì jié","estación (del año)"],"当然":["dāng rán","por supuesto"],"春天":["chūn tiān","primavera"],"春":["chūn","primavera"],"草":["cǎo","hierba"],"夏天":["xià tiān","verano"],"夏":["xià","verano"],"裙子":["qún zi","falda"],"最近":["zuì jìn","últimamente"],"越":["yuè","cuanto más… más…"],"四季":["sì jì","las cuatro estaciones"],"季":["jì","estación (del año)"],"草地":["cǎo dì","césped, prado"],"开花":["kāi huā","florecer"],"眼镜":["yǎn jìng","gafas"],"突然":["tū rán","de repente"],"离开":["lí kāi","marcharse, salir de"],"清楚":["qīng chu","claro/a"],"刚才":["gāng cái","hace un momento"],"帮忙":["bāng máng","echar una mano"],"特别":["tè bié","especialmente"],"讲":["jiǎng","explicar, contar"],"明白":["míng bai","entender"],"锻炼":["duàn liàn","hacer ejercicio"],"音乐":["yīn yuè","música"],"公园":["gōng yuán","parque"],"聊天儿":["liáo tiān r","charlar"],"睡着":["shuì zháo","quedarse dormido/a"],"更":["gèng","más, aún más"],"耳机":["ěr jī","auriculares"],"不见":["bú jiàn","no aparecer, perderse"],"纸":["zhǐ","papel"],"聊":["liáo","charlar"],"半天":["bàn tiān","mucho rato; medio día"],"总":["zǒng","siempre"],"看来":["kàn lái","parece que"],"不用":["bú yòng","no hace falta"],"同事":["tóng shì","compañero/a de trabajo"],"以前":["yǐ qián","antes"],"银行":["yín háng","banco"],"久":["jiǔ","mucho tiempo"],"感兴趣":["gǎn xìng qù","interesarse"],"结婚":["jié hūn","casarse"],"欢迎":["huān yíng","bienvenido"],"迟到":["chí dào","llegar tarde"],"半":["bàn","media, mitad"],"接":["jiē","recoger, ir a buscar (a alguien)"],"刻":["kè","cuarto (de hora)"],"差":["chà","faltar (差五分 menos cinco)"],"后天":["hòu tiān","pasado mañana"],"后年":["hòu nián","dentro de dos años"],"前天":["qián tiān","anteayer"],"前年":["qián nián","hace dos años"],"以后":["yǐ hòu","después"],"以外":["yǐ wài","aparte de"],"以上":["yǐ shàng","más de"],"以下":["yǐ xià","por debajo de"],"休假":["xiū jià","estar de vacaciones"],"假期":["jià qī","vacaciones"],"夫妻":["fū qī","matrimonio, marido y mujer"],"爱人":["ài rén","esposo/a, pareja"],"不久":["bù jiǔ","poco después"],"好久":["hǎo jiǔ","mucho tiempo"],"好多":["hǎo duō","muchos/as"],"满意":["mǎn yì","satisfecho/a"],"电梯":["diàn tī","ascensor"],"层":["céng","piso, planta"],"害怕":["hài pà","tener miedo"],"熊猫":["xióng māo","oso panda"],"见面":["jiàn miàn","verse, quedar con alguien"],"安静":["ān jìng","tranquilo/a"],"可乐":["kě lè","refresco de cola"],"一会儿":["yí huì r","un rato"],"马上":["mǎ shàng","enseguida"],"洗手间":["xǐ shǒu jiān","baño, aseo"],"老":["lǎo","viejo/a, mayor"],"几乎":["jī hū","casi"],"变化":["biàn huà","cambio; cambiar"],"健康":["jiàn kāng","sano; salud"],"重要":["zhòng yào","importante"],"小区":["xiǎo qū","urbanización, barrio residencial"],"房子":["fáng zi","casa, piso"],"屋子":["wū zi","habitación"],"室":["shì","sala, cuarto"],"怕":["pà","tener miedo"],"大熊猫":["dà xióng māo","oso panda"],"动物园":["dòng wù yuán","zoo"],"面前":["miàn qián","delante de"],"身边":["shēn biān","al lado, cerca"],"老人":["lǎo rén","persona mayor"],"中文":["zhōng wén","chino (lengua)"],"班":["bān","clasificador de vuelos y trenes regulares"],"一样":["yí yàng","igual"],"最后":["zuì hòu","al final"],"放心":["fàng xīn","estar tranquilo/a"],"一定":["yí dìng","seguro, sin falta"],"担心":["dān xīn","preocuparse"],"比较":["bǐ jiào","bastante, relativamente"],"了解":["liǎo jiě","conocer, informarse"],"先":["xiān","primero"],"中间":["zhōng jiān","en medio"],"参加":["cān jiā","participar, asistir"],"影响":["yǐng xiǎng","afectar; influencia"],"班级":["bān jí","clase, grupo"],"课本":["kè běn","libro de texto"],"课文":["kè wén","texto (de la lección)"],"笔记":["bǐ jì","apuntes"],"练":["liàn","practicar"],"外语":["wài yǔ","lengua extranjera"],"懂得":["dǒng de","comprender, saber"],"中":["zhōng","en medio; dentro"],"加":["jiā","sumar, añadir"],"个子":["gè zi","estatura"],"矮":["ǎi","bajo/a (de estatura)"],"历史":["lì shǐ","historia"],"体育":["tǐ yù","educación física, deporte"],"数学":["shù xué","matemáticas"],"方便":["fāng biàn","práctico, cómodo"],"自行车":["zì xíng chē","bicicleta"],"骑":["qí","montar, ir en (bicicleta, moto, caballo)"],"旧":["jiù","viejo/a, usado/a"],"换":["huàn","cambiar"],"地方":["dì fang","lugar, sitio"],"中介":["zhōng jiè","agencia (inmobiliaria)"],"主要":["zhǔ yào","principal"],"环境":["huán jìng","entorno, ambiente"],"附近":["fù jìn","cerca, alrededores"],"身高":["shēn gāo","estatura"],"直到":["zhí dào","hasta"],"受":["shòu","sufrir, recibir"],"方便面":["fāng biàn miàn","fideos instantáneos"],"汽车":["qì chē","coche"],"高铁":["gāo tiě","tren de alta velocidad"],"红绿灯":["hóng lǜ dēng","semáforo"],"街":["jiē","calle"],"马路":["mǎ lù","calle, carretera"],"路边":["lù biān","borde del camino"],"路口":["lù kǒu","cruce"],"图书馆":["tú shū guǎn","biblioteca"],"借":["jiè","pedir prestado, prestar"],"词典":["cí diǎn","diccionario"],"还":["huán","devolver"],"灯":["dēng","luz, lámpara"],"会议":["huì yì","reunión"],"结束":["jié shù","terminar"],"忘记":["wàng jì","olvidar"],"空调":["kōng tiáo","aire acondicionado"],"关":["guān","cerrar; apagar"],"地铁":["dì tiě","metro"],"双":["shuāng","par (clasificador)"],"筷子":["kuài zi","palillos"],"啤酒":["pí jiǔ","cerveza"],"口":["kǒu","boca; clasificador (trago, bocado)"],"瓶子":["píng zi","botella"],"笔记本":["bǐ jì běn","cuaderno; ordenador portátil"],"电子邮件":["diàn zǐ yóu jiàn","correo electrónico (mensaje)"],"习惯":["xí guàn","costumbre; acostumbrarse"],"电子书":["diàn zǐ shū","libro electrónico"],"字典":["zì diǎn","diccionario (de caracteres)"],"会":["huì","reunión; saber, poder"],"洗衣机":["xǐ yī jī","lavadora"],"酒":["jiǔ","alcohol, vino"],"收到":["shōu dào","recibir"],"电":["diàn","electricidad"],"封":["fēng","clasificador de cartas"],"信":["xìn","carta"],"邮件":["yóu jiàn","correo, mensaje"],"邮箱":["yóu xiāng","buzón; correo electrónico (cuenta)"],"开机":["kāi jī","encender (aparato)"],"关机":["guān jī","apagar (aparato)"],"太阳":["tài yáng","sol"],"西":["xī","oeste"],"生气":["shēng qì","enfadado/a"],"行李箱":["xíng li xiāng","maleta"],"自己":["zì jǐ","uno/a mismo/a"],"包":["bāo","envolver (jiaozi)"],"发现":["fā xiàn","descubrir"],"护照":["hù zhào","pasaporte"],"起飞":["qǐ fēi","despegar"],"司机":["sī jī","conductor/a"],"教":["jiāo","enseñar"],"画":["huà","cuadro, pintura"],"需要":["xū yào","necesitar"],"黑板":["hēi bǎn","pizarra"],"外地":["wài dì","otra ciudad, fuera"],"行李":["xíng li","equipaje"],"箱子":["xiāng zi","caja, maleta"],"游客":["yóu kè","turista"],"检票":["jiǎn piào","pasar el control de billetes"],"晚点":["wǎn diǎn","ir con retraso"],"画家":["huà jiā","pintor/a"],"终于":["zhōng yú","por fin"],"爷爷":["yé ye","abuelo (paterno)"],"礼物":["lǐ wù","regalo"],"奶奶":["nǎi nai","abuela (paterna)"],"遇到":["yù dào","encontrarse con"],"一边":["yì biān","mientras"],"过去":["guò qu","pasar (hacia allí); el pasado"],"一般":["yì bān","normalmente; normal"],"愿意":["yuàn yì","querer, estar dispuesto/a"],"起来":["qǐ lai","levantarse"],"应该":["yīng gāi","deber"],"生活":["shēng huó","vida; vivir"],"校长":["xiào zhǎng","director/a (de escuela)"],"坏":["huài","malo/a; estropeado/a"],"经常":["jīng cháng","a menudo"],"大人":["dà rén","adulto/a"],"分开":["fēn kāi","separar(se)"],"遇见":["yù jiàn","encontrarse con"],"认得":["rèn de","reconocer, conocer"],"起":["qǐ","levantarse"],"开会":["kāi huì","tener una reunión"],"该":["gāi","deber"],"常":["cháng","a menudo"],"常常":["cháng cháng","a menudo"],"常见":["cháng jiàn","frecuente, común"],"常用":["cháng yòng","de uso frecuente"],"心里":["xīn lǐ","en el corazón, por dentro"],"打扫":["dǎ sǎo","limpiar"],"干净":["gān jìng","limpio/a"],"然后":["rán hòu","después, luego"],"冰箱":["bīng xiāng","nevera"],"洗澡":["xǐ zǎo","ducharse, bañarse"],"节目":["jié mù","programa"],"月亮":["yuè liang","luna"],"像":["xiàng","parecerse a"],"盘子":["pán zi","plato"],"刮风":["guā fēng","hacer viento"],"叔叔":["shū shu","tío"],"阿姨":["ā yí","tía"],"故事":["gù shi","cuento, historia"],"声音":["shēng yīn","voz, sonido"],"菜单":["cài dān","menú, carta"],"简单":["jiǎn dān","sencillo/a"],"香蕉":["xiāng jiāo","plátano"],"服务":["fú wù","servicio; servir"],"冰":["bīng","hielo"],"冰激凌":["bīng jī líng","helado"],"扫":["sǎo","barrer"],"做客":["zuò kè","ir de visita"],"声":["shēng","sonido, voz"],"刮":["guā","soplar (el viento)"],"风":["fēng","viento"],"姐妹":["jiě mèi","hermanas"],"外卖":["wài mài","comida a domicilio"],"请客":["qǐng kè","invitar (pagar)"],"名单":["míng dān","lista de nombres"],"留学":["liú xué","estudiar en el extranjero"],"水平":["shuǐ píng","nivel"],"提高":["tí gāo","mejorar"],"练习":["liàn xí","practicar; ejercicio"],"完成":["wán chéng","terminar, completar"],"句子":["jù zi","frase"],"其他":["qí tā","otro/a, otros/as"],"发":["fā","enviar"],"要求":["yāo qiú","pedir, exigir; requisito"],"注意":["zhù yì","prestar atención"],"上网":["shàng wǎng","conectarse a internet"],"除了":["chú le","además de, excepto"],"新闻":["xīn wén","noticias"],"极了":["jí le","muchísimo"],"节日":["jié rì","fiesta, festividad"],"举行":["jǔ xíng","celebrar (un acto)"],"世界":["shì jiè","mundo"],"街道":["jiē dào","calle"],"各":["gè","cada"],"文化":["wén huà","cultura"],"留学生":["liú xué shēng","estudiante extranjero/a"],"校园":["xiào yuán","campus"],"句":["jù","frase (clasificador)"],"选":["xuǎn","elegir"],"关注":["guān zhù","prestar atención"],"过节":["guò jié","celebrar una fiesta"],"新年":["xīn nián","Año Nuevo"],"晚会":["wǎn huì","velada, fiesta"],"城市":["chéng shì","ciudad"],"如果":["rú guǒ","si (condicional)"],"认为":["rèn wéi","creer, opinar"],"皮球":["pí qiú","pelota"],"帽子":["mào zi","gorro, sombrero"],"长":["zhǎng","crecer; tener (un aspecto)"],"可爱":["kě ài","mono/a, adorable"],"米":["mǐ","metro; arroz"],"公斤":["gōng jīn","kilo"],"鼻子":["bí zi","nariz"],"头发":["tóu fa","pelo, cabello"],"检查":["jiǎn chá","examinar, revisar"],"刷牙":["shuā yá","lavarse los dientes"],"关系":["guān xi","relación"],"别人":["bié rén","los demás, otra persona"],"词语":["cí yǔ","palabras, expresiones"],"的话":["de huà","si (…的话)"],"市":["shì","ciudad"],"斤":["jīn","jin (medio kilo)"],"查":["chá","buscar, consultar"],"牙":["yá","diente"],"牙刷":["yá shuā","cepillo de dientes"],"刷":["shuā","cepillar"],"有用":["yǒu yòng","útil"],"别的":["bié de","otro/a"],"有关":["yǒu guān","relacionado con"],"请假":["qǐng jià","pedir permiso (ausencia)"],"一共":["yí gòng","en total"],"邻居":["lín jū","vecino/a"],"后来":["hòu lái","después, más tarde"],"爱好":["ài hào","afición"],"办法":["bàn fǎ","manera, solución"],"饱":["bǎo","lleno/a (de comer)"],"为了":["wèi le","para"],"决定":["jué dìng","decidir"],"选择":["xuǎn zé","elegir"],"冬天":["dōng tiān","invierno"],"冬":["dōng","invierno"],"必须":["bì xū","tener que, deber"],"根据":["gēn jù","según"],"情况":["qíng kuàng","situación"],"渴":["kě","tener sed"],"放假":["fàng jià","tener vacaciones"],"放学":["fàng xué","salir de clase"],"喜爱":["xǐ ài","gustar mucho"],"住院":["zhù yuàn","estar ingresado/a"],"出院":["chū yuàn","salir del hospital"],"病人":["bìng rén","enfermo/a, paciente"],"跳":["tiào","saltar"],"向":["xiàng","hacia"],"万":["wàn","diez mil"],"嘴":["zuǐ","boca"],"动物":["dòng wù","animal"],"段":["duàn","clasificador (período, tramo)"],"不但":["bú dàn","no solo (不但…而且…)"],"而且":["ér qiě","además"],"有名":["yǒu míng","famoso/a"],"同意":["tóng yì","estar de acuerdo"],"相信":["xiāng xìn","creer, confiar"],"关于":["guān yú","sobre, acerca de"],"机会":["jī huì","oportunidad"],"国家":["guó jiā","país"],"种":["zhǒng","tipo, clase"],"特点":["tè diǎn","característica"],"奇怪":["qí guài","extraño/a"],"地":["de","partícula adverbial (地)"],"养":["yǎng","criar, tener (mascota)"],"鸡":["jī","pollo, gallina"],"牛":["niú","vaca, buey"],"羊":["yáng","oveja"],"可":["kě","pero; poder"],"不同":["bù tóng","diferente"],"耳朵":["ěr duo","oreja"],"脸":["liǎn","cara"],"短":["duǎn","corto/a"],"马":["mǎ","caballo"],"张":["zhāng","clasificador (papel, fotos)"],"位":["wèi","clasificador (personas, cortés)"],"蓝":["lán","azul"],"秋天":["qiū tiān","otoño"],"秋":["qiū","otoño"],"过":["guò","pasar, cruzar"],"鸟":["niǎo","pájaro"],"哭":["kū","llorar"],"黄河":["huáng hé","río Amarillo"],"船":["chuán","barco"],"经过":["jīng guò","pasar por"],"变":["biàn","cambiar"],"变成":["biàn chéng","convertirse en"],"海":["hǎi","mar"],"河":["hé","río"],"照相机":["zhào xiàng jī","cámara de fotos"],"被":["bèi","partícula de pasiva (por)"],"难过":["nán guò","triste"],"东":["dōng","este"],"信用卡":["xìn yòng kǎ","tarjeta de crédito"],"关心":["guān xīn","preocuparse por"],"只有":["zhǐ yǒu","solo (只有…才…)"],"才":["cái","no… hasta…"],"成绩":["chéng jì","notas, resultados"],"碗":["wǎn","cuenco"],"分":["fēn","minuto"],"解决":["jiě jué","resolver"],"试":["shì","probar(se)"],"真正":["zhēn zhèng","verdadero/a"],"多么":["duō me","¡qué…!"],"相机":["xiàng jī","cámara de fotos"],"拍照":["pāi zhào","hacer fotos"],"照相":["zhào xiàng","hacer una foto"],"银行卡":["yín háng kǎ","tarjeta bancaria"],"卡":["kǎ","tarjeta"],"感到":["gǎn dào","sentir"],"只能":["zhǐ néng","solo poder"],"只是":["zhǐ shì","solo, simplemente"],"怎么办":["zěn me bàn","¿qué hacer?"],"怎样":["zěn yàng","¿cómo?"]}}],"chars":{"育":["yù","criar, educar"],"心":["xīn","corazón"],"汉":["hàn","han (chino)"],"响":["xiǎng","sonar; ruido"],"方":["fāng","cuadrado; lado, dirección"],"干":["gān","seco/a"],"般":["bān","tipo, manera"],"姐":["jiě","hermana mayor"],"法":["fǎ","ley; método"],"活":["huó","vivir; vivo/a"],"努":["nǔ","esforzarse"],"平":["píng","plano/a, llano/a"],"报":["bào","periódico; informar"],"共":["gòng","común; en total"],"其":["qí","su, sus; ese"],"化":["huà","cambiar, transformar"],"轻":["qīng","ligero/a"],"刚":["gāng","justo, hace poco"],"于":["yú","en, a (preposición)"],"闻":["wén","oír; noticia"],"参":["cān","participar"],"典":["diǎn","obra clásica; norma"],"耳":["ěr","oreja"],"收":["shōu","recibir"],"汽":["qì","vapor"],"午":["wǔ","mediodía"],"假":["jià","vacaciones"],"爸":["bà","papá"],"成":["chéng","convertirse en; lograr"],"实":["shí","real, verdadero/a"],"助":["zhù","ayudar"],"现":["xiàn","ahora; aparecer"],"瓶":["píng","botella"],"应":["yīng","deber"],"以":["yǐ","con, por medio de"],"同":["tóng","igual; juntos"],"作":["zuò","hacer; obra"],"且":["qiě","además"],"区":["qū","zona, distrito"],"者":["zhě","persona que… (sufijo)"],"礼":["lǐ","cortesía; regalo"],"生":["shēng","nacer; vida"],"片":["piàn","trozo; clasificador de cosas planas"],"今":["jīn","hoy, actual"],"工":["gōng","trabajo; obrero/a"],"儿":["ér","hijo; niño/a"],"主":["zhǔ","principal; dueño/a"],"空":["kōng","vacío/a; aire"],"故":["gù","antiguo/a; causa"],"阳":["yáng","sol"],"除":["chú","quitar; excepto"],"复":["fù","repetir"],"护":["hù","proteger"],"而":["ér","y, pero"],"图":["tú","dibujo, mapa"],"城":["chéng","ciudad"],"文":["wén","escritura; lengua"],"瓜":["guā","melón, calabaza"],"李":["lǐ","ciruela; Li (apellido)"],"香":["xiāng","aromático/a, rico/a"],"重":["zhòng","pesado/a; importante"],"举":["jǔ","levantar"],"音":["yīn","sonido"],"力":["lì","fuerza"],"哥":["gē","hermano mayor"],"单":["dān","solo, sencillo; lista"],"节":["jié","fiesta; sección"],"级":["jí","nivel, grado"],"必":["bì","necesariamente"],"净":["jìng","limpio/a"],"妈":["mā","mamá"],"须":["xū","deber, necesitar"],"目":["mù","ojo"],"直":["zhí","recto/a"],"么":["me","sufijo (什么, 怎么)"],"安":["ān","tranquilo/a, seguro/a"],"语":["yǔ","lengua, idioma"],"相":["xiāng","mutuamente"],"答":["dá","responder"],"行":["xíng","ir; vale, de acuerdo"],"物":["wù","cosa, objeto"],"习":["xí","practicar"],"求":["qiú","pedir"],"务":["wù","tarea, asunto"],"板":["bǎn","tabla, plancha"],"饮":["yǐn","beber"],"当":["dāng","cuando; ser, actuar como"],"什":["shén","(en 什么) qué"],"况":["kuàng","situación"],"特":["tè","especial"],"如":["rú","como; si"],"调":["tiáo","ajustar"],"定":["dìng","fijar, decidir"],"结":["jié","atar; terminar"],"业":["yè","trabajo, oficio"]},"hw":"爱八爸百半比边不茶打大地的点对多儿二分哥个工口国过还汉好和很后会几家间叫姐今男九可来了两六妈吗么没们名那你年七去人日三少上什生十时是书说四岁他她天同为文我五午习下小现写学要也一以有语月在长这中子女字作安把般板办饱报北被必变冰才参草层查差成城除处春答带单当灯典调定丢冬段而耳发法方放风复该干刚更共故瓜海合河护化换活或级急加假讲角饺节结借斤净久句卡渴刻空哭礼李力练凉马毛目南难努怕胖片平瓶其汽且轻秋求区全如伞山勺声实适收受树特挺图闻务物夏相香响向心信行须选牙言羊阳养业页音饮应用又于育咱张者直纸种重主助总巴保抱背标并部餐产厂晨程吹此村达刀导倒低掉度断队烦反份否父改敢各够挂观管广喊忽虎划基及计技际济寄建江将金京究举科克况困拉利例俩连联量另流论麻美民内农弄排牌篇品普强青取确任扔入社深省食使示式输熟术顺随台态谈汤堂讨套庭停通痛土推味温无误线象性兄许血压亚研验夜印永由油与原约云增章之支止指至志众专转装资组座","hwl":"2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444"};
+const $=id=>document.getElementById(id);
+const RAD={}; const RADFORM={'竹':'⺮','足':'⻊'};
+for(let i=0;i<DATA.rad.length;i+=2){ const c=DATA.rad[i], r=DATA.rad[i+1]; RAD[c]=(RADFORM[r]&&c!==r)?RADFORM[r]:r; }
+const DIC={};
+const EJEMPLO=DATA.books[0].lessons[0][2].join(' ');
+try{ $('hanzi').value=localStorage.getItem('hskfichas_hanzi')||EJEMPLO; const t=localStorage.getItem('hskfichas_titulo'); if(t) $('titulo').value=t; }catch(e){ $('hanzi').value=EJEMPLO; }
+
+/* ---------- books and lessons (new HSK) ---------- */
+const BOOKS=DATA.books;
+const HWLEV={}; [...DATA.hw].forEach((c,i)=>{ HWLEV[c]=+DATA.hwl[i]; });
+const ALLDIC={}; BOOKS.forEach(b=>Object.assign(ALLDIC,b.dic));
+function book(){ return BOOKS.find(b=>b.id===$('libro').value)||BOOKS[0]; }
+function setBook(){
+  const b=book();
+  for(const k in DIC) delete DIC[k];
+  // single characters: official list meanings, then any book, then this book (with its lesson label)
+  for(const [c,v] of Object.entries(DATA.chars)) DIC[c]=[v[0],v[1],'HSK'];
+  for(const [w,v] of Object.entries(ALLDIC)) if([...w].length===1) DIC[w]=[v[0],v[1],'HSK'];
+  b.lessons.forEach(([n,t,ws])=>ws.forEach(w=>{ const v=b.dic[w]; if(v) DIC[w]=[v[0],v[1],'L'+n]; }));
+  const sel=$('unidad'); sel.innerHTML='<option value="">— Escribo yo los caracteres —</option>';
+  b.lessons.forEach(([n,t,ws])=>{ const o=document.createElement('option'); o.value=n; o.textContent='Lección '+n+' · '+t+' ('+ws.length+' palabras)'; sel.appendChild(o); });
+  rows=[];
+}
+// characters to write in a lesson: on the official handwriting list up to the book's level, first time they appear in the book
+function hwChars(b,n){
+  const seen=new Set(), out=[];
+  for(const [m,t,ws] of b.lessons){
+    for(const w of ws) for(const c of w){
+      if(seen.has(c)) continue; seen.add(c);
+      if(m===n && HWLEV[c] && HWLEV[c]<=b.hw) out.push(c);
+    }
+    if(m===n) break;
+  }
+  return out;
+}
+(function fillBooks(){
+  const sel=document.getElementById('libro');
+  BOOKS.forEach(b=>{ const o=document.createElement('option'); o.value=b.id; o.textContent=b.name; sel.appendChild(o); });
+  try{ const v=localStorage.getItem('hskfichas_libro'); if(v && BOOKS.some(b=>b.id===v)) sel.value=v; }catch(e){}
+})();
+const isHan=c=>/[㐀-鿿⺀-⿟豈-﫿]/.test(c);
+
+/* ---------- stroke data (Make Me a Hanzi via hanzi-writer-data, loaded as ES modules) ---------- */
+const cache={};
+async function strokes(ch){
+  if(cache[ch]) return cache[ch];
+  const url='https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/'+encodeURIComponent(ch)+'.json/+esm';
+  const m=await import(url); const d=m.default||m;
+  cache[ch]={paths:d.strokes.map(p=>new Path2D(p)),med:d.medians};
+  return cache[ch];
+}
+
+/* ---------- words and their data ---------- */
+let rows=[];            // {w, chars, py, es, rads, src}
+const aiES={};          // translations proposed by Claude, kept for the session
+
+function tokens(){
+  const txt=$('hanzi').value;
+  let list;
+  if(document.querySelector('input[name=modo]:checked').value==='car') list=[...txt].filter(isHan);
+  else list=txt.split(/[\s,，、;；。.·]+/).map(t=>[...t].filter(isHan).join('')).filter(Boolean);
+  return [...new Set(list)];
+}
+function autoPinyin(w){
+  try{ return window.pinyinPro.pinyin(w,{type:'array'}).join(' '); }catch(e){ return ''; }
+}
+function buildRows(){
+  const old=Object.fromEntries(rows.map(r=>[r.w,r]));
+  rows=tokens().map(w=>{
+    if(old[w]) return old[w];
+    const d=DIC[w];
+    const r={w,chars:[...w],rads:[...w].map(c=>RAD[c]||'')};
+    if(d){ r.py=d[0]; r.es=d[1]; r.src=d[2]; }
+    else { r.py=autoPinyin(w); r.es=aiES[w]||''; r.src=aiES[w]?'Claude':''; }
+    return r;
+  });
+}
+function srcChip(r){
+  if(r.src==='Claude') return '<span class="chip ai">Claude</span>';
+  if(r.src) return '<span class="chip">'+r.src+'</span>';
+  return r.es?'<span class="chip">tú</span>':'<span class="chip none">sin traducir</span>';
+}
+function esc(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function drawTable(){
+  $('datos').hidden=!rows.length;
+  $('tbody').innerHTML=rows.map((r,i)=>`<tr><td class="w">${esc(r.w)}</td>
+    <td><input type="text" id="py${i}" data-i="${i}" data-k="py" value="${esc(r.py)}" aria-label="Pinyin de ${esc(r.w)}"></td>
+    <td><input type="text" id="es${i}" data-i="${i}" data-k="es" value="${esc(r.es)}" aria-label="Significado de ${esc(r.w)}"></td>
+    <td class="rad">${r.rads.map(x=>esc(x||'—')).join(' ')}</td><td id="src${i}">${srcChip(r)}</td></tr>`).join('');
+}
+let timer=null;
+$('tbody').addEventListener('input',e=>{
+  const t=e.target; if(!t.dataset.k) return;
+  const r=rows[+t.dataset.i]; r[t.dataset.k]=t.value;
+  if(t.dataset.k==='es' && !DIC[r.w]){ r.src=''; $('src'+t.dataset.i).innerHTML=srcChip(r); }
+  clearTimeout(timer); timer=setTimeout(()=>render(),600);
+});
+
+/* ---------- Spanish meanings from Claude for words not in the book lists ---------- */
+let sample=null;
+(async()=>{ try{ sample=await window.claude?.use?.('sample'); }catch(e){} })();
+async function translateMissing(){
+  const miss=rows.filter(r=>!r.es);
+  if(!miss.length || !sample) return miss.length;
+  setStatus('Pidiendo a Claude la traducción de '+miss.length+(miss.length>1?' palabras…':' palabra…'));
+  const list=miss.map(r=>`${r.w} (${r.py})`).join('\n');
+  const prompt=`Eres profesor de chino mandarín para adultos en España. Da la traducción al español de España de cada palabra china de la lista (chino estándar, caracteres simplificados). Traducción breve de glosario, de 1 a 6 palabras; si tiene dos acepciones muy frecuentes, sepáralas con coma. Indica la categoría solo si hace falta para entenderla (por ejemplo «partícula interrogativa», «clasificador de libros»). Para un carácter suelto, da su significado más habitual como palabra.\nResponde SOLO con un objeto JSON {"palabra": "traducción"} sin nada más.\n\nPalabras:\n${list}`;
+  try{
+    const res=await sample.json(prompt,{modelTier:'default'});
+    miss.forEach(r=>{ const t=res&&res[r.w]; if(typeof t==='string'&&t.trim()){ r.es=t.trim(); r.src='Claude'; aiES[r.w]=r.es; } });
+  }catch(e){
+    const msg={not_granted:'No se ha permitido usar Claude: escribe tú las traducciones en la tabla.',rate_limited:'Claude está ocupado ahora. Escribe las traducciones o vuelve a pulsar «Crear ficha» en un momento.'}[e&&e.code];
+    setStatus(msg||'No se pudieron obtener las traducciones. Escríbelas en la tabla.',true);
+    return rows.filter(r=>!r.es).length;
+  }
+  return rows.filter(r=>!r.es).length;
+}
+
+/* ---------- drawing (units: mm, scaled) ---------- */
+const DPMM=7.5;
+const PW=210, PH=297, M=12, CW=PW-2*M;
+const COLS=12, CELL=CW/COLS, PYH=6.2;
+const GREEN='#5a9c78', GREEN_L='#a9cdb8', GREEN_BG='#eef5f0', RED='#c8372d', INK='#1d2621', PINK='#f2b8cb', MUTED='#5d6b63', FAINT='#dfe5e1';
+const BIG=25;            // stroke-direction diagram
+const SQ=10, SQGAP=1.2; // stroke-order boxes
+
+function newPage(){
+  const c=document.createElement('canvas'); c.width=Math.round(PW*DPMM); c.height=Math.round(PH*DPMM);
+  const x=c.getContext('2d'); x.scale(DPMM,DPMM); x.fillStyle='#fff'; x.fillRect(0,0,PW,PH);
+  return {c,x};
+}
+function font(x,size,weight='400',fam='"Noto Sans","Noto Sans SC",sans-serif'){ x.font=`${weight} ${size}px ${fam}`; }
+function drawHan(x,C,left,top,size,{upto=C.paths.length,red=-1,fill=INK,prev=null}={}){
+  x.save(); x.translate(left,top); const s=size/1024; x.scale(s,-s); x.translate(0,-900);
+  for(let i=0;i<upto;i++){ x.fillStyle=(i===red)?RED:(prev&&i<upto-1?prev:fill); x.fill(C.paths[i]); }
+  x.restore();
+}
+function pt(left,top,size,p){ const s=size/1024; return [left+p[0]*s, top+(900-p[1])*s]; }
+function arrow(x,C,i,left,top,size,{color='#fff',w=size*0.022}={}){
+  const pts=C.med[i].map(p=>pt(left,top,size,p)); if(pts.length<2) return;
+  x.save(); x.strokeStyle=color; x.fillStyle=color; x.lineWidth=w; x.lineCap='round'; x.lineJoin='round';
+  x.beginPath(); x.moveTo(...pts[0]); for(let k=1;k<pts.length;k++) x.lineTo(...pts[k]); x.stroke();
+  // arrowhead at the end, along the last segment
+  let a=pts[pts.length-1], b=pts[pts.length-2]; let k=pts.length-2;
+  while(Math.hypot(a[0]-b[0],a[1]-b[1])<size*0.03 && k>0){ k--; b=pts[k]; }
+  const ang=Math.atan2(a[1]-b[1],a[0]-b[0]), L=w*3.4;
+  x.beginPath(); x.moveTo(a[0]+Math.cos(ang)*w*.8,a[1]+Math.sin(ang)*w*.8);
+  x.lineTo(a[0]-Math.cos(ang-0.5)*L,a[1]-Math.sin(ang-0.5)*L); x.lineTo(a[0]-Math.cos(ang+0.5)*L,a[1]-Math.sin(ang+0.5)*L); x.closePath(); x.fill();
+  x.restore();
+}
+function tianzige(x,left,top,size,color=GREEN_L){
+  x.save(); x.strokeStyle=color; x.lineWidth=.18; x.setLineDash([.9,.9]);
+  x.beginPath(); x.moveTo(left+size/2,top); x.lineTo(left+size/2,top+size); x.moveTo(left,top+size/2); x.lineTo(left+size,top+size/2); x.stroke();
+  x.restore();
+}
+function gridRow(x,top,cells){
+  x.save(); x.strokeStyle=GREEN_L; x.lineWidth=.18; x.setLineDash([.6,.8]);
+  x.beginPath(); x.moveTo(M,top+PYH*0.36); x.lineTo(M+CW,top+PYH*0.36); x.moveTo(M,top+PYH*0.72); x.lineTo(M+CW,top+PYH*0.72); x.stroke(); x.restore();
+  for(let i=0;i<COLS;i++) tianzige(x,M+i*CELL,top+PYH,CELL);
+  x.save(); x.strokeStyle=GREEN; x.lineWidth=.3; x.strokeRect(M,top,CW,PYH+CELL);
+  x.beginPath(); x.moveTo(M,top+PYH); x.lineTo(M+CW,top+PYH);
+  for(let i=1;i<COLS;i++){ x.moveTo(M+i*CELL,top+PYH); x.lineTo(M+i*CELL,top+PYH+CELL); }
+  x.stroke(); x.restore();
+  (cells||[]).forEach((cl,i)=>{ if(!cl) return;
+    const cx=M+i*CELL;
+    if(cl.py){ font(x,3.1); x.fillStyle=cl.copy?'#a7b0ab':INK; x.textAlign='center'; x.textBaseline='alphabetic'; x.fillText(cl.py,cx+CELL/2,top+PYH*0.72-.3); }
+    const pad=CELL*0.08; drawHan(x,cl.C,cx+pad,top+PYH+pad,CELL-2*pad,{fill:cl.copy?PINK:INK});
+  });
+  return top+PYH+CELL;
+}
+const BAND=BIG+1;
+function modoCar(){ const m=document.querySelector('input[name=modo]:checked'); return !!m && m.value==='car'; }
+const EXTRA=BAND-8.9; // height of the extra writing line in «carácter a carácter»
+function extraLine(r){ return modoCar() && new Set(r.chars).size===1; }
+function blockHeight(r){ const L=new Set(r.chars).size; return 9 + L*(BAND+1.5) + (extraLine(r)?EXTRA+1.5:0) + (modoCar()?4:3.6+PYH+CELL+1.5+4); }
+function practiceStrip(x,C,left,top,width,size0,copies){
+  const n=Math.ceil(width/size0-.05), size=width/n; top+=(size0-size)/2;
+  for(let i=0;i<n;i++){
+    const cx=left+i*size;
+    x.save(); x.fillStyle='#fff'; x.fillRect(cx,top,size,size); x.restore();
+    tianzige(x,cx,top,size);
+    if(copies && i<3){ const p=size*0.08; drawHan(x,C,cx+p,top+p,size-2*p,{fill:PINK}); }
+  }
+  x.save(); x.strokeStyle=GREEN; x.lineWidth=.3; x.strokeRect(left,top,n*size,size);
+  x.beginPath(); for(let i=1;i<n;i++){ x.moveTo(left+i*size,top); x.lineTo(left+i*size,top+size); } x.stroke(); x.restore();
+}
+function drawDirection(x,C,left,top,size){
+  x.save(); x.strokeStyle=GREEN_L; x.lineWidth=.2; x.strokeRect(left,top,size,size); x.restore();
+  tianzige(x,left,top,size);
+  const pad=size*0.06, s=size-2*pad, l=left+pad, t=top+pad;
+  drawHan(x,C,l,t,s,{fill:FAINT});
+  const n=C.paths.length;
+  for(let i=0;i<n;i++) arrow(x,C,i,l,t,s,{color:RED,w:s*0.014});
+  // stroke numbers at each start point, nudged back from the stroke
+  font(x,Math.max(1.8,Math.min(2.4,s*0.085)),'600');
+  x.textAlign='center'; x.textBaseline='middle';
+  for(let i=0;i<n;i++){
+    const m=C.med[i]; const a=pt(l,t,s,m[0]), b=pt(l,t,s,m[Math.min(1,m.length-1)]);
+    let dx=a[0]-b[0], dy=a[1]-b[1]; const d=Math.hypot(dx,dy)||1; dx/=d; dy/=d;
+    const r=s*0.046; const cx=a[0]+dx*r*1.2, cy=a[1]+dy*r*1.2;
+    x.fillStyle='#fff'; x.beginPath(); x.arc(cx,cy,r,0,7); x.fill();
+    x.strokeStyle=RED; x.lineWidth=.15; x.stroke();
+    x.fillStyle=RED; x.fillText(String(i+1),cx,cy+.1);
+  }
+}
+
+async function render(){
+  const btn=$('gen'); btn.disabled=true; $('pdf').disabled=true; $('imprimir').disabled=true;
+  try{ localStorage.setItem('hskfichas_hanzi',$('hanzi').value); localStorage.setItem('hskfichas_titulo',$('titulo').value); localStorage.setItem('hskfichas_libro',$('libro').value);}catch(e){}
+  if(!rows.length){ $('pages').innerHTML='<div class="empty">Escribe caracteres y pulsa «Crear ficha».</div>'; btn.disabled=false; return; }
+  const missing=[];
+  const uniq=[...new Set(rows.flatMap(r=>r.chars))];
+  setStatus('Cargando el orden de los trazos…');
+  await Promise.all(uniq.map(ch=>strokes(ch).catch(()=>missing.push(ch))));
+  await document.fonts.ready;
+  const copies=$('rosa').checked, arrows=$('flechas').checked;
+  const pages=[]; let pg=null, y=0;
+  const title=$('titulo').value;
+  function header(){
+    pg=newPage(); pages.push(pg); const x=pg.x;
+    font(x,5.2,'600'); x.fillStyle=INK; x.textAlign='left'; x.textBaseline='alphabetic'; x.fillText(title,M,M+4);
+    font(x,3.2); x.fillStyle=MUTED;
+    x.fillText('Nombre: ______________________________     Fecha: ____ / ____ / ______',M,M+10.5);
+    x.textAlign='right'; x.fillText('Hoja '+pages.length,M+CW,M+10.5);
+    y=M+15;
+  }
+  function fillRest(){
+    while(y+PYH+CELL<=PH-M){ y=gridRow(pg.x,y,[])+1.5; }
+  }
+  header();
+  let shown=0;
+  for(const r of rows){
+    if(r.chars.some(c=>missing.includes(c))) continue;
+    shown++;
+    const h=blockHeight(r);
+    if(y+h>PH-M && y>M+16){ fillRest(); header(); }
+    const x=pg.x;
+    // word line: word drawn from stroke data (Kai style), pinyin, meaning
+    const ws=7.4; let tx=M;
+    r.chars.forEach(c=>{ drawHan(x,cache[c],tx,y,ws); tx+=ws+.3; }); tx+=2.5;
+    font(x,4,'600'); x.fillStyle=GREEN; x.textAlign='left'; x.textBaseline='alphabetic'; x.fillText(r.py,tx,y+5.4); tx+=x.measureText(r.py).width+3;
+    font(x,3.8); x.fillStyle=INK;
+    let es='· '+(r.es||'');
+    while(es.length>4 && tx+x.measureText(es).width>M+CW){ es=es.slice(0,-2)+'…'; }
+    x.fillText(es,tx,y+5.4);
+    y+=9;
+    const sy=(r.py||'').split(/\s+/).filter(Boolean);
+    // one band per character: big diagram on the left; data + stroke order on top; writing boxes below
+    r.chars.forEach((ch,k)=>{
+      if(r.chars.indexOf(ch)<k) return;
+      const C=cache[ch], n=C.paths.length;
+      x.save(); x.fillStyle=GREEN_BG; x.fillRect(M,y,CW,BAND); x.restore();
+      if(arrows) drawDirection(x,C,M+.5,y+.5,BIG);
+      else { x.save(); x.fillStyle='#fff'; x.fillRect(M+.5,y+.5,BIG,BIG); x.restore(); tianzige(x,M+.5,y+.5,BIG); drawHan(x,C,M+1.5,y+1.5,BIG-2); }
+      const ix=M+BIG+2;
+      // data line
+      font(x,2.5); x.fillStyle=MUTED; x.textAlign='left'; x.textBaseline='alphabetic';
+      x.fillText('部首',ix,y+5.2);
+      const rad=r.rads[k];
+      if(rad && cache[rad]) drawHan(x,cache[rad],ix+5.6,y+1.2,5.2);
+      else { font(x,4,'500','"Noto Serif SC","Noto Sans SC",serif'); x.fillStyle=INK; x.fillText(rad||'—',ix+5.8,y+5.6); }
+      font(x,2.5); x.fillStyle=MUTED; x.fillText('笔画',ix+12.5,y+5.2);
+      font(x,3.4,'600'); x.fillStyle=INK; x.fillText(String(n),ix+18,y+5.4);
+      font(x,3.4,'600'); x.fillStyle=GREEN; x.fillText(sy.length===r.chars.length?sy[k]:'',ix+24,y+5.4);
+      // stroke order in one line
+      const sx=ix+36, avail=M+CW-sx-.5, gap=.45;
+      const sq=Math.min(6.6,(avail+gap)/n-gap);
+      for(let i=0;i<n;i++){
+        const bx=sx+i*(sq+gap), by=y+.9;
+        x.save(); x.fillStyle='#fff'; x.fillRect(bx,by,sq,sq); x.strokeStyle=GREEN_L; x.lineWidth=.12; x.strokeRect(bx,by,sq,sq); x.restore();
+        const p=sq*0.05;
+        drawHan(x,C,bx+p,by+p,sq-2*p,{upto:i+1,red:i});
+        if(arrows) arrow(x,C,i,bx+p,by+p,sq-2*p,{color:'#7d1a12',w:(sq-2*p)*0.014});
+        font(x,1.6,'600'); x.fillStyle=MUTED; x.textAlign='left'; x.fillText(String(i+1),bx+.35,by+1.7);
+      }
+      // writing boxes: first ones in pink to trace, the rest empty
+      const top=y+.9+6.6+.9, size=y+BAND-.5-top;
+      practiceStrip(x,C,ix,top,M+CW-ix,size,copies);
+      y+=BAND+1.5;
+    });
+    // whole-word row: removed (María prefers only the sentence row under the characters)
+    if(false){
+      const cells=[]; const L=r.chars.length, fit=Math.floor(COLS/L);
+      const reps=copies?Math.max(1,Math.min(fit,Math.ceil(fit*0.5))):1;
+      for(let rep=0,pos=0;rep<reps;rep++,pos+=L) for(let k=0;k<L;k++) cells[pos+k]={C:cache[r.chars[k]],py:sy[k]||'',copy:rep>0};
+      y=gridRow(x,y,cells)+1.5;
+    }
+    // «carácter a carácter»: one more full-width line of empty boxes to write the character
+    if(extraLine(r)){
+      practiceStrip(x,cache[r.chars[0]],M,y,CW,EXTRA,false);
+      y+=EXTRA+1.5;
+    }
+    // sentence line (not in «carácter a carácter»)
+    if(modoCar()){ y+=4; continue; }
+    // a full row of boxes to write a sentence with the word
+    font(x,2.6); x.fillStyle=MUTED; x.textAlign='left'; x.textBaseline='alphabetic'; x.fillText('(haz una frase con '+r.w+')',M,y+2.6);
+    y=gridRow(x,y+3.6,[])+1.5;
+    x.save(); x.strokeStyle=GREEN; x.lineWidth=.25; x.beginPath(); x.moveTo(M,y+1.5); x.lineTo(M+CW,y+1.5); x.stroke(); x.restore();
+    y+=4;
+  }
+  fillRest();
+  const box=$('pages'); box.innerHTML='';
+  pages.forEach((p,i)=>{ const d=document.createElement('div'); d.innerHTML='<div class="pnum">Hoja '+(i+1)+' de '+pages.length+'</div>'; p.c.setAttribute('role','img'); p.c.setAttribute('aria-label','Ficha, hoja '+(i+1)); const im=new Image(); im.className='sheet'; im.src=p.c.toDataURL('image/png'); im.alt='Ficha, hoja '+(i+1); d.appendChild(im); box.appendChild(d); });
+  window._pages=pages;
+  const sin=rows.filter(r=>!r.es).length;
+  let msg=shown+(shown===1?' palabra':' palabras')+' en '+pages.length+(pages.length===1?' hoja A4.':' hojas A4.');
+  if(sin) msg+=' Falta el significado de '+sin+'; puedes escribirlo en la tabla.';
+  if(missing.length) msg='No hay datos de trazos para: '+missing.join(' ')+'. Esas palabras no salen en la ficha. '+msg;
+  setStatus(msg,!!missing.length);
+  btn.disabled=false; $('pdf').disabled=!pages.length; $('imprimir').disabled=!pages.length;
+}
+function setStatus(t,err){ const s=$('status'); s.textContent=t; s.className=err?'err':''; }
+
+async function create(){
+  $('gen').disabled=true;
+  if(!window.pinyinPro){ setStatus('No se pudo cargar el pinyin automático; escríbelo en la tabla.',true); }
+  buildRows(); drawTable();
+  if(!rows.length){ setStatus('Escribe al menos un carácter chino.',true); $('gen').disabled=false; render(); return; }
+  if(rows.some(r=>!r.es)){ await translateMissing(); drawTable(); }
+  try{ await render(); }
+  catch(e){ setStatus('No se pudo cargar el orden de los trazos. Comprueba la conexión y pulsa «Crear ficha».',true); $('gen').disabled=false; }
+}
+
+let downloads=null;
+(async()=>{ try{ downloads=await window.claude?.use?.('downloads'); }catch(e){}
+  if(window._pages) $('pdf').disabled=false; })();
+// without the download capability (e.g. public link): print the sheets; the print dialog can also save a PDF
+function printSheets(){
+  let pa=document.getElementById('printArea');
+  if(!pa){ pa=document.createElement('div'); pa.id='printArea'; document.body.appendChild(pa); }
+  pa.innerHTML='';
+  window._pages.forEach(p=>{ const im=new Image(); im.src=p.c.toDataURL('image/png'); pa.appendChild(im); });
+  setStatus('');
+  setTimeout(()=>{ try{ window.print(); }catch(e){} },150);
+}
+
+$('pdf').addEventListener('click',async()=>{
+  if(!window._pages) return;
+  $('pdf').disabled=true; setStatus('Preparando el PDF…');
+  try{
+    const {jsPDF}=window.jspdf; const doc=new jsPDF({unit:'mm',format:'a4',orientation:'portrait'});
+    window._pages.forEach((p,i)=>{ if(i) doc.addPage(); doc.addImage(p.c.toDataURL('image/jpeg',0.92),'JPEG',0,0,PW,PH); });
+    const name=($('titulo').value.replace(/[^\p{L}\p{N} ._-]+/gu,' ').replace(/\s+/g,' ').trim()||'fichas')+'.pdf';
+    if(downloads) await downloads.save({filename:name,data:doc.output('blob')});
+    else doc.save(name);
+    setStatus('PDF guardado.');
+  }catch(e){ setStatus(e&&e.code==='declined'?'Descarga cancelada.':'No se pudo guardar el PDF ('+(e&&e.code||'error')+').',e&&e.code!=='declined'); }
+  $('pdf').disabled=false;
+});
+$('gen').addEventListener('click',create);
+$('imprimir').addEventListener('click',()=>{ if(window._pages) printSheets(); });
+function loadLesson(){
+  const n=+$('unidad').value; if(!n) { $('hanzi').focus(); return; }
+  const b=book(), L=b.lessons.find(l=>l[0]===n);
+  if($('soloHW').checked){
+    const cs=hwChars(b,n);
+    $('modoCar').checked=true;
+    $('hanzi').value=cs.join(' ');
+    $('titulo').value=b.name+' · Lección '+n+' · caracteres para escribir';
+    if(!cs.length){ rows=[]; drawTable(); render(); setStatus('En esta lección no aparece ningún carácter nuevo de la lista de escritura.'); return; }
+  } else {
+    $('modoPal').checked=true;
+    $('hanzi').value=L[2].join(' ');
+    $('titulo').value=b.name+' · Lección '+n+' '+L[1];
+  }
+  create();
+}
+$('unidad').addEventListener('change',loadLesson);
+$('soloHW').addEventListener('change',()=>{ if($('unidad').value) loadLesson(); });
+$('libro').addEventListener('change',()=>{ setBook(); $('unidad').value=''; });
+$('hanzi').addEventListener('input',()=>{ $('unidad').value=''; });
+document.querySelectorAll('input[name=modo]').forEach(el=>el.addEventListener('change',()=>{ if($('hanzi').value.trim()) create(); }));
+['rosa','flechas'].forEach(id=>$(id).addEventListener('change',()=>{ if(rows.length) render(); }));
+$('titulo').addEventListener('input',()=>{ clearTimeout(timer); timer=setTimeout(()=>{ if(rows.length) render(); },600); });
+setBook();
+window.addEventListener('load',()=>{ create(); });
+</script>
+
+</body></html>

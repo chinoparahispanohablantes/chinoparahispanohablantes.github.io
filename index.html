@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chino para hispanohablantes · 中文</title>
+<meta name="description" content="Herramientas gratuitas para aprender y enseñar chino mandarín, creadas por María A. Piernavieja (孙雅颂), Departamento de Chino de la EOI de Cádiz.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chino para hispanohablantes · 中文">
+<meta property="og:description" content="Herramientas gratuitas para aprender y enseñar chino: fichas de escritura del nuevo HSK, lector de textos con pinyin y más.">
+<meta property="og:image" content="https://chinoparahispanohablantes.github.io/img/fichas-hsk.png">
+<meta property="og:url" content="https://chinoparahispanohablantes.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231F3A5F'/%3E%3Ctext x='50' y='72' font-size='62' text-anchor='middle' fill='%23E8A33D'%3E%E4%B8%AD%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root{
+  --navy:#1F3A5F; --amber:#E8A33D; --amber-soft:#FDF3E1; --amber-mid:#F7D9A3;
+  --green:#2f7a55; --bg:#FBF8F3; --surface:#fff; --fg:#1E2633; --muted:#5f6b7a; --line:#E6D9C2;
+  --zh:"KaiTi","STKaiti","Kaiti SC","FandolKai","Noto Serif SC",serif;
+  --ui:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --navy:#9DB8DE; --amber:#F0B556; --amber-soft:#2A2418; --amber-mid:#4A3B1E;
+  --green:#5cb487; --bg:#12161D; --surface:#1A2029; --fg:#E9EDF3; --muted:#9AA5B5; --line:#333C4A; color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:17px;line-height:1.55}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 16px 40px}
+header.hero{display:flex;border-radius:16px;overflow:hidden;background:#1F3A5F;color:#fff}
+.hero .tag{background:#E8A33D;color:#1F3A5F;font-family:var(--zh);font-size:64px;display:grid;place-items:center;padding:0 30px;line-height:1}
+.hero .t{padding:26px 28px;min-width:0}
+.hero h1{margin:0;font-size:clamp(26px,4vw,38px);line-height:1.15;text-wrap:balance}
+.hero h1 .zh{font-family:var(--zh);font-weight:400;color:#F7D9A3}
+.hero p{margin:10px 0 0;opacity:.9;max-width:60ch}
+@media (max-width:560px){.hero{flex-direction:column}.hero .tag{padding:14px 0;font-size:48px}}
+h2{font-size:24px;margin:36px 0 14px;display:flex;align-items:center;gap:10px}
+h2 .g{background:var(--navy);color:var(--bg);border-radius:6px;padding:0 10px;font-size:16px;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top;max-height:300px;border-bottom:1px solid var(--line);background:#fff}
+.card .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{margin:0;font-size:22px}
+.card h3 .zh{font-family:var(--zh);font-weight:400;color:var(--muted)}
+.card p{margin:0}
+.steps{margin:0;padding-left:22px;display:grid;gap:4px}
+.tip{background:var(--amber-soft);border-left:4px solid var(--amber);border-radius:6px;padding:8px 12px;font-size:15px}
+.btn{align-self:flex-start;margin-top:auto;display:inline-block;background:var(--navy);color:var(--bg);text-decoration:none;font-weight:700;border-radius:9px;padding:11px 18px}
+.btn:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.card.green .btn{background:var(--green)}
+.about{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.about p{margin:0 0 8px}
+footer{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);text-align:center;font-size:14px;color:var(--muted)}
+footer .zh{font-family:var(--zh)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="tag">中</div>
+    <div class="t">
+      <h1>Chino para hispanohablantes <span class="zh">中文</span></h1>
+      <p>Herramientas gratuitas para aprender y enseñar chino mandarín. Funcionan en el navegador, sin registrarse ni instalar nada.</p>
+    </div>
+  </header>
+
+  <h2><span class="g">1</span> Herramientas</h2>
+  <div class="grid">
+
+    <article class="card green">
+      <img src="img/fichas-hsk.png" alt="Ejemplo de ficha de escritura del carácter 汉字 con orden de trazos y casillas para practicar">
+      <div class="body">
+        <h3>Fichas de caracteres · Nuevo HSK <span class="zh">写汉字</span></h3>
+        <p>Crea fichas de escritura listas para imprimir, con el orden y la dirección de cada trazo, pinyin, significado en español, radical (部首) y número de trazos.</p>
+        <ol class="steps">
+          <li>Elige el <b>libro</b> (新HSK教程 1 o HSK标准教程 1, 2 y 3) y la <b>lección</b>.</li>
+          <li>Si quieres, marca <b>«Solo los caracteres que hay que saber escribir»</b> (lista oficial de escritura del nuevo HSK).</li>
+          <li>Elige <b>«Por palabras»</b> (con una fila para hacer una frase) o <b>«Carácter a carácter»</b>.</li>
+          <li>Pulsa <b>Descargar PDF</b> o <b>Imprimir</b>.</li>
+        </ol>
+        <p class="tip">También puedes escribir tus propios caracteres, aunque no uses estos libros, y corregir cualquier dato de la tabla antes de imprimir.</p>
+        <a class="btn" href="fichas-hsk/">Abrir las fichas →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="img/lector.png" alt="Lector de chino leyendo una frase con pinyin y la palabra resaltada">
+      <div class="body">
+        <h3>Lector de chino <span class="zh">中文朗读</span></h3>
+        <p>Pega cualquier texto en chino y escúchalo frase a frase, con pinyin sobre los caracteres y la palabra que suena resaltada.</p>
+        <ol class="steps">
+          <li>Pega o escribe el texto y pulsa <b>Preparar lectura</b>.</li>
+          <li>Elige la <b>voz</b>, la <b>velocidad</b> y la pausa entre frases.</li>
+          <li>Pulsa <b>Leer todo</b> o haz clic en una frase para oírla sola.</li>
+          <li>Para practicar dictados, activa <b>Modo dictado</b> y <b>Repetir cada frase</b>.</li>
+        </ol>
+        <p class="tip"><b>La voz que mejor suena es la de Microsoft Edge</b> (voces «Natural», como Xiaoxiao).</p>
+        <a class="btn" href="lector/">Abrir el lector →</a>
+      </div>
+    </article>
+
+  </div>
+
+  <h2><span class="g">2</span> Sobre mí</h2>
+  <div class="about">
+    <p>Soy <b>María A. Piernavieja</b> (<span style="font-family:var(--zh)">孙雅颂</span>), profesora y jefa del Departamento de Chino de la <b>Escuela Oficial de Idiomas de Cádiz</b>.</p>
+    <p>Creo estos materiales para mis clases y los comparto para que puedan servir a otros profesores y estudiantes de chino. Si te resultan útiles o tienes alguna sugerencia, me encantará saberlo.</p>
+  </div>
+
+  <footer>Creado por María A. Piernavieja <span class="zh">孙雅颂</span> · Departamento de Chino · EOI de Cádiz</footer>
+</div>
+</body>
+</html>

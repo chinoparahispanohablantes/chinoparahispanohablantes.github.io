@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Pega un texto en chino y escúchalo frase a frase, con pinyin y resaltado de la palabra que suena. Modo dictado. Gratis.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lector de chino 中文朗读">
+<meta property="og:description" content="Pega un texto en chino y escúchalo frase a frase, con pinyin y resaltado de la palabra que suena. Modo dictado. Gratis.">
+<meta property="og:image" content="https://chinoparahispanohablantes.github.io/img/lector.png">
+<meta property="og:url" content="https://chinoparahispanohablantes.github.io/lector/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231F3A5F'/%3E%3Ctext x='50' y='72' font-size='62' text-anchor='middle' fill='%23E8A33D'%3E%E4%B8%AD%3C/text%3E%3C/svg%3E">
+<style>body{margin:0}</style>
+</head><body>
+<title>Lector de chino 中文朗读</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one column workbench — text box on top, controls bar, then the sentence-by-sentence reading view */
+:root {
+  --navy: #1F3A5F; --amber: #E8A33D; --amber-soft: #FDF3E1; --amber-mid: #F7D9A3;
+  --bg: #FBF8F3; --surface: #FFFFFF; --fg: #1E2633; --muted: #667085; --line: #E6D9C2;
+  --hl: #FCE3B0; --on-navy: #FFFFFF; --word: #E8A33D; --on-word: #1F3A5F;
+  --zh: "KaiTi", "STKaiti", "Kaiti SC", "Kaiti TC", "BiauKai", "FandolKai", "Noto Serif SC", serif;
+  --ui: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --navy: #9DB8DE; --amber: #F0B556; --amber-soft: #2A2418; --amber-mid: #4A3B1E;
+  --bg: #12161D; --surface: #1A2029; --fg: #E9EDF3; --muted: #9AA5B5; --line: #333C4A;
+  --hl: #5A4420; --on-navy: #12161D; --word: #F0B556; --on-word: #12161D; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --navy: #9DB8DE; --amber: #F0B556; --amber-soft: #2A2418; --amber-mid: #4A3B1E;
+  --bg: #12161D; --surface: #1A2029; --fg: #E9EDF3; --muted: #9AA5B5; --line: #333C4A;
+  --hl: #5A4420; --on-navy: #12161D; --word: #F0B556; --on-word: #12161D; color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font-family: var(--ui); font-size: 16px; line-height: 1.5; }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 18px; }
+header.band { display: flex; align-items: stretch; border-radius: 10px; overflow: hidden; background: var(--navy); }
+header.band .tag { background: var(--amber); color: #1F3A5F; font-weight: 700; font-size: 26px; display: grid; place-items: center; padding: 0 22px; font-family: var(--zh); }
+header.band .t { padding: 14px 18px; color: var(--on-navy); min-width: 0 }
+header.band h1 { margin: 0; font-size: 22px; text-wrap: balance }
+header.band p { margin: 2px 0 0; font-size: 14px; opacity: .85 }
+.box { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.boxhead { display: flex; align-items: center; gap: 10px; padding: 8px 14px; background: var(--amber-mid); border-radius: 10px 10px 0 0; font-weight: 700; color: var(--fg); }
+.boxhead .g { background: var(--navy); color: var(--on-navy); border-radius: 5px; padding: 1px 8px; font-size: 13px }
+.boxbody { padding: 14px; display: flex; flex-direction: column; gap: 12px }
+textarea { width: 100%; min-height: 150px; resize: vertical; font-family: var(--zh); font-size: 22px; line-height: 1.7; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--fg); }
+textarea:focus, select:focus, button:focus-visible, input:focus-visible { outline: 3px solid var(--amber); outline-offset: 1px }
+.row { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center }
+label.f { display: flex; flex-direction: column; gap: 3px; font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: .02em; min-width: 0 }
+select { font: inherit; font-size: 15px; padding: 7px 8px; border-radius: 7px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); max-width: 100% }
+#voice { min-width: 0; width: 100%; }
+.voicef { flex: 1 1 320px }
+.range { display: flex; align-items: center; gap: 8px; color: var(--fg); font-size: 15px; font-variant-numeric: tabular-nums }
+input[type=range] { accent-color: var(--amber); width: 140px }
+.btns { display: flex; flex-wrap: wrap; gap: 8px }
+button { font: inherit; font-weight: 700; font-size: 16px; border-radius: 8px; padding: 10px 16px; cursor: pointer; border: 1px solid var(--navy); background: var(--surface); color: var(--navy); }
+button.primary { background: var(--navy); color: var(--on-navy); }
+button:disabled { opacity: .45; cursor: default }
+.chk { display: flex; align-items: center; gap: 6px; font-size: 15px; color: var(--fg); cursor: pointer }
+.chk input { accent-color: var(--navy); width: 18px; height: 18px }
+.status { font-size: 14px; color: var(--muted); min-height: 1.4em }
+.reader { display: flex; flex-direction: column; gap: 8px }
+.para { display: flex; flex-wrap: wrap; gap: 4px 2px; padding-bottom: 6px; border-bottom: 1px dashed var(--line) }
+.para:last-child { border-bottom: 0 }
+.sent { font-family: var(--zh); font-size: 30px; line-height: 2; padding: 4px 6px; border-radius: 6px; cursor: pointer; border: 0; background: transparent; color: var(--fg); font-weight: 400; text-align: left }
+.sent:hover { background: var(--amber-soft) }
+.sent.now { background: var(--hl); box-shadow: inset 0 -3px 0 var(--amber) }
+.w { border-radius: 5px; transition: background-color .12s, color .12s }
+.w.on { background: var(--word); color: var(--on-word) }
+.w.on rt { color: var(--on-word) }
+ruby { ruby-position: over }
+rt { font-family: var(--ui); font-size: 13px; color: var(--muted); letter-spacing: 0 }
+.dict .sent { font-size: 0; padding: 8px 10px; border: 1px dashed var(--line) }
+.dict .sent::after { content: attr(data-n); color: var(--muted); font-family: var(--ui); font-size: 15px }
+.dict .sent > * { display: none }
+.help { font-size: 15px; color: var(--fg) }
+.help ul { margin: 6px 0 0; padding-left: 20px; display: grid; gap: 4px }
+.help b { color: var(--navy) }
+.warn { background: var(--amber-soft); border-left: 4px solid var(--amber); padding: 8px 12px; border-radius: 6px; font-size: 14px }
+footer { text-align: center; font-size: 13px; color: var(--muted) }
+@media (max-width: 520px) { .sent { font-size: 25px } header.band h1 { font-size: 19px } input[type=range] { width: 110px } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important } }
+</style>
+
+<div class="wrap">
+  <header class="band">
+    <div class="tag">读</div>
+    <div class="t">
+      <h1>Lector de chino · 中文朗读</h1>
+      <p>Escribe o pega un texto en chino y escúchalo frase a frase, con pinyin si lo necesitas. La palabra que suena se resalta.</p>
+    </div>
+  </header>
+
+  <section class="box">
+    <div class="boxhead"><span class="g">1</span> Texto en chino</div>
+    <div class="boxbody">
+      <textarea id="txt" spellcheck="false" aria-label="Texto en chino"></textarea>
+      <div class="row">
+        <button id="btnLoad" class="primary" type="button">Preparar lectura</button>
+        <button id="btnSample" type="button">Cargar ejemplo</button>
+        <button id="btnClear" type="button">Borrar</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="box">
+    <div class="boxhead"><span class="g">2</span> Voz y velocidad</div>
+    <div class="boxbody">
+      <div class="row">
+        <label class="f voicef" for="voice">Voz china
+          <select id="voice"></select>
+        </label>
+        <label class="f" for="rate">Velocidad
+          <span class="range"><input id="rate" type="range" min="0.5" max="1.3" step="0.05" value="0.85"><span id="rateV">0,85×</span></span>
+        </label>
+        <label class="f" for="gap">Pausa entre frases
+          <span class="range"><input id="gap" type="range" min="0" max="5" step="0.5" value="1"><span id="gapV">1 s</span></span>
+        </label>
+        <label class="f" for="rep">Repetir cada frase
+          <select id="rep"><option value="1">1 vez</option><option value="2">2 veces</option><option value="3">3 veces</option></select>
+        </label>
+      </div>
+      <div id="voiceWarn" class="warn" hidden></div>
+    </div>
+  </section>
+
+  <section class="box">
+    <div class="boxhead"><span class="g">3</span> Escuchar</div>
+    <div class="boxbody">
+      <div class="row">
+        <div class="btns">
+          <button id="btnPlay" class="primary" type="button">▶ Leer todo</button>
+          <button id="btnPause" type="button" disabled>⏸ Pausa</button>
+          <button id="btnStop" type="button" disabled>⏹ Parar</button>
+        </div>
+        <label class="chk"><input id="optPy" type="checkbox" checked> Mostrar pinyin</label>
+        <label class="chk"><input id="optWord" type="checkbox" checked> Resaltar palabras</label>
+        <label class="chk"><input id="optDict" type="checkbox"> Modo dictado (ocultar texto)</label>
+      </div>
+      <div class="status" id="status" aria-live="polite"></div>
+      <div class="reader" id="reader"></div>
+    </div>
+  </section>
+
+  <section class="box">
+    <div class="boxhead"><span class="g">?</span> Para conseguir la voz más natural</div>
+    <div class="boxbody help">
+      <ul>
+        <li><b>La voz que mejor suena es la de Microsoft Edge:</b> elige una voz «Natural» u «Online», por ejemplo <i>Microsoft Xiaoxiao Online (Natural)</i>. Con Edge, además, el resaltado sigue exactamente a la palabra que suena. Necesita internet.</li>
+        <li>En Google Chrome también funciona bien con la voz <b>«Google 普通话»</b>.</li>
+        <li>Sin internet se usan las voces del sistema: en Windows, <i>Huihui</i> o <i>Yaoyao</i>; en Mac, <i>Tingting</i>. En el Mac puedes descargar voces chinas mejores en <b>Ajustes del Sistema → Accesibilidad → Contenido leído → Voz del sistema → Gestionar voces → Chino (China continental)</b>.</li>
+        <li>Haz clic en cualquier frase para escucharla sola. Con <b>«Repetir cada frase»</b> y <b>«Modo dictado»</b> puedes hacer dictados en clase.</li>
+        <li>Este lector reproduce el audio, pero no guarda archivos MP3. Para descargar un MP3 usa una web como TTSMaker.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>Creado por María A. Piernavieja 孙雅颂 · Departamento de Chino · EOI de Cádiz</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/pinyin-pro@3.29.4/dist/index.js"></script>
+<script>
+(function () {
+  const SAMPLE = '听说下个星期北京会很冷。今天的天气预报说，从下个星期一起，受冷空气的影响，北方的气温将下降六到八度。北京白天最高气温两度，夜间最低气温零下九度，星期三还会下雪。\n我下个星期要去北京出差。北京比我住的城市冷多了，所以我要多带几件毛衣，还要带一件大衣。妈妈说：“如果下雪，你一定要戴帽子和手套。”\n我的朋友小李住在广州。他说，广州的冬天没有北京那么冷，气温在十五度左右，和我的城市差不多。虽然广州不下雪，但是常常下雨，所以去广州最好带一把雨伞。\n我最喜欢的季节是冬天，因为我喜欢下雪天。下雪的时候，我喜欢和朋友一起去公园拍照。';
+  const $ = id => document.getElementById(id);
+  const txt = $('txt'), reader = $('reader'), status = $('status'), voiceSel = $('voice');
+  const synth = window.speechSynthesis;
+  let voices = [], sentences = [], idx = -1, playing = false, paused = false, timer = null, token = 0;
+  let fakeTimers = [];
+  const HAN = /[㐀-鿿豈-﫿]/;
+
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  };
+  txt.value = store.get('zhreader.text', SAMPLE);
+  $('rate').value = store.get('zhreader.rate', '0.85');
+  $('gap').value = store.get('zhreader.gap', '1');
+  $('optWord').checked = store.get('zhreader.word', '1') === '1';
+
+  function fmt() {
+    $('rateV').textContent = String(Number($('rate').value).toFixed(2)).replace('.', ',') + '×';
+    $('gapV').textContent = String($('gap').value).replace('.', ',') + ' s';
+  }
+  fmt();
+
+  // ---------- voices
+  function score(v) {
+    const n = v.name.toLowerCase();
+    let s = 0;
+    if (/natural|neural|online/.test(n)) s += 50;
+    if (/google/.test(n)) s += 40;
+    if (/premium|enhanced|mejorada|lili|yu-shu|xiaoxiao|yunxi|xiaoyi/.test(n)) s += 30;
+    if (/zh[-_]cn/i.test(v.lang)) s += 10;
+    if (/hk|tw|yue|cantonese|粤/i.test(v.lang + n)) s -= 60;
+    return s;
+  }
+  function loadVoices() {
+    if (!synth) return;
+    voices = synth.getVoices().filter(v => /^(zh|cmn)/i.test(v.lang));
+    voices.sort((a, b) => score(b) - score(a));
+    const saved = store.get('zhreader.voice', '');
+    voiceSel.innerHTML = '';
+    voices.forEach((v, i) => {
+      const o = document.createElement('option');
+      o.value = v.voiceURI;
+      o.textContent = (i === 0 ? '⭐ ' : '') + v.name + ' (' + v.lang + ')';
+      voiceSel.appendChild(o);
+    });
+    if (saved && voices.some(v => v.voiceURI === saved)) voiceSel.value = saved;
+    const w = $('voiceWarn');
+    if (!voices.length) {
+      w.hidden = false;
+      w.textContent = 'Este navegador no tiene voces chinas instaladas. Prueba con Microsoft Edge (la voz que mejor suena) o Google Chrome, o instala una voz china en el sistema (mira la ayuda de abajo).';
+    } else if (score(voices[0]) < 30) {
+      w.hidden = false;
+      w.textContent = 'Solo hay voces chinas básicas en este navegador. Para la voz más natural abre esta página en Microsoft Edge con internet.';
+    } else w.hidden = true;
+  }
+  if (!synth) {
+    $('voiceWarn').hidden = false;
+    $('voiceWarn').textContent = 'Este navegador no puede leer textos en voz alta. Usa Microsoft Edge, Google Chrome o Safari.';
+  } else {
+    loadVoices();
+    if (typeof synth.onvoiceschanged !== 'undefined') synth.onvoiceschanged = loadVoices;
+    setTimeout(loadVoices, 600);
+  }
+
+  // ---------- text → sentences → words
+  function split(text) {
+    const paras = text.split(/\n+/).map(p => p.trim()).filter(Boolean);
+    return paras.map(p => {
+      const out = []; let cur = '';
+      const chars = Array.from(p);
+      for (let i = 0; i < chars.length; i++) {
+        cur += chars[i];
+        if (/[。！？!?；;…]/.test(chars[i])) {
+          while (i + 1 < chars.length && /[”"’」』）)]/.test(chars[i + 1])) cur += chars[++i];
+          out.push(cur.trim()); cur = '';
+        }
+      }
+      if (cur.trim()) out.push(cur.trim());
+      return out;
+    });
+  }
+  const esc = t => t.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  let segmenter = null;
+  try { if (window.Intl && Intl.Segmenter) segmenter = new Intl.Segmenter('zh', { granularity: 'word' }); } catch (e) {}
+  function words(s) {
+    if (segmenter) return Array.from(segmenter.segment(s), g => ({ t: g.segment, start: g.index }));
+    const out = []; let o = 0;
+    Array.from(s).forEach(ch => { out.push({ t: ch, start: o }); o += ch.length; });
+    return out;
+  }
+  function sentHTML(s, withPy) {
+    const pm = {};
+    if (withPy && window.pinyinPro) {
+      let o = 0;
+      window.pinyinPro.pinyin(s, { type: 'all', toneType: 'symbol' }).forEach(it => { pm[o] = it; o += it.origin.length; });
+    }
+    return words(s).map(g => {
+      let inner = '', o = g.start;
+      Array.from(g.t).forEach(ch => {
+        const it = pm[o];
+        inner += (it && it.isZh) ? '<ruby>' + esc(ch) + '<rt>' + esc(it.pinyin) + '</rt></ruby>' : esc(ch);
+        o += ch.length;
+      });
+      const n = Array.from(g.t).filter(c => HAN.test(c)).length;
+      return '<span class="w" data-s="' + g.start + '" data-e="' + (g.start + g.t.length) + '" data-h="' + n + '">' + inner + '</span>';
+    }).join('');
+  }
+  function render() {
+    stop();
+    const paras = split(txt.value);
+    sentences = []; reader.innerHTML = '';
+    paras.forEach(p => {
+      const div = document.createElement('div'); div.className = 'para';
+      p.forEach(s => {
+        const i = sentences.length; sentences.push(s);
+        const b = document.createElement('button');
+        b.type = 'button'; b.className = 'sent'; b.dataset.i = i; b.dataset.n = '🔊 Frase ' + (i + 1);
+        b.setAttribute('aria-label', 'Escuchar la frase ' + (i + 1));
+        b.innerHTML = sentHTML(s, $('optPy').checked);
+        b.addEventListener('click', () => playOne(i));
+        div.appendChild(b);
+      });
+      reader.appendChild(div);
+    });
+    status.textContent = sentences.length ? sentences.length + ' frases listas. Pulsa «Leer todo» o haz clic en una frase.' : 'Escribe un texto en chino arriba.';
+    store.set('zhreader.text', txt.value);
+  }
+
+  // ---------- word highlight
+  function sentEl(i) { return reader.querySelector('.sent[data-i="' + i + '"]'); }
+  function clearWord() { reader.querySelectorAll('.w.on').forEach(e => e.classList.remove('on')); }
+  function lightWord(w) { clearWord(); if (w && $('optWord').checked) w.classList.add('on'); }
+  function lightAt(i, ci) {
+    const el = sentEl(i); if (!el) return;
+    const ws = el.querySelectorAll('.w');
+    for (const w of ws) {
+      if (ci >= +w.dataset.s && ci < +w.dataset.e) {
+        // skip punctuation: light the next word that has characters
+        let t = w;
+        while (t && t.dataset.h === '0') t = t.nextElementSibling;
+        lightWord(t || w); return;
+      }
+    }
+  }
+  function clearFake() { fakeTimers.forEach(clearTimeout); fakeTimers = []; }
+  // Fallback when the voice gives no word timings (e.g. some Chrome voices): estimate them
+  function fakeRun(i, my, startDelay) {
+    const el = sentEl(i); if (!el) return;
+    const rate = Number($('rate').value);
+    const perChar = 1000 / (3.6 * rate);
+    let t = -startDelay;
+    el.querySelectorAll('.w').forEach(w => {
+      const n = +w.dataset.h;
+      if (n > 0) {
+        const at = Math.max(0, t);
+        fakeTimers.push(setTimeout(() => { if (my === token) lightWord(w); }, at));
+        t += n * perChar;
+      } else if (/[，,、：:]/.test(w.textContent)) t += perChar * 1.2;
+    });
+  }
+
+  // ---------- speech
+  function voice() { return voices.find(v => v.voiceURI === voiceSel.value) || voices[0] || null; }
+  function mark(i) {
+    reader.querySelectorAll('.sent.now').forEach(e => e.classList.remove('now'));
+    const el = sentEl(i);
+    if (el) { el.classList.add('now'); el.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+  }
+  function say(i, done) {
+    const my = token;
+    let gotBoundary = false, waitT = null;
+    const u = new SpeechSynthesisUtterance(sentences[i]);
+    const v = voice(); if (v) u.voice = v;
+    u.lang = v ? v.lang : 'zh-CN';
+    u.rate = Number($('rate').value);
+    u.onstart = () => {
+      if (my !== token) return;
+      clearWord();
+      waitT = setTimeout(() => { if (!gotBoundary && my === token) fakeRun(i, my, 350); }, 350);
+      fakeTimers.push(waitT);
+    };
+    u.onboundary = e => {
+      if (my !== token || (e.name && e.name !== 'word')) return;
+      if (!gotBoundary) { gotBoundary = true; clearFake(); }
+      lightAt(i, e.charIndex);
+    };
+    const end = () => { if (my !== token) return; clearFake(); clearWord(); done(); };
+    u.onend = end; u.onerror = end;
+    synth.speak(u);
+  }
+  function speakIndex(i, reps, then) {
+    let n = 0;
+    const once = () => {
+      n++;
+      say(i, () => {
+        if (n < reps) timer = setTimeout(once, 600);
+        else then();
+      });
+    };
+    once();
+  }
+  function setButtons() {
+    $('btnPause').disabled = !playing;
+    $('btnStop').disabled = !playing && !paused;
+    $('btnPause').textContent = paused ? '▶ Continuar' : '⏸ Pausa';
+  }
+  function runFrom(i, single) {
+    if (!synth || !sentences.length) return;
+    token++; synth.cancel(); clearTimeout(timer); clearFake(); clearWord();
+    playing = true; paused = false; idx = i; setButtons();
+    const reps = Number($('rep').value);
+    const step = () => {
+      mark(idx);
+      status.textContent = 'Frase ' + (idx + 1) + ' de ' + sentences.length;
+      speakIndex(idx, reps, () => {
+        if (single || idx >= sentences.length - 1) { finish(); return; }
+        idx++;
+        timer = setTimeout(step, Number($('gap').value) * 1000);
+      });
+    };
+    step();
+  }
+  function finish() { playing = false; paused = false; setButtons(); status.textContent = 'Terminado.'; }
+  function playOne(i) { runFrom(i, true); }
+  function stop() {
+    token++; clearTimeout(timer); clearFake(); if (synth) synth.cancel();
+    playing = false; paused = false; idx = -1; setButtons();
+    clearWord();
+    reader.querySelectorAll('.sent.now').forEach(e => e.classList.remove('now'));
+  }
+
+  // ---------- events
+  $('btnLoad').addEventListener('click', render);
+  $('btnSample').addEventListener('click', () => { txt.value = SAMPLE; render(); });
+  $('btnClear').addEventListener('click', () => { txt.value = ''; render(); txt.focus(); });
+  $('btnPlay').addEventListener('click', () => { if (!sentences.length) render(); runFrom(0, false); });
+  $('btnStop').addEventListener('click', () => { stop(); status.textContent = 'Parado.'; });
+  $('btnPause').addEventListener('click', () => {
+    if (paused) { runFrom(Math.max(idx, 0), false); return; }
+    if (!playing) return;
+    token++; clearTimeout(timer); clearFake(); synth.cancel(); clearWord();
+    playing = false; paused = true; setButtons();
+    status.textContent = 'En pausa en la frase ' + (idx + 1) + '. Pulsa «Continuar» para seguir.';
+  });
+  $('optPy').addEventListener('change', render);
+  $('optWord').addEventListener('change', () => { store.set('zhreader.word', $('optWord').checked ? '1' : '0'); if (!$('optWord').checked) clearWord(); });
+  $('optDict').addEventListener('change', () => reader.classList.toggle('dict', $('optDict').checked));
+  $('rate').addEventListener('input', () => { fmt(); store.set('zhreader.rate', $('rate').value); });
+  $('gap').addEventListener('input', () => { fmt(); store.set('zhreader.gap', $('gap').value); });
+  voiceSel.addEventListener('change', () => store.set('zhreader.voice', voiceSel.value));
+  let t; txt.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => store.set('zhreader.text', txt.value), 400); });
+
+  if (window.pinyinPro) render();
+  else window.addEventListener('load', render);
+})();
+</script>
+
+</body></html>
